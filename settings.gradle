@@ -1,1 +1,1 @@
-include ':app',':epublib'
+include ':app',':epublib',':pdflib'

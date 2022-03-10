@@ -126,6 +126,7 @@ kapt {
 }
 
 dependencies {
+    implementation project(path: ':pdflib')
     coreLibraryDesugaring('com.android.tools:desugar_jdk_libs:1.1.5')
     testImplementation('junit:junit:4.13.2')
     androidTestImplementation('androidx.test:runner:1.4.0')
@@ -203,9 +204,9 @@ dependencies {
     kapt("com.github.bumptech.glide:compiler:$glideVersion")
 
     //webServer
-    def nanoHttpdVersion = "2.3.1"
-    implementation("org.nanohttpd:nanohttpd:$nanoHttpdVersion")
-    implementation("org.nanohttpd:nanohttpd-websocket:$nanoHttpdVersion")
+//    def nanoHttpdVersion = "2.3.1"
+//    implementation("org.nanohttpd:nanohttpd:$nanoHttpdVersion")
+//    implementation("org.nanohttpd:nanohttpd-websocket:$nanoHttpdVersion")
 
     //二维码
     implementation('com.github.jenly1314:zxing-lite:2.1.1')

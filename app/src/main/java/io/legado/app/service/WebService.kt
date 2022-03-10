@@ -11,8 +11,8 @@ import io.legado.app.constant.EventBus
 import io.legado.app.constant.IntentAction
 import io.legado.app.constant.PreferKey
 import io.legado.app.utils.*
-import io.legado.app.web.HttpServer
-import io.legado.app.web.WebSocketServer
+//import io.legado.app.web.HttpServer
+//import io.legado.app.web.WebSocketServer
 
 import java.io.IOException
 
@@ -32,8 +32,8 @@ class WebService : BaseService() {
 
     }
 
-    private var httpServer: HttpServer? = null
-    private var webSocketServer: WebSocketServer? = null
+//    private var httpServer: HttpServer? = null
+//    private var webSocketServer: WebSocketServer? = null
     private var notificationContent = ""
 
     override fun onCreate() {
@@ -44,57 +44,6 @@ class WebService : BaseService() {
         upTile(true)
     }
 
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.action) {
-            IntentAction.stop -> stopSelf()
-            "copyHostAddress" -> sendToClip(hostAddress)
-            else -> upWebServer()
-        }
-        return super.onStartCommand(intent, flags, startId)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        isRun = false
-        if (httpServer?.isAlive == true) {
-            httpServer?.stop()
-        }
-        if (webSocketServer?.isAlive == true) {
-            webSocketServer?.stop()
-        }
-        postEvent(EventBus.WEB_SERVICE, "")
-        upTile(false)
-    }
-
-    private fun upWebServer() {
-        if (httpServer?.isAlive == true) {
-            httpServer?.stop()
-        }
-        if (webSocketServer?.isAlive == true) {
-            webSocketServer?.stop()
-        }
-        val address = NetworkUtils.getLocalIPAddress()
-        if (address != null) {
-            val port = getPort()
-            httpServer = HttpServer(port)
-            webSocketServer = WebSocketServer(port + 1)
-            try {
-                httpServer?.start()
-                webSocketServer?.start(1000 * 30) // 通信超时设置
-                hostAddress = getString(R.string.http_ip, address.hostAddress, port)
-                isRun = true
-                postEvent(EventBus.WEB_SERVICE, hostAddress)
-                notificationContent = hostAddress
-                upNotification()
-            } catch (e: IOException) {
-                toastOnUi(e.localizedMessage ?: "")
-                e.printOnDebug()
-                stopSelf()
-            }
-        } else {
-            stopSelf()
-        }
-    }
 
     private fun getPort(): Int {
         var port = getPrefInt(PreferKey.webPort, 1122)
