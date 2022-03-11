@@ -38,7 +38,7 @@
 
         <item
             android:id="@+id/menu_set_charset"
-            android:icon="@drawable/ic_translate"
+            android:icon="@mipmap/ic_bookmark"
             android:title="@string/set_charset"
             app:showAsAction="always" />
 

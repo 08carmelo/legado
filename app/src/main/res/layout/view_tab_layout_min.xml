@@ -4,8 +4,6 @@
     android:id="@+id/tab_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="?attr/actionBarStyle"
-    app:tabBackground="@android:color/transparent"
     app:tabRippleColor="@android:color/transparent"
     app:tabMaxWidth="100dp"
     app:tabMinWidth="10dp" />

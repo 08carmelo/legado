@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:visible="false"
         android:id="@+id/menu_replace"
         android:title="@string/replace" />
 
@@ -11,23 +12,32 @@
         android:title="@android:string/copy" />
 
     <item
+        android:visible="false"
         android:id="@+id/menu_bookmark"
         android:title="@string/bookmark" />
 
     <item
+        android:id="@+id/menu_note"
+        android:title="笔记" />
+
+    <item
+        android:visible="false"
         android:id="@+id/menu_aloud"
         android:title="@string/read_aloud" />
 
     <item
+        android:visible="false"
         android:id="@+id/menu_dict"
         android:title="@string/dict" />
 
     <item
+        android:visible="false"
         android:id="@+id/menu_search_content"
         android:title="@string/search_content"
         app:showAsAction="never" />
 
     <item
+        android:visible="false"
         android:id="@+id/menu_browser"
         android:title="@string/browser"
         app:showAsAction="never" />

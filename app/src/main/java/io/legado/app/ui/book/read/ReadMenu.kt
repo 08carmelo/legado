@@ -246,6 +246,7 @@ class ReadMenu @JvmOverloads constructor(
         })
 
         //搜索
+        fabSearch.isVisible = false
         fabSearch.setOnClickListener {
             runMenuOut {
                 callBack.openSearchActivity(null)
@@ -253,6 +254,7 @@ class ReadMenu @JvmOverloads constructor(
         }
 
         //自动翻页
+        fabAutoPage.isVisible = false
         fabAutoPage.setOnClickListener {
             runMenuOut {
                 callBack.autoPage()
@@ -260,9 +262,11 @@ class ReadMenu @JvmOverloads constructor(
         }
 
         //替换
+        fabReplaceRule.isVisible = false
         fabReplaceRule.setOnClickListener { callBack.openReplaceRule() }
 
         //夜间模式
+        fabNightTheme.isVisible = false
         fabNightTheme.setOnClickListener {
             AppConfig.isNightTheme = !AppConfig.isNightTheme
             ThemeConfig.applyDayNight(context)

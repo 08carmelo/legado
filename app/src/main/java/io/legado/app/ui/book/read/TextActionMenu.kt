@@ -57,8 +57,9 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
             onInitializeMenu(otherMenu)
         }
         menuItems = myMenu.visibleItems + otherMenu.visibleItems
-        visibleMenuItems.addAll(menuItems.subList(0, 5))
-        moreMenuItems.addAll(menuItems.subList(5, menuItems.size))
+//        visibleMenuItems.addAll(menuItems.subList(0, 5))
+//        moreMenuItems.addAll(menuItems.subList(5, menuItems.size))
+        visibleMenuItems.addAll(myMenu.visibleItems)
         binding.recyclerView.adapter = adapter
         binding.recyclerViewMore.adapter = adapter
         setOnDismissListener {
@@ -91,7 +92,7 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
             binding.ivMenuMore.gone()
         } else {
             adapter.setItems(visibleMenuItems)
-            binding.ivMenuMore.visible()
+            binding.ivMenuMore.gone()
         }
     }
 

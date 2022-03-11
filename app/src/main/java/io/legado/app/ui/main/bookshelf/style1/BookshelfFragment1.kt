@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -67,6 +68,7 @@ class BookshelfFragment1 : BaseBookshelfFragment(R.layout.fragment_bookshelf),
         tabLayout.setupWithViewPager(binding.viewPagerBookshelf)
         binding.viewPagerBookshelf.offscreenPageLimit = 1
         binding.viewPagerBookshelf.adapter = adapter
+        tabLayout.isVisible = false
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

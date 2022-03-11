@@ -354,7 +354,19 @@ class ReadBookActivity : BaseReadBookActivity(),
             R.id.menu_reverse_content -> ReadBook.book?.let {
                 viewModel.reverseContent(it)
             }
-            R.id.menu_set_charset -> showCharsetConfig()
+            R.id.menu_set_charset -> {
+                val book = ReadBook.book
+                val page = ReadBook.curTextChapter?.getPage(ReadBook.durPageIndex)
+                if (book != null && page != null) {
+                    val bookmark = book.createBookMark().apply {
+                        chapterIndex = ReadBook.durChapterIndex
+                        chapterPos = ReadBook.durChapterPos
+                        chapterName = page.title
+                        bookText = page.text.trim()
+                    }
+                    showDialogFragment(BookmarkDialog(bookmark))
+                }
+            }
             R.id.menu_image_style -> {
                 val imgStyles =
                     arrayListOf(Book.imgStyleDefault, Book.imgStyleFull, Book.imgStyleText)
@@ -585,6 +597,10 @@ class ReadBookActivity : BaseReadBookActivity(),
      */
     override fun onMenuItemSelected(itemId: Int): Boolean {
         when (itemId) {
+            R.id.menu_note -> {
+                // todo 记笔记
+                return true
+            }
             R.id.menu_bookmark -> binding.readView.curPage.let {
                 val bookmark = it.createBookmark()
                 if (bookmark == null) {
@@ -738,8 +754,8 @@ class ReadBookActivity : BaseReadBookActivity(),
     }
 
     override fun showReadMenuHelp() {
-        val text = String(assets.open("help/readMenuHelp.md").readBytes())
-        showDialogFragment(TextDialog(text, TextDialog.Mode.MD))
+//        val text = String(assets.open("help/readMenuHelp.md").readBytes())
+//        showDialogFragment(TextDialog(text, TextDialog.Mode.MD))
     }
 
     /**

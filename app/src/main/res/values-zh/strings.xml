@@ -71,7 +71,7 @@
     <string name="exit_no_save">尚未保存,是否继续编辑</string>
     <string name="read_style">阅读样式设置</string>
     <string name="version">版本</string>
-    <string name="local">本地</string>
+    <string name="local">本</string>
     <string name="search">搜索</string>
     <string name="origin_format">来源: %s</string>
     <string name="read_dur_progress">最近: %s</string>

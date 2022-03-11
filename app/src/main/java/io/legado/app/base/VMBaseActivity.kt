@@ -6,8 +6,8 @@ import io.legado.app.constant.Theme
 
 abstract class VMBaseActivity<VB : ViewBinding, VM : ViewModel>(
     fullScreen: Boolean = true,
-    theme: Theme = Theme.Auto,
-    toolBarTheme: Theme = Theme.Auto,
+    theme: Theme = Theme.Light,
+    toolBarTheme: Theme = Theme.Light,
     transparent: Boolean = false,
     imageBg: Boolean = true
 ) : BaseActivity<VB>(fullScreen, theme, toolBarTheme, transparent, imageBg) {

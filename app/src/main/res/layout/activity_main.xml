@@ -15,6 +15,7 @@
 
     <io.legado.app.lib.theme.view.ThemeBottomNavigationVIew
         android:id="@+id/bottom_navigation_view"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/background"

@@ -667,7 +667,7 @@ public class LibraryFragment extends Fragment implements MainActivity.SearchList
         searchMenu.setVisible(true);
         homeMenu.setVisible(false);
         tocMenu.setVisible(false);
-        bookmarksMenu.setVisible(books.hasBookmarks());
+        bookmarksMenu.setVisible(false);
         fontsize.setVisible(false);
         debug.setVisible(false);
         rtl.setVisible(false);
