@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="screen_lock_text">
+        <item>@string/system_default</item>
+        <item>保持亮屏</item>
+        <item>30秒后关闭</item>
+        <item>1分钟后关闭</item>
+        <item>5分钟后关闭</item>
+        <item>30分钟后关闭</item>
+    </string-array>
+    <string-array name="theme_text">
+        <item>明亮主题</item>
+        <item>黑暗主题</item>
+    </string-array>
+    <plurals name="days">
+        <item quantity="one">%d天</item>
+        <item quantity="other">%d天</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d小时</item>
+        <item quantity="other">%d小时</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d分</item>
+        <item quantity="other">%d分</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d秒</item>
+        <item quantity="other">%d秒</item>
+    </plurals>
+    <string name="ShareAction">分享</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"转到主屏幕"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"转到上一层级"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"更多选项"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"完成"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"查看全部"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"选择应用"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"关闭"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"开启"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"Delete 键"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"Enter 键"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Fn+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"空格键"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"搜索…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"清除查询"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"搜索查询"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"搜索"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"提交查询"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"语音搜索"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"分享方式"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"使用<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"收起"</string>
+    <string name="add_more_fonts_to">添加更多字体到 \'%s\'</string>
+    <string name="app_name">Book Reader</string>
+    <string name="are_you_sure">你确定吗？</string>
+    <string name="book_delete">删除</string>
+    <string name="book_font">字体</string>
+    <string name="book_open">打开</string>
+    <string name="book_rename">重命名</string>
+    <string name="book_toc">目录</string>
+    <string name="bookmark_edit">编辑</string>
+    <string name="bookmarks">书签</string>
+    <string name="catalog_home">首页</string>
+    <string name="close">关闭</string>
+    <string name="continue_reading">继续阅读：</string>
+    <string name="controls_brightness">亮度</string>
+    <string name="controls_fullscreen">全屏</string>
+    <string name="controls_navigate">导航</string>
+    <string name="controls_nextpage">下一页</string>
+    <string name="controls_prevpage">上一页</string>
+    <string name="days_symbol">d</string>
+    <string name="default_button">默认</string>
+    <string name="delete_bookmark">删除书签</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"高级"</string>
+    <string name="filedialog_delete">删除</string>
+    <string name="filedialog_empty">空列表</string>
+    <string name="filedialog_foldercreated">已创建文件夹“%1$s”</string>
+    <string name="filedialog_folderdeleted">已删除：“%1$s”</string>
+    <string name="filedialog_foldername">文件夹名称</string>
+    <string name="filedialog_newfolder">新建文件夹</string>
+    <string name="filedialog_readonly">只读目录</string>
+    <string name="filedialog_rename">重命名</string>
+    <string name="filedialog_renameto">已更名为：“%1$s”</string>
+    <string name="filedialog_selectfolder">请选择文件夹</string>
+    <string name="filedialog_unablecreatefolder">无法创建文件夹: \'%1$s\'</string>
+    <string name="image_fit_to_screen">适应屏幕</string>
+    <string name="image_fit_to_screen_all_images">适应屏幕全部图片</string>
+    <string name="image_original_size">原始大小</string>
+    <string name="image_original_size_all_images">原始大小全部图片</string>
+    <string name="keep_reading_position">保持位置</string>
+    <string name="loading_book">正在加载图书</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_settings">设置</string>
+    <string name="migrating_data">数据迁移</string>
+    <string msgid="1685185767093348095" name="mr_button_content_description">"投射按钮"</string>
+    <string msgid="1350095112462806159" name="mr_cast_button_connected">"投射按钮。已连接"</string>
+    <string msgid="8959304318293841992" name="mr_cast_button_connecting">"投射按钮。正在连接"</string>
+    <string msgid="5501231066847739632" name="mr_cast_button_disconnected">"投射按钮。已断开连接"</string>
+    <string msgid="5504553798429329689" name="mr_chooser_searching">"正在查找设备"</string>
+    <string msgid="7548226170787476564" name="mr_chooser_title">"投射到"</string>
+    <string msgid="5813284753012893250" name="mr_controller_album_art">"专辑封面"</string>
+    <string msgid="5286734709674025661" name="mr_controller_casting_screen">"正在投射屏幕"</string>
+    <string msgid="5468775621814500662" name="mr_controller_close_description">"关闭"</string>
+    <string msgid="5518911192681928413" name="mr_controller_collapse_group">"收起"</string>
+    <string msgid="1370654436555555647" name="mr_controller_disconnect">"断开连接"</string>
+    <string msgid="2422682304043876468" name="mr_controller_expand_group">"展开"</string>
+    <string msgid="7299368841849988218" name="mr_controller_no_info_available">"没有任何相关信息"</string>
+    <string msgid="4342878516155861006" name="mr_controller_no_media_selected">"未选择任何媒体内容"</string>
+    <string msgid="4701315813294065305" name="mr_controller_pause">"暂停"</string>
+    <string msgid="4443315438268112801" name="mr_controller_play">"播放"</string>
+    <string msgid="5106056093749454009" name="mr_controller_stop">"停止"</string>
+    <string msgid="7617024847862349259" name="mr_controller_stop_casting">"停止投射"</string>
+    <string msgid="691656961160498512" name="mr_controller_volume_slider">"音量滑块"</string>
+    <string msgid="3117964881088969586" name="mr_system_route_name">"系统"</string>
+    <string msgid="8236416097133080726" name="mr_user_route_category_name">"设备"</string>
+    <string name="my_readings">我的阅读</string>
+    <string name="not_permitted">不允许</string>
+    <string name="open_browser">打开浏览器</string>
+    <string name="open_file">打开文件</string>
+    <string name="optimization_alive">保活服务</string>
+    <string name="optimization_alive_summary">使应用程序保持运行的后台服务</string>
+    <string name="optimization_dialog">优化设置</string>
+    <string name="optimization_icon">保持图标</string>
+    <string name="optimization_icon_summary">某些设备上应用程序经常被清理，故需要</string>
+    <string name="optimization_killed">应用程序被系统终止。请考虑添加应用到白名单。</string>
+    <string name="optimization_message">考虑将应用程序添加到电池管理白名单，以防应用程序被清除。</string>
+    <string name="optimization_system">电池优化</string>
+    <string name="optimization_system_summary">打开系统的“电池优化”对话框</string>
+    <string name="per_second">/s</string>
+    <string name="pref_rotate_summary">允许屏幕旋转</string>
+    <string name="pref_rotate_title">旋转</string>
+    <string name="pref_screenlock_title">保持亮屏</string>
+    <string name="pref_storagepath_summary">未选择“同步文件夹”</string>
+    <string name="pref_storagepath_title">同步文件夹</string>
+    <string name="pref_theme_title">主题</string>
+    <string name="pref_tts_title">TTS Language</string>
+    <string name="pref_volume_summary">使用音量键翻页</string>
+    <string name="pref_volume_title">音量键翻页</string>
+    <string name="search">搜索</string>
+    <string name="search_book">图书搜索…</string>
+    <string name="search_local">本地搜索…</string>
+    <string msgid="146198913615257606" name="search_menu_title">"搜索"</string>
+    <string name="shared_via">分享至 %1$s</string>
+    <string name="size_gb">%1$.1f GB</string>
+    <string name="size_kb">%1$.1f kb</string>
+    <string name="size_mb">%1$.1f MB</string>
+    <string name="sort_by">按 ... 排序</string>
+    <string name="sort_by_added_asc">添加时间升序</string>
+    <string name="sort_by_added_desc">添加时间降序</string>
+    <string name="sort_by_name_a_z">名称 A-Z</string>
+    <string name="sort_by_name_z_a">名称 Z-A</string>
+    <string name="sort_by_opened_asc">打开时间升序</string>
+    <string name="sort_by_opened_desc">打开时间降序</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>、<ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="sync_conflict">同步冲突</string>
+    <string name="system_default">系统默认</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"关闭"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"开启"</string>
+    <string name="view_mode">查看模式</string>
+    <string name="view_mode_continuous">连续视图</string>
+    <string name="view_mode_paging">分页视图</string>
+</resources>

@@ -1,0 +1,89 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/mac/AndroidStudioProjects/legado/pdflib/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/res/values-sw600dp/dimens.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "42",
+                        "endOffsets": "54"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1212",
+                        "endColumns": "42",
+                        "endOffsets": "1250"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/623b35b5aa217416969dc89491b741af/transformed/jetified-android-library-1.33.14/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "38",
+                        "endOffsets": "89"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/384f42d9ced837e7e34633c91d947fc0/transformed/appcompat-1.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "94,163,232,302,376,452,511,582",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "158,227,297,371,447,506,577,645"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/cf0d6c24aff565406783a22fae35f305/transformed/material-1.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,553,617,680",
+                        "endLines": "2,3,4,5,6,7,9,10,11,15",
+                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
+                        "endOffsets": "110,180,251,323,381,439,548,612,675,847"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,19,23,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "650,710,780,851,923,981,1039,1148,1393,1456",
+                        "endLines": "11,12,13,14,15,16,18,19,23,27",
+                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
+                        "endOffsets": "705,775,846,918,976,1034,1143,1207,1451,1623"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/3eac83c96cd790301ae34dfb5e30ddd0/transformed/mediarouter-1.0.0-alpha5/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,124",
+                        "endColumns": "68,68",
+                        "endOffsets": "119,188"
+                    },
+                    "to": {
+                        "startLines": "21,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "1255,1324",
+                        "endColumns": "68,68",
+                        "endOffsets": "1319,1388"
+                    }
+                }
+            ]
+        }
+    ]
+}

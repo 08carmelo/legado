@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="screen_lock_text">
+        <item>@string/system_default</item>
+        <item>Eingeschaltet lassen</item>
+        <item>Abschalten nach 30 Sekunden</item>
+        <item>Abschalten nach 1 Minute</item>
+        <item>Abschalten nach 5 Minuten</item>
+        <item>Abschalten nach 30 Minuten</item>
+    </string-array>
+    <string-array name="theme_text">
+        <item>Helles Aussehen</item>
+        <item>Dunkles Aussehen</item>
+    </string-array>
+    <plurals name="days">
+        <item quantity="one">%d Tag</item>
+        <item quantity="other">%d Tage</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d Stunde</item>
+        <item quantity="other">%d Stunden</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d Minute</item>
+        <item quantity="other">%d Minuten</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d Sekunde</item>
+        <item quantity="other">%d Sekunden</item>
+    </plurals>
+    <string name="ShareAction">Teilen</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Zur Startseite"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Nach oben"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Weitere Optionen"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Fertig"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Alle ansehen"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"App auswählen"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"Aus"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"An"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Strg +"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"Löschen"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"Eingabetaste"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Funktionstaste +"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta-Taste +"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Umschalttaste +"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"Leertaste +"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym-Taste +"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menütaste +"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Suchen…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Suchanfrage löschen"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Suchanfrage"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Suchen"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Suchanfrage senden"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Sprachsuche"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Freigeben für"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Mit <ns1:g id="APPLICATION_NAME">%s</ns1:g> teilen"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <string name="add_more_fonts_to">Weitere Schriftarten zu \'%s\' hinzufügen</string>
+    <string name="app_name">Book Reader</string>
+    <string name="are_you_sure">Sind Sie sicher?</string>
+    <string name="book_delete">Löschen</string>
+    <string name="book_font">Schriftart</string>
+    <string name="book_open">Öffnen</string>
+    <string name="book_rename">Umbenennen</string>
+    <string name="book_toc">Inhaltsverzeichnis</string>
+    <string name="bookmark_edit">Edit</string>
+    <string name="bookmarks">Lesezeichen</string>
+    <string name="catalog_home">Startseite</string>
+    <string name="close">Schließen</string>
+    <string name="continue_reading">Weiterlesen ab:</string>
+    <string name="controls_brightness">Helligkeit</string>
+    <string name="controls_fullscreen">Vollbild</string>
+    <string name="controls_navigate">Navigieren</string>
+    <string name="controls_nextpage">Nächste Seite</string>
+    <string name="controls_prevpage">Vorherige Seite</string>
+    <string name="days_symbol">T</string>
+    <string name="default_button">Standard</string>
+    <string name="delete_bookmark">Lesezeichen löschen</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Erweitert"</string>
+    <string name="filedialog_delete">Löschen</string>
+    <string name="filedialog_empty">Leere Liste</string>
+    <string name="filedialog_foldercreated">Ordner \'%1$s\' erstellt</string>
+    <string name="filedialog_folderdeleted">Gelöscht: \'%1$s\'</string>
+    <string name="filedialog_foldername">Ordnername</string>
+    <string name="filedialog_newfolder">Neuer Ordner</string>
+    <string name="filedialog_readonly">Schreibgeschützter Ordner</string>
+    <string name="filedialog_rename">Umbenennen</string>
+    <string name="filedialog_renameto">Umbenannt zu: \'%1$s\'</string>
+    <string name="filedialog_selectfolder">Bitte wählen Sie einen Ordner aus</string>
+    <string name="filedialog_unablecreatefolder">Ordner kann nicht erstellt werden: \'%1$s\'</string>
+    <string name="image_fit_to_screen">Fit To Screen</string>
+    <string name="image_fit_to_screen_all_images">Fit To Screen All Images</string>
+    <string name="image_original_size">Originalgröße</string>
+    <string name="image_original_size_all_images">Originalgröße Alle Bilder</string>
+    <string name="keep_reading_position">Position beibehalten</string>
+    <string name="loading_book">Lade Buch</string>
+    <string name="menu_about">Über</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="migrating_data">Migriere Daten</string>
+    <string msgid="1685185767093348095" name="mr_button_content_description">"Cast-Symbol"</string>
+    <string msgid="1350095112462806159" name="mr_cast_button_connected">"Cast-Symbol. Verbunden."</string>
+    <string msgid="8959304318293841992" name="mr_cast_button_connecting">"Cast-Symbol. Verbindung wird hergestellt."</string>
+    <string msgid="5501231066847739632" name="mr_cast_button_disconnected">"Cast-Symbol. Nicht verbunden."</string>
+    <string msgid="5504553798429329689" name="mr_chooser_searching">"Geräte werden gesucht"</string>
+    <string msgid="7548226170787476564" name="mr_chooser_title">"Streamen auf"</string>
+    <string msgid="5813284753012893250" name="mr_controller_album_art">"Albumcover"</string>
+    <string msgid="5286734709674025661" name="mr_controller_casting_screen">"Bildschirm wird übertragen"</string>
+    <string msgid="5468775621814500662" name="mr_controller_close_description">"Schließen"</string>
+    <string msgid="5518911192681928413" name="mr_controller_collapse_group">"Minimieren"</string>
+    <string msgid="1370654436555555647" name="mr_controller_disconnect">"Trennen"</string>
+    <string msgid="2422682304043876468" name="mr_controller_expand_group">"Maximieren"</string>
+    <string msgid="7299368841849988218" name="mr_controller_no_info_available">"Keine Informationen verfügbar"</string>
+    <string msgid="4342878516155861006" name="mr_controller_no_media_selected">"Keine Medien ausgewählt"</string>
+    <string msgid="4701315813294065305" name="mr_controller_pause">"Pause"</string>
+    <string msgid="4443315438268112801" name="mr_controller_play">"Wiedergabe"</string>
+    <string msgid="5106056093749454009" name="mr_controller_stop">"Stopp"</string>
+    <string msgid="7617024847862349259" name="mr_controller_stop_casting">"Streaming beenden"</string>
+    <string msgid="691656961160498512" name="mr_controller_volume_slider">"Schieberegler für die Lautstärke"</string>
+    <string msgid="3117964881088969586" name="mr_system_route_name">"System"</string>
+    <string msgid="8236416097133080726" name="mr_user_route_category_name">"Geräte"</string>
+    <string name="my_readings">Meine Bücher</string>
+    <string name="not_permitted">Nicht erlaubt</string>
+    <string name="open_browser">Browser öffnen</string>
+    <string name="open_file">Datei öffnen</string>
+    <string name="optimization_alive">Aufrechterhaltungsdienst</string>
+    <string name="optimization_alive_summary">Hintergrunddienst hält die Anwendung am Laufen.</string>
+    <string name="optimization_dialog">Optimierungsdialog</string>
+    <string name="optimization_icon">Anhaltendes Symbol</string>
+    <string name="optimization_icon_summary">Erfordert auf einigen Geräten, wenn die Anwendung ständig entfernt wird.</string>
+    <string name="optimization_killed">Die Anwendung wurde durch das Betriebssystem beendet. Erwägen Sie, die Anwendung zur Ausnahmeliste hinzuzufügen.</string>
+    <string name="optimization_message">Überlegen Sie, die App zur Positivliste des Batteriemanagers hinzuzufügen, um eine Entfernung dieser aus dem Arbeitsspeicher zu verhindern.</string>
+    <string name="optimization_system">Akku-Optimierung</string>
+    <string name="optimization_system_summary">Systemdialogfeld zur Optimierung des Akkus öffnen</string>
+    <string name="per_second">/s</string>
+    <string name="pref_rotate_summary">Erlaube den Bildschirm zu drehen</string>
+    <string name="pref_rotate_title">Bildschirm drehen</string>
+    <string name="pref_screenlock_title">Bildschirm eingeschaltet lassen</string>
+    <string name="pref_storagepath_summary">Kein \'Synchronisierungsordner\' ausgewählt</string>
+    <string name="pref_storagepath_title">Synchronisierungsordner</string>
+    <string name="pref_theme_title">Aussehen</string>
+    <string name="pref_tts_title">TTS Language</string>
+    <string name="pref_volume_summary">Verwende Lautstärketasten um umzublättern</string>
+    <string name="pref_volume_title">Lautstärketasten umschalten</string>
+    <string name="search">Suchen</string>
+    <string name="search_book">Buchsuche…</string>
+    <string name="search_local">Lokale Suche…</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Suchen"</string>
+    <string name="shared_via">Teilen über %1$s</string>
+    <string name="size_gb">%1$.1f GB</string>
+    <string name="size_kb">%1$.1f kb</string>
+    <string name="size_mb">%1$.1f MB</string>
+    <string name="sort_by">Sortieren nach …</string>
+    <string name="sort_by_added_asc">Hinzugefügt (älteste zuerst)</string>
+    <string name="sort_by_added_desc">Hinzugefügt (neueste zuerst)</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_opened_asc">Zuletzt geöffnet (älteste zuerst)</string>
+    <string name="sort_by_opened_desc">Zuletzt geöffnet (neueste zuerst)</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="sync_conflict">Synchronisierungsfehler</string>
+    <string name="system_default">Systemstandard</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"AUS"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"EIN"</string>
+    <string name="view_mode">Anzeigemodus</string>
+    <string name="view_mode_continuous">Kontinuierliche Anzeige</string>
+    <string name="view_mode_paging">Seitenweise Anzeige</string>
+</resources>

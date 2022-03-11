@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <attr name="side_nav_bar" format="reference" />
+
+    <string-array name="theme_value" translatable="false">
+        <item>@string/Theme_Light</item>
+        <item>@string/Theme_Dark</item>
+    </string-array>
+
+    <string-array name="viewmode_value" translatable="false">
+        <item>PAGING</item>
+        <item>CONTINUOUS</item>
+    </string-array>
+
     <attr name="radius" format="dimension" />
     <attr name="isBottomBackground" format="boolean" />
     <attr name="themeMode" format="enum">

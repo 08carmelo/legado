@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="screen_lock_text">
+        <item>@string/system_default</item>
+        <item>Altid tændt</item>
+        <item>Sluk efter 30 sec</item>
+        <item>Sluk efter 1 min</item>
+        <item>Sluk efter 5 min</item>
+        <item>Sluk efter 30 min</item>
+    </string-array>
+    <plurals name="days">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dage</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d time</item>
+        <item quantity="other">%d timer</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d minut</item>
+        <item quantity="other">%d minutter</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d sekund</item>
+        <item quantity="other">%d sekunder</item>
+    </plurals>
+    <string name="ShareAction">Del</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Naviger hjem"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Naviger op"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Flere muligheder"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Luk"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Se alle"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Vælg en app"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"FRA"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"TIL"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Fn+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"mellemrum"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Søg…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Ryd forespørgslen"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Søgeforespørgsel"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Søg"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Indsend forespørgslen"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Talesøgning"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Del med"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Del med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Skjul"</string>
+    <string name="are_you_sure">Er du sikker?</string>
+    <string name="close">Luk</string>
+    <string name="days_symbol">d</string>
+    <string name="default_button">Default</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Avanceret"</string>
+    <string name="filedialog_delete">Slet</string>
+    <string name="filedialog_empty">Tom liste</string>
+    <string name="filedialog_foldercreated">Mappe \'%1$s\' oprettet</string>
+    <string name="filedialog_folderdeleted">Slettet: \'%1$s\'</string>
+    <string name="filedialog_foldername">Mappenavn</string>
+    <string name="filedialog_newfolder">Ny mappe</string>
+    <string name="filedialog_readonly">Skrivebeskyttet mappe</string>
+    <string name="filedialog_rename">Omdøb</string>
+    <string name="filedialog_renameto">Omdøbt til: \'%1$s\'</string>
+    <string name="filedialog_selectfolder">Vælg venligst en mappe</string>
+    <string name="filedialog_unablecreatefolder">Kunne ikke oprette mappe: \'%1$s\'</string>
+    <string name="menu_about">Om</string>
+    <string name="menu_settings">Indstillinger</string>
+    <string name="migrating_data">Migrering af data</string>
+    <string msgid="1685185767093348095" name="mr_button_content_description">"Cast-knap"</string>
+    <string msgid="1350095112462806159" name="mr_cast_button_connected">"Cast-knap. Der er oprettet forbindelse"</string>
+    <string msgid="8959304318293841992" name="mr_cast_button_connecting">"Cast-knap. Opretter forbindelse"</string>
+    <string msgid="5501231066847739632" name="mr_cast_button_disconnected">"Cast-knap. Forbindelsen er afbrudt"</string>
+    <string msgid="5504553798429329689" name="mr_chooser_searching">"Finder enheder"</string>
+    <string msgid="7548226170787476564" name="mr_chooser_title">"Cast til"</string>
+    <string msgid="5813284753012893250" name="mr_controller_album_art">"Albumgrafik"</string>
+    <string msgid="5286734709674025661" name="mr_controller_casting_screen">"Skærmen castes"</string>
+    <string msgid="5468775621814500662" name="mr_controller_close_description">"Luk"</string>
+    <string msgid="5518911192681928413" name="mr_controller_collapse_group">"Skjul"</string>
+    <string msgid="1370654436555555647" name="mr_controller_disconnect">"Afbryd forbindelse"</string>
+    <string msgid="2422682304043876468" name="mr_controller_expand_group">"Udvid"</string>
+    <string msgid="7299368841849988218" name="mr_controller_no_info_available">"Der er ingen tilgængelige oplysninger"</string>
+    <string msgid="4342878516155861006" name="mr_controller_no_media_selected">"Ingen medier er markeret"</string>
+    <string msgid="4701315813294065305" name="mr_controller_pause">"Sæt på pause"</string>
+    <string msgid="4443315438268112801" name="mr_controller_play">"Afspil"</string>
+    <string msgid="5106056093749454009" name="mr_controller_stop">"Stop"</string>
+    <string msgid="7617024847862349259" name="mr_controller_stop_casting">"Stop med at caste"</string>
+    <string msgid="691656961160498512" name="mr_controller_volume_slider">"Lydstyrkeskyder"</string>
+    <string msgid="3117964881088969586" name="mr_system_route_name">"System"</string>
+    <string msgid="8236416097133080726" name="mr_user_route_category_name">"Enheder"</string>
+    <string name="not_permitted">Ikke tilladt</string>
+    <string name="open_browser">Åbn browser</string>
+    <string name="optimization_alive">Keep Alive Service</string>
+    <string name="optimization_alive_summary">Baggrundstjeneste holder applikationen kørende</string>
+    <string name="optimization_dialog">Optimeringsindstillinger</string>
+    <string name="optimization_icon">Persistent Icon</string>
+    <string name="optimization_icon_summary">Kræves på nogle enheder, når applikationen konstant fjernes</string>
+    <string name="optimization_killed">App blev lukket af OS. Overvej at tilføje program til hvidliste.</string>
+    <string name="optimization_message">Overvej at tilføje applikation til telefonbatteristyringens hvidliste for at forhindre, at program fjernes fra hukommelsen.</string>
+    <string name="optimization_system">Optimering af batteri</string>
+    <string name="optimization_system_summary">Åbn dialogboks til optimering af systembatteri</string>
+    <string name="pref_screenlock_title">Hold skærmen tændt</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Søg"</string>
+    <string name="shared_via">Del via %1$s</string>
+    <string name="size_gb">%1$.1f GB</string>
+    <string name="size_kb">%1$.1f kb</string>
+    <string name="size_mb">%1$.1f MB</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="system_default">System Default</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"FRA"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"TIL"</string>
+</resources>

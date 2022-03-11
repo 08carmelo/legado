@@ -1,14 +1,334 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.github.axet.bookreader" >
-4
-5    <uses-sdk
-6        android:minSdkVersion="21"
-6-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml
-7        android:targetSdkVersion="31" />
-7-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml
-8
-9    <application />
-9-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:3:5-20
-10
-11</manifest>
+3    package="com.github.axet.bookreader"
+4    android:installLocation="auto"
+5    android:versionCode="408"
+6    android:versionName="1.13.29" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="21"
+9-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="31" />
+10-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:7:5-67
+12-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:7:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:8:5-79
+13-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:9:5-80
+14-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:9:22-77
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+17
+18    <application
+18-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:11:5-263:19
+19        android:allowBackup="true"
+19-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:12:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.0.0] /Users/mac/.gradle/caches/transforms-3/edd40459526dc62aa6af96bcf43994ad/transformed/core-1.0.0/AndroidManifest.xml:22:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:13:9-43
+23        android:requestLegacyExternalStorage="true"
+23-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:14:9-52
+24        android:roundIcon="@mipmap/ic_launcher"
+24-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:15:9-48
+25        android:supportsRtl="true"
+25-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:16:9-35
+26        android:testOnly="true" >
+27        <uses-library
+27-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:18:9-20:40
+28            android:name="org.apache.http.legacy"
+28-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:19:13-50
+29            android:required="false" />
+29-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:20:13-37
+30
+31        <activity
+31-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:22:9-242:20
+32            android:name="com.github.axet.bookreader.activities.MainActivity"
+32-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:23:13-52
+33            android:configChanges="keyboardHidden|orientation|screenSize"
+33-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:24:13-74
+34            android:launchMode="singleTop"
+34-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:25:13-43
+35            android:windowSoftInputMode="adjustNothing" >
+35-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:26:13-56
+36            <meta-data
+36-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:28:13-30:54
+37                android:name="android.app.searchable"
+37-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:29:17-54
+38                android:resource="@xml/searchable" />
+38-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:30:17-51
+39
+40            <!-- <intent-filter> -->
+41            <!-- <action android:name="android.intent.action.MAIN" /> -->
+42
+43
+44            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+45            <!-- </intent-filter> -->
+46            <!-- <intent-filter> -->
+47            <!-- <action android:name="android.intent.action.VIEW" /> -->
+48
+49
+50            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+51            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+52
+53
+54            <!-- <data -->
+55            <!-- android:host="*" -->
+56            <!-- android:pathPattern=".*\\.fb2" -->
+57            <!-- android:scheme="content" /> -->
+58            <!-- </intent-filter> -->
+59            <!-- <intent-filter> -->
+60            <!-- <action android:name="android.intent.action.VIEW" /> -->
+61
+62
+63            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+64            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+65
+66
+67            <!-- <data -->
+68            <!-- android:host="*" -->
+69            <!-- android:scheme="file" /> -->
+70            <!-- <data -->
+71            <!-- android:host="*" -->
+72            <!-- android:scheme="http" /> -->
+73            <!-- <data -->
+74            <!-- android:host="*" -->
+75            <!-- android:scheme="https" /> -->
+76            <!-- <data android:pathPattern=".*\\.epub" /> -->
+77            <!-- <data android:pathPattern=".*\\.oeb" /> -->
+78            <!-- <data android:pathPattern=".*\\.fb2" /> -->
+79            <!-- <data android:pathPattern=".*\\.fb2\\.zip" /> -->
+80            <!-- <data android:pathPattern=".*\\.mobi" /> -->
+81            <!-- <data android:pathPattern=".*\\.prc" /> -->
+82            <!-- <data android:pathPattern=".*\\.txt" /> -->
+83            <!-- <data android:pathPattern=".*\\.rtf" /> -->
+84            <!-- <data android:pathPattern=".*\\.pdf" /> -->
+85            <!-- <data android:pathPattern=".*\\.djvu" /> -->
+86            <!-- <data android:pathPattern=".*\\.cbr" /> -->
+87            <!-- <data android:pathPattern=".*\\.cbz" /> -->
+88            <!-- </intent-filter> -->
+89            <!-- <intent-filter> -->
+90            <!-- <action android:name="android.intent.action.VIEW" /> -->
+91
+92
+93            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+94            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+95
+96
+97            <!-- <data -->
+98            <!-- android:host="*" -->
+99            <!-- android:mimeType="text/plain" -->
+100            <!-- android:scheme="file" /> -->
+101            <!-- <data -->
+102            <!-- android:host="*" -->
+103            <!-- android:scheme="http" /> -->
+104            <!-- <data -->
+105            <!-- android:host="*" -->
+106            <!-- android:scheme="https" /> -->
+107            <!-- <data android:pathPattern=".*\\.epub" /> -->
+108            <!-- <data android:pathPattern=".*\\.oeb" /> -->
+109            <!-- <data android:pathPattern=".*\\.fb2" /> -->
+110            <!-- <data android:pathPattern=".*\\.mobi" /> -->
+111            <!-- <data android:pathPattern=".*\\.prc" /> -->
+112            <!-- <data android:pathPattern=".*\\.txt" /> -->
+113            <!-- <data android:pathPattern=".*\\.rtf" /> -->
+114            <!-- <data android:pathPattern=".*\\.pdf" /> -->
+115            <!-- <data android:pathPattern=".*\\.djvu" /> -->
+116            <!-- <data android:pathPattern=".*\\.cbr" /> -->
+117            <!-- <data android:pathPattern=".*\\.cbz" /> -->
+118            <!-- </intent-filter> -->
+119            <!-- <intent-filter> -->
+120            <!-- <action android:name="android.intent.action.VIEW" /> -->
+121
+122
+123            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+124            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+125
+126
+127            <!-- <data -->
+128            <!-- android:host="*" -->
+129            <!-- android:scheme="http" /> -->
+130            <!-- <data -->
+131            <!-- android:host="*" -->
+132            <!-- android:scheme="https" /> -->
+133            <!-- <data android:pathPattern=".*\\.epub" /> -->
+134            <!-- <data android:pathPattern=".*\\.oeb" /> -->
+135            <!-- <data android:pathPattern=".*\\.fb2" /> -->
+136            <!-- <data android:pathPattern=".*\\.fb2\\.zip" /> -->
+137            <!-- <data android:pathPattern=".*\\.mobi" /> -->
+138            <!-- <data android:pathPattern=".*\\.prc" /> -->
+139            <!-- <data android:pathPattern=".*\\.txt" /> -->
+140            <!-- <data android:pathPattern=".*\\.rtf" /> -->
+141            <!-- <data android:pathPattern=".*\\.djvu" /> -->
+142            <!-- <data android:pathPattern=".*\\.cbr" /> -->
+143            <!-- <data android:pathPattern=".*\\.cbz" /> -->
+144            <!-- </intent-filter> -->
+145            <!-- <intent-filter> -->
+146            <!-- <action android:name="android.intent.action.VIEW" /> -->
+147
+148
+149            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+150            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+151
+152
+153            <!-- <data -->
+154            <!-- android:host="*" -->
+155            <!-- android:scheme="file" /> -->
+156            <!-- <data -->
+157            <!-- android:host="*" -->
+158            <!-- android:scheme="content" /> -->
+159            <!-- <data android:mimeType="application/epub+zip" /> -->
+160            <!-- <data android:mimeType="application/zip" /> -->
+161            <!-- <data android:mimeType="application/x-pilot-prc" /> -->
+162            <!-- <data android:mimeType="application/x-mobipocket-ebook" /> -->
+163            <!-- <data android:mimeType="application/x-fictionbook+xml" /> -->
+164            <!-- <data android:mimeType="application/x-fictionbook" /> -->
+165            <!-- <data android:mimeType="application/pdf" /> -->
+166            <!-- <data android:mimeType="application/octet-stream" /> -->
+167            <!-- <data android:mimeType="text/*" /> -->
+168            <!-- <data android:mimeType="application/x-pdf" /> -->
+169            <!-- <data android:mimeType="application/djvu" /> -->
+170            <!-- <data android:mimeType="application/x-djvu" /> -->
+171            <!-- <data android:mimeType="application/x-cbr" /> -->
+172            <!-- <data android:mimeType="application/x-cbz" /> -->
+173            <!-- <data android:mimeType="image/vnd.djvu" /> -->
+174            <!-- <data android:mimeType="image/x-djvu" /> -->
+175            <!-- <data android:mimeType="text/plain" /> -->
+176            <!-- </intent-filter> -->
+177            <!-- <intent-filter> -->
+178            <!-- <action android:name="android.intent.action.VIEW" /> -->
+179
+180
+181            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+182            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+183
+184
+185            <!-- <data -->
+186            <!-- android:host="*" -->
+187            <!-- android:scheme="http" /> -->
+188            <!-- <data -->
+189            <!-- android:host="*" -->
+190            <!-- android:scheme="https" /> -->
+191            <!-- <data android:mimeType="application/zip" /> -->
+192            <!-- <data android:mimeType="application/epub+zip" /> -->
+193            <!-- <data android:mimeType="application/x-pilot-prc" /> -->
+194            <!-- <data android:mimeType="application/x-mobipocket-ebook" /> -->
+195            <!-- <data android:mimeType="application/x-fictionbook+xml" /> -->
+196            <!-- <data android:mimeType="application/x-fictionbook" /> -->
+197            <!-- <data android:mimeType="application/djvu" /> -->
+198            <!-- <data android:mimeType="application/x-djvu" /> -->
+199            <!-- <data android:mimeType="application/x-cbr" /> -->
+200            <!-- <data android:mimeType="application/x-cbz" /> -->
+201            <!-- <data android:mimeType="image/vnd.djvu" /> -->
+202            <!-- <data android:mimeType="image/x-djvu" /> -->
+203            <!-- </intent-filter> -->
+204            <!-- <intent-filter> -->
+205            <!-- <action android:name="android.intent.action.VIEW" /> -->
+206
+207
+208            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+209            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+210
+211
+212            <!-- <data -->
+213            <!-- android:host="*rus.ec" -->
+214            <!-- android:mimeType="application/zip" -->
+215            <!-- android:scheme="http" /> -->
+216            <!-- <data -->
+217            <!-- android:host="lib.ololo.cc" -->
+218            <!-- android:mimeType="application/zip" -->
+219            <!-- android:scheme="http" /> -->
+220            <!-- </intent-filter> -->
+221            <!-- <intent-filter> -->
+222            <!-- <action android:name="android.intent.action.VIEW" /> -->
+223
+224
+225            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+226            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+227
+228
+229            <!-- <data -->
+230            <!-- android:host="*" -->
+231            <!-- android:scheme="book" /> -->
+232            <!-- </intent-filter> -->
+233            <!-- <intent-filter> -->
+234            <!-- <action android:name="android.intent.action.VIEW" /> -->
+235
+236
+237            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+238            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+239
+240
+241            <!-- <data -->
+242            <!-- android:host="*" -->
+243            <!-- android:scheme="epub" /> -->
+244            <!-- </intent-filter> -->
+245            <!-- <intent-filter> -->
+246            <!-- <action android:name="android.intent.action.SEND" /> -->
+247
+248
+249            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+250            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+251
+252
+253            <!-- <data android:mimeType="application/epub+zip" /> -->
+254            <!-- <data android:mimeType="application/zip" /> -->
+255            <!-- <data android:mimeType="application/x-pilot-prc" /> -->
+256            <!-- <data android:mimeType="application/x-mobipocket-ebook" /> -->
+257            <!-- <data android:mimeType="application/x-fictionbook+xml" /> -->
+258            <!-- <data android:mimeType="application/x-fictionbook" /> -->
+259            <!-- <data android:mimeType="application/pdf" /> -->
+260            <!-- <data android:mimeType="application/octet-stream" /> -->
+261            <!-- <data android:mimeType="text/*" /> -->
+262            <!-- <data android:mimeType="application/x-pdf" /> -->
+263            <!-- <data android:mimeType="application/djvu" /> -->
+264            <!-- <data android:mimeType="application/x-djvu" /> -->
+265            <!-- <data android:mimeType="application/x-cbr" /> -->
+266            <!-- <data android:mimeType="application/x-cbz" /> -->
+267            <!-- <data android:mimeType="image/vnd.djvu" /> -->
+268            <!-- <data android:mimeType="image/x-djvu" /> -->
+269            <!-- <data android:mimeType="text/plain" /> -->
+270            <!-- </intent-filter> -->
+271        </activity>
+272        <activity
+272-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:243:9-246:50
+273            android:name="com.github.axet.bookreader.activities.SettingsActivity"
+273-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:244:13-56
+274            android:label="@string/menu_settings"
+274-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:245:13-50
+275            android:theme="@style/Translucent" />
+275-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:246:13-47
+276
+277        <!-- <provider -->
+278        <!-- android:name="com.github.axet.androidlibrary.services.FileProvider" -->
+279        <!-- android:authorities="com.github.axet.bookreader.files" -->
+280        <!-- android:exported="false" -->
+281        <!-- android:grantUriPermissions="true" /> -->
+282        <provider
+282-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:253:9-257:50
+283            android:name="com.github.axet.androidlibrary.services.StorageProvider"
+283-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:254:13-83
+284            android:authorities="com.github.axet.bookreader.storage"
+284-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:255:13-69
+285            android:exported="false"
+285-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:256:13-37
+286            android:grantUriPermissions="true" />
+286-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:257:13-47
+287        <provider
+287-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:258:9-262:50
+288            android:name="com.github.axet.bookreader.services.ImagesProvider"
+288-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:259:13-78
+289            android:authorities="com.github.axet.bookreader.images"
+289-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:260:13-68
+290            android:exported="false"
+290-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:261:13-37
+291            android:grantUriPermissions="true" />
+291-->/Users/mac/AndroidStudioProjects/legado/pdflib/src/main/AndroidManifest.xml:262:13-47
+292    </application>
+293
+294</manifest>

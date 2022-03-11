@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
 import androidx.multidex.MultiDexApplication
+import com.github.axet.androidlibrary.net.HttpClient.SpongyLoader
 import com.jeremyliao.liveeventbus.LiveEventBus
 import io.legado.app.base.AppContextWrapper
 import io.legado.app.constant.AppConst.channelIdDownload
@@ -17,6 +18,7 @@ import io.legado.app.help.config.AppConfig
 import io.legado.app.help.config.ThemeConfig.applyDayNight
 import io.legado.app.help.http.cronet.CronetLoader
 import io.legado.app.utils.defaultSharedPreferences
+import org.geometerplus.zlibrary.ui.android.library.ZLAndroidApplication
 import splitties.systemservices.notificationManager
 
 class App : MultiDexApplication() {
@@ -33,10 +35,18 @@ class App : MultiDexApplication() {
             .autoClear(false)
         registerActivityLifecycleCallbacks(LifecycleHelp)
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(AppConfig)
+        val zlib = object : ZLAndroidApplication() {
+            init {
+                attachBaseContext(this@App)
+                onCreate()
+            }
+        }
+        SpongyLoader(this, false)
     }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(AppContextWrapper.wrap(base))
+//        MultiDex.install(this)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

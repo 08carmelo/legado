@@ -128,35 +128,35 @@ class MainActivity : VMBaseActivity<ActivityMainBinding, MainViewModel>(),
         }
     }
 
-    override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {
-        event?.let {
-            when (keyCode) {
-                KeyEvent.KEYCODE_BACK -> if (event.isTracking && !event.isCanceled) {
-                    if (pagePosition != 0) {
-                        binding.viewPagerMain.currentItem = 0
-                        return true
-                    }
-                    (fragmentMap[getFragmentId(0)] as? BookshelfFragment2)?.let {
-                        if (it.back()) {
-                            return true
-                        }
-                    }
-                    if (System.currentTimeMillis() - exitTime > 2000) {
-                        toastOnUi(R.string.double_click_exit)
-                        exitTime = System.currentTimeMillis()
-                    } else {
-                        if (BaseReadAloudService.pause) {
-                            finish()
-                        } else {
-                            moveTaskToBack(true)
-                        }
-                    }
-                    return true
-                }
-            }
-        }
-        return super.onKeyUp(keyCode, event)
-    }
+//    override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {
+//        event?.let {
+//            when (keyCode) {
+//                KeyEvent.KEYCODE_BACK -> if (event.isTracking && !event.isCanceled) {
+//                    if (pagePosition != 0) {
+//                        binding.viewPagerMain.currentItem = 0
+//                        return true
+//                    }
+//                    (fragmentMap[getFragmentId(0)] as? BookshelfFragment2)?.let {
+//                        if (it.back()) {
+//                            return true
+//                        }
+//                    }
+//                    if (System.currentTimeMillis() - exitTime > 2000) {
+//                        toastOnUi(R.string.double_click_exit)
+//                        exitTime = System.currentTimeMillis()
+//                    } else {
+//                        if (BaseReadAloudService.pause) {
+//                            finish()
+//                        } else {
+//                            moveTaskToBack(true)
+//                        }
+//                    }
+//                    return true
+//                }
+//            }
+//        }
+//        return super.onKeyUp(keyCode, event)
+//    }
 
     override fun onPause() {
         super.onPause()

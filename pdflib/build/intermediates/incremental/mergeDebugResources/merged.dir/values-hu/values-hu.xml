@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="screen_lock_text">
+        <item>@string/system_default</item>
+        <item>Állandóan bekapcsolva</item>
+        <item>Kikapcsolás 30 másodperc után</item>
+        <item>Kikapcsolás 1 perc után</item>
+        <item>Kikapcsolás 5 perc után</item>
+        <item>Kikapcsolás 30 perc után</item>
+    </string-array>
+    <string-array name="theme_text">
+        <item>Világos téma</item>
+        <item>Sötét téma</item>
+    </string-array>
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+    <plurals name="days">
+        <item quantity="one">%d nap</item>
+        <item quantity="other">%d nap</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d óra</item>
+        <item quantity="other">%d óra</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d perc</item>
+        <item quantity="other">%d perc</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d másodperc</item>
+        <item quantity="other">%d másodperc</item>
+    </plurals>
+    <string name="ShareAction">Megoszt</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Ugrás a főoldalra"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Felfelé mozgatás"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"További lehetőségek"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Kész"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Összes megtekintése"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Válasszon ki egy alkalmazást"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"KI"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"BE"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"Enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"Szóköz"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Keresés…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Lekérdezés törlése"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Keresési lekérdezés"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Keresés"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Lekérdezés küldése"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Hangalapú keresés"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Megosztás a következővel:"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Megosztás a következő alkalmazással: <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Összecsukás"</string>
+    <string name="add_more_fonts_to">További betűkészletek hozzáadása: a \"%s\" mappába</string>
+    <string name="app_name">Book Reader</string>
+    <string name="are_you_sure">Biztos?</string>
+    <string name="book_delete">Törlés</string>
+    <string name="book_font">Betűtípus</string>
+    <string name="book_open">Megnyitás</string>
+    <string name="book_rename">Átnevezés</string>
+    <string name="book_toc">Tartalom</string>
+    <string name="bookmark_edit">Módosít</string>
+    <string name="bookmarks">Könyvjelzők</string>
+    <string name="catalog_home">Kezdőoldal</string>
+    <string name="close">Bezárás</string>
+    <string name="continue_reading">Az olvasás folytatása:</string>
+    <string name="controls_brightness">Fényerő</string>
+    <string name="controls_fullscreen">Teljes képernyő</string>
+    <string name="controls_navigate">Navigáció</string>
+    <string name="controls_nextpage">Következő oldal</string>
+    <string name="controls_prevpage">Előző oldal</string>
+    <string name="days_symbol">n</string>
+    <string name="default_button">Alapértelmezett</string>
+    <string name="delete_bookmark">Könyvjelző törlése</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Speciális"</string>
+    <string name="filedialog_delete">Töröl</string>
+    <string name="filedialog_empty">A mappa üres</string>
+    <string name="filedialog_foldercreated">A(z) \'%1$s\' mappa létrehozva</string>
+    <string name="filedialog_folderdeleted">Törölve: \'%1$s\'</string>
+    <string name="filedialog_foldername">Mappa neve</string>
+    <string name="filedialog_newfolder">Új mappa</string>
+    <string name="filedialog_readonly">A mappa csak olvasható</string>
+    <string name="filedialog_rename">Átnevez</string>
+    <string name="filedialog_renameto">Átnevezve: \'%1$s\'</string>
+    <string name="filedialog_selectfolder">Válasszon egy mappát</string>
+    <string name="filedialog_unablecreatefolder">Nem sikerült a mappát létrehozni: \'%1$s\'</string>
+    <string name="image_fit_to_screen">Igazítás a képernyőhöz</string>
+    <string name="image_fit_to_screen_all_images">Minden kép igazítása a képernyőhöz</string>
+    <string name="image_original_size">Eredeti méret</string>
+    <string name="image_original_size_all_images">Minden kép eredeti méretben</string>
+    <string name="keep_reading_position">Pozíció megtartása</string>
+    <string name="loading_book">Könyv beolvasása</string>
+    <string name="menu_about">Névjegy</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="migrating_data">Adatok átmásolása</string>
+    <string msgid="1685185767093348095" name="mr_button_content_description">"Átküldés gomb"</string>
+    <string msgid="1350095112462806159" name="mr_cast_button_connected">"Átküldés gomb. Csatlakoztatva"</string>
+    <string msgid="8959304318293841992" name="mr_cast_button_connecting">"Átküldés gomb. Csatlakozás"</string>
+    <string msgid="5501231066847739632" name="mr_cast_button_disconnected">"Átküldés gomb. Kapcsolat bontva"</string>
+    <string msgid="5504553798429329689" name="mr_chooser_searching">"Eszközök keresése"</string>
+    <string msgid="7548226170787476564" name="mr_chooser_title">"Átküldés ide:"</string>
+    <string msgid="5813284753012893250" name="mr_controller_album_art">"Lemezborító"</string>
+    <string msgid="5286734709674025661" name="mr_controller_casting_screen">"Képernyőtartalom átküldése…"</string>
+    <string msgid="5468775621814500662" name="mr_controller_close_description">"Bezárás"</string>
+    <string msgid="5518911192681928413" name="mr_controller_collapse_group">"Összecsukás"</string>
+    <string msgid="1370654436555555647" name="mr_controller_disconnect">"Leválasztás"</string>
+    <string msgid="2422682304043876468" name="mr_controller_expand_group">"Kibontás"</string>
+    <string msgid="7299368841849988218" name="mr_controller_no_info_available">"Nincs információ"</string>
+    <string msgid="4342878516155861006" name="mr_controller_no_media_selected">"Nincs kiválasztott médiatartalom"</string>
+    <string msgid="4701315813294065305" name="mr_controller_pause">"Szünet"</string>
+    <string msgid="4443315438268112801" name="mr_controller_play">"Lejátszás"</string>
+    <string msgid="5106056093749454009" name="mr_controller_stop">"Leállítás"</string>
+    <string msgid="7617024847862349259" name="mr_controller_stop_casting">"Átküldés leállítása"</string>
+    <string msgid="691656961160498512" name="mr_controller_volume_slider">"Hangerőszabályzó"</string>
+    <string msgid="3117964881088969586" name="mr_system_route_name">"Rendszer"</string>
+    <string msgid="8236416097133080726" name="mr_user_route_category_name">"Eszközök"</string>
+    <string name="my_readings">Könyveim</string>
+    <string name="not_permitted">Nem megengedett</string>
+    <string name="open_browser">Böngésző megnyitása</string>
+    <string name="open_file">Fájl megnyitása</string>
+    <string name="optimization_alive">Keep Alive szolgáltatás</string>
+    <string name="optimization_alive_summary">Háttérben futó alkalmazás, ami segít elkerülni az alkalmazás leállását</string>
+    <string name="optimization_dialog">Optimalizációs beállítások</string>
+    <string name="optimization_icon">Perzisztens ikon</string>
+    <string name="optimization_icon_summary">Egyes eszközökön szükséges, ha az alkalmazást az OS állandóan eltávolítja a memóriából</string>
+    <string name="optimization_killed">Az alkalmazást az OS leállította. Fontolja meg, hogy hozzáadja az alkalmazást az OS által nem figyelt alkalmazások listájához.</string>
+    <string name="optimization_message">Fontolja meg, hogy hozzáadja az alkalmazást az akkumulátor-menedzser által nem figyelt alkalmazások listájához.</string>
+    <string name="optimization_system">Akkumulátor-optimalizáció</string>
+    <string name="optimization_system_summary">Az akkumulátor-optimalizációs beállítások megnyitása</string>
+    <string name="per_second">/s</string>
+    <string name="pref_rotate_summary">Elforgatás engedélyezése</string>
+    <string name="pref_rotate_title">Forgatás</string>
+    <string name="pref_screenlock_title">Képernyő bekapcsolva tartása</string>
+    <string name="pref_storagepath_summary">Alapértelmezett</string>
+    <string name="pref_storagepath_title">Tárhely</string>
+    <string name="pref_theme_title">Téma</string>
+    <string name="pref_tts_title">TTS Language</string>
+    <string name="pref_volume_summary">Lapozás a hangerőgombokkal</string>
+    <string name="pref_volume_title">Lapozás</string>
+    <string name="search">Keresés</string>
+    <string name="search_book">Könyvek keresése…</string>
+    <string name="search_local">Keresés helyben…</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Keresés"</string>
+    <string name="shared_via">Megosztás ezen keresztül: %1$s</string>
+    <string name="size_gb">%1$.1f GB</string>
+    <string name="size_kb">%1$.1f kb</string>
+    <string name="size_mb">%1$.1f MB</string>
+    <string name="sort_by">Sorbarendezés ...</string>
+    <string name="sort_by_added_asc">Utoljára hozzáadott a végén</string>
+    <string name="sort_by_added_desc">Utoljára hozzáadott az elején</string>
+    <string name="sort_by_name_a_z">Név szerint, A-Z</string>
+    <string name="sort_by_name_z_a">Név szerint, Z-A</string>
+    <string name="sort_by_opened_asc">Utoljára olvasott a végén</string>
+    <string name="sort_by_opened_desc">Utoljára olvasott az elején</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="sync_conflict">Szinkronizációs konfliktus</string>
+    <string name="system_default">Alapértelmezett</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"KI"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"BE"</string>
+    <string name="view_mode">Tördelés módja</string>
+    <string name="view_mode_continuous">Folyamatos nézet</string>
+    <string name="view_mode_paging">Oldalakra tördelt nézet</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/mac/AndroidStudioProjects/legado/pdflib/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "map": [
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/1035b72d5a7d63086e09a8dc0d04feac/transformed/jetified-library-0.1.17/res/values-v11/values-v11.xml",
+                    "from": {
+                        "startLines": "2,4,6",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,130,229",
+                        "endLines": "3,5,7",
+                        "endColumns": "9,9,9",
+                        "endOffsets": "125,224,304"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/4ddb2cea81e2d0adb6a1b85e52cd66ec/transformed/jetified-androidfilechooser-5.0/res/values-v11/values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "16",
+                        "endColumns": "12",
+                        "endOffsets": "1011"
+                    },
+                    "to": {
+                        "startLines": "8",
+                        "startColumns": "4",
+                        "startOffsets": "309",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "1265"
+                    }
+                }
+            ]
+        }
+    ]
+}

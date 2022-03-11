@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="screen_lock_text">
+        <item>@string/system_default</item>
+        <item>Keep On</item>
+        <item>Off after 30 sec</item>
+        <item>Off after 1 min</item>
+        <item>Off after 5 min</item>
+        <item>Off after 30 min</item>
+    </string-array>
+    <string-array name="theme_text">
+        <item>उज्यालो थिम</item>
+        <item>अँघ्यारो थिम</item>
+    </string-array>
+    <plurals name="days">
+        <item quantity="one">%d दिन</item>
+        <item quantity="other">%d दिन</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d घण्टा</item>
+        <item quantity="other">%d घण्टा</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d मिनेट</item>
+        <item quantity="other">%d मिनेट</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d सेकन्ड</item>
+        <item quantity="other">%d सेकन्ड</item>
+    </plurals>
+    <string name="ShareAction">बाँड्नुहोस</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"गृह खोज्नुहोस्"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"माथि खोज्नुहोस्"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"थप विकल्पहरू"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"सम्पन्न भयो"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"सबै हेर्नुहोस्"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"एउटा अनुप्रयोग छान्नुहोस्"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"निष्क्रिय पार्नुहोस्"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"सक्रिय गर्नुहोस्"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"space"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"खोज्नुहोस्..."</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"प्रश्‍न हटाउनुहोस्"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"जिज्ञासाको खोज गर्नुहोस्"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"खोज्नुहोस्"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"जिज्ञासा पेस गर्नुहोस्"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"भ्वाइस खोजी"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"साझेदारी गर्नुहोस्..."</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> सँग आदान प्रदान गर्नुहोस्"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"संक्षिप्त पार्नुहोस्"</string>
+    <string name="add_more_fonts_to">Add more fonts to \'%s\'</string>
+    <string name="app_name">Book Reader</string>
+    <string name="are_you_sure">के तपाईँ निश्चित हुनुहुन्छ?</string>
+    <string name="book_delete">हटाउनुहोस्</string>
+    <string name="book_font">Font</string>
+    <string name="book_open">खोल्नुहोस्</string>
+    <string name="book_rename">पुनः नामाकरण</string>
+    <string name="book_toc">शीर्षकहरू</string>
+    <string name="bookmark_edit">Edit</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="catalog_home">गृह</string>
+    <string name="close">बन्द गर्नुहोस्</string>
+    <string name="continue_reading">Continue reading from:</string>
+    <string name="controls_brightness">Brightness</string>
+    <string name="controls_fullscreen">Fullscreen</string>
+    <string name="controls_navigate">Navigate</string>
+    <string name="controls_nextpage">Next page</string>
+    <string name="controls_prevpage">Previous page</string>
+    <string name="days_symbol">"d"</string>
+    <string name="default_button">पूर्वनिर्धारित</string>
+    <string name="delete_bookmark">Delete bookmark</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"उन्नत"</string>
+    <string name="filedialog_delete">हटाउनुहोस्</string>
+    <string name="filedialog_empty">खाली सूची</string>
+    <string name="filedialog_foldercreated">फोल्डर \'%1$s\' सृजना भयो</string>
+    <string name="filedialog_folderdeleted">हटाइयो: \'%1$s\'</string>
+    <string name="filedialog_foldername">फोल्डरको नाम</string>
+    <string name="filedialog_newfolder">नयाँ फोल्डर</string>
+    <string name="filedialog_readonly">पढ्न मात्र मिल्ने निर्देशिका</string>
+    <string name="filedialog_rename">पुन: नामाकरण गर्नुहोस्</string>
+    <string name="filedialog_renameto">यस नाममा पुनः नामाकरण गरियो: \'%1$s\'</string>
+    <string name="filedialog_selectfolder">कृपया फोल्डर छान्नुहोस् ।</string>
+    <string name="filedialog_unablecreatefolder">फोल्डर \'%1$s\' बनाउन सकिएन:  </string>
+    <string name="image_fit_to_screen">Fit To Screen</string>
+    <string name="image_fit_to_screen_all_images">Fit To Screen All Images</string>
+    <string name="image_original_size">Original Size</string>
+    <string name="image_original_size_all_images">Original Size All Images</string>
+    <string name="keep_reading_position">Keep Position</string>
+    <string name="loading_book">किताब लोड हुँदैछ।</string>
+    <string name="menu_about">यस एपको बारेमा</string>
+    <string name="menu_settings">सेटिङ्ग</string>
+    <string name="migrating_data">Migrating data</string>
+    <string msgid="1685185767093348095" name="mr_button_content_description">"Cast बटन"</string>
+    <string msgid="1350095112462806159" name="mr_cast_button_connected">"Cast बटन। जडान गरियो"</string>
+    <string msgid="8959304318293841992" name="mr_cast_button_connecting">"Cast बटन। जडान गरिँदै छ"</string>
+    <string msgid="5501231066847739632" name="mr_cast_button_disconnected">"Cast बटन। जडान विच्छेद गरियो"</string>
+    <string msgid="5504553798429329689" name="mr_chooser_searching">"यन्त्रहरू पत्ता लगाइँदै छ"</string>
+    <string msgid="7548226170787476564" name="mr_chooser_title">"यसमा Cast गर्नुहोस्"</string>
+    <string msgid="5813284753012893250" name="mr_controller_album_art">"एल्बम आर्ट"</string>
+    <string msgid="5286734709674025661" name="mr_controller_casting_screen">"स्क्रिन Cast गरिँदै छ"</string>
+    <string msgid="5468775621814500662" name="mr_controller_close_description">"बन्द गर्नुहोस्"</string>
+    <string msgid="5518911192681928413" name="mr_controller_collapse_group">"संक्षिप्त गर्नुहोस्"</string>
+    <string msgid="1370654436555555647" name="mr_controller_disconnect">"विच्छेद गर्नुहोस्"</string>
+    <string msgid="2422682304043876468" name="mr_controller_expand_group">"विस्तृत गर्नुहोस्"</string>
+    <string msgid="7299368841849988218" name="mr_controller_no_info_available">"कुनै पनि जानकारी उपलब्ध छैन"</string>
+    <string msgid="4342878516155861006" name="mr_controller_no_media_selected">"कुनै पनि मिडिया चयन गरिएन"</string>
+    <string msgid="4701315813294065305" name="mr_controller_pause">"पज गर्नुहोस्‌"</string>
+    <string msgid="4443315438268112801" name="mr_controller_play">"खेल्नुहोस्"</string>
+    <string msgid="5106056093749454009" name="mr_controller_stop">"रोक्नुहोस्"</string>
+    <string msgid="7617024847862349259" name="mr_controller_stop_casting">"casting रोक्नुहोस्"</string>
+    <string msgid="691656961160498512" name="mr_controller_volume_slider">"भोल्युमको स्लाइडर"</string>
+    <string msgid="3117964881088969586" name="mr_system_route_name">"प्रणाली"</string>
+    <string msgid="8236416097133080726" name="mr_user_route_category_name">"यन्त्रहरू"</string>
+    <string name="my_readings">My Readings</string>
+    <string name="not_permitted">अनुमति छैन</string>
+    <string name="open_browser">ब्राउजर खोल्नुहोस</string>
+    <string name="open_file">फाईल खोल्नुहोस्</string>
+    <string name="optimization_alive">Keep Alive Service</string>
+    <string name="optimization_alive_summary">Background service keep application running</string>
+    <string name="optimization_dialog">अनुकुल सेटिङ्ग</string>
+    <string name="optimization_icon">Persistent Icon</string>
+    <string name="optimization_icon_summary">Requires on some devices when application constantly get removed</string>
+    <string name="optimization_killed">Application were killed by OS. Consider adding application to whitelist.</string>
+    <string name="optimization_message">यस एपलाई फोन मेमोरीबाट हट्न नदिन कृपया बेटरी म्यानेजरको whitelistमा राख्नुहोस् ।</string>
+    <string name="optimization_system">Battery Optimization</string>
+    <string name="optimization_system_summary">Open system battery optimization dialog</string>
+    <string name="per_second">/s</string>
+    <string name="pref_rotate_summary">Allow screen rotate</string>
+    <string name="pref_rotate_title">Roate</string>
+    <string name="pref_screenlock_title">Keep Screen On</string>
+    <string name="pref_storagepath_summary">No \'Sync Folder\' selected</string>
+    <string name="pref_storagepath_title">Sync Folder</string>
+    <string name="pref_theme_title">Theme</string>
+    <string name="pref_tts_title">TTS Language</string>
+    <string name="pref_volume_summary">Use volume keys to turn pages</string>
+    <string name="pref_volume_title">Volume Keys Turning</string>
+    <string name="search">खोज्नुहोस्</string>
+    <string name="search_book">किताब खोजी…</string>
+    <string name="search_local">स्थानीय खोजी…</string>
+    <string msgid="146198913615257606" name="search_menu_title">"खोज्नुहोस्"</string>
+    <string name="shared_via">%1$s मार्फत बाँडियो</string>
+    <string name="size_gb">%1$.1f GB</string>
+    <string name="size_kb">%1$.1f kb</string>
+    <string name="size_mb">%1$.1f MB</string>
+    <string name="sort_by">Sort By ...</string>
+    <string name="sort_by_added_asc">Added Asc</string>
+    <string name="sort_by_added_desc">Added Desc</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_opened_asc">Opened Asc</string>
+    <string name="sort_by_opened_desc">Opened Desc</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"९९९+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="sync_conflict">Sync conflict</string>
+    <string name="system_default">System Default</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"निष्क्रिय पार्नुहोस्‌"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"सक्रिय"</string>
+    <string name="view_mode">View Mode</string>
+    <string name="view_mode_continuous">Continuous View</string>
+    <string name="view_mode_paging">Paging View</string>
+</resources>

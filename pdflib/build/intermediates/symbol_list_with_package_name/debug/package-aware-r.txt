@@ -27,6 +27,10 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array screen_lock_text
 array screen_lock_values
+array theme_text
+array theme_value
+array viewmode_text
+array viewmode_value
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -466,6 +470,8 @@ attr mediaRouteStopDrawable
 attr mediaRouteTheme
 attr mediaRouteTvIconDrawable
 attr menu
+attr metaButtonBarButtonStyle
+attr metaButtonBarStyle
 attr min
 attr move_outside_circle
 attr multiChoiceItemLayout
@@ -555,6 +561,7 @@ attr showMotionSpec
 attr showSeekBarValue
 attr showText
 attr showTitle
+attr side_nav_bar
 attr singleChoiceItemLayout
 attr singleLine
 attr singleLineTitle
@@ -704,8 +711,6 @@ attr yesNoPreferenceStyle
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
-bool abc_config_closeDialogWhenTouchOutside
-bool abc_config_showMenuShortcutsWhenKeyboardPresent
 bool afc_pkey_display_remember_last_location_def
 bool afc_pkey_display_show_time_for_old_days_def
 bool afc_pkey_display_show_time_for_old_days_this_year_def
@@ -736,7 +741,6 @@ color abc_tint_default
 color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
-color abc_tint_switch_thumb
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
@@ -790,6 +794,7 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color holo_blue_dark
+color ic_launcher_background
 color light_gray
 color material_blue_grey_800
 color material_blue_grey_900
@@ -868,7 +873,6 @@ dimen abc_action_bar_elevation_material
 dimen abc_action_bar_icon_vertical_padding_material
 dimen abc_action_bar_overflow_padding_end_material
 dimen abc_action_bar_overflow_padding_start_material
-dimen abc_action_bar_progress_bar_size
 dimen abc_action_bar_stacked_max_height
 dimen abc_action_bar_stacked_tab_max_width
 dimen abc_action_bar_subtitle_bottom_margin_material
@@ -935,6 +939,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen afc_10dp
 dimen afc_15dp
 dimen afc_30dp
@@ -1013,6 +1019,7 @@ dimen disabled_alpha_material_light
 dimen fab_actions_spacing
 dimen fab_icon_size
 dimen fab_labels_margin
+dimen fab_margin
 dimen fab_plus_icon_size
 dimen fab_plus_icon_stroke
 dimen fab_shadow_offset
@@ -1030,6 +1037,7 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen image_size
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
@@ -1087,6 +1095,8 @@ dimen mtrl_textinput_box_stroke_width_default
 dimen mtrl_textinput_box_stroke_width_focused
 dimen mtrl_textinput_outline_box_expanded_padding
 dimen mtrl_toolbar_default_height
+dimen nav_header_height
+dimen nav_header_vertical_spacing
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1300,6 +1310,7 @@ drawable fab_bg_mini
 drawable fab_bg_normal
 drawable fbreader
 drawable fbreader_bw
+drawable ic_add_black_24dp
 drawable ic_arrow_back_black_24dp
 drawable ic_arrow_back_grey600
 drawable ic_arrow_back_pressed
@@ -1311,8 +1322,14 @@ drawable ic_arrow_forward_pressed
 drawable ic_arrow_forward_white
 drawable ic_audiotrack_dark
 drawable ic_audiotrack_light
+drawable ic_battery_std_24
 drawable ic_bookmark_outline_pressed
 drawable ic_bookmark_outline_white
+drawable ic_bookmark_white_24dp
+drawable ic_brightness_day_white_24dp
+drawable ic_brightness_night_white_24dp
+drawable ic_bug_report_black_24dp
+drawable ic_check_black_24dp
 drawable ic_circle
 drawable ic_circle_black_24dp
 drawable ic_circle_white_24dp
@@ -1325,9 +1342,13 @@ drawable ic_content_copy_pressed
 drawable ic_content_copy_white
 drawable ic_dialog_close_dark
 drawable ic_dialog_close_light
+drawable ic_expand_less_black_24dp
 drawable ic_expand_more_black_24dp
+drawable ic_fiber_new_black_24dp
 drawable ic_file
 drawable ic_folder
+drawable ic_format_size_white_24dp
+drawable ic_gesture_black_24dp
 drawable ic_group_collapse_00
 drawable ic_group_collapse_01
 drawable ic_group_collapse_02
@@ -1360,7 +1381,9 @@ drawable ic_group_expand_12
 drawable ic_group_expand_13
 drawable ic_group_expand_14
 drawable ic_group_expand_15
+drawable ic_home_white_24dp
 drawable ic_image_black_24dp
+drawable ic_launcher_foreground
 drawable ic_list_buy
 drawable ic_list_download
 drawable ic_list_downloading
@@ -1392,6 +1415,7 @@ drawable ic_menu_add
 drawable ic_menu_bookmarks
 drawable ic_menu_day
 drawable ic_menu_filter
+drawable ic_menu_gallery
 drawable ic_menu_library
 drawable ic_menu_networklibrary
 drawable ic_menu_night
@@ -1532,20 +1556,33 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_open_in_new_black_24dp
+drawable ic_outline_pause_24
+drawable ic_outline_play_arrow_24
 drawable ic_refresh_black_24dp
+drawable ic_remove_black_24dp
 drawable ic_rotate_left_black_24dp
 drawable ic_rotate_right_black_24dp
+drawable ic_search_black_24dp
+drawable ic_search_white_24dp
 drawable ic_share_pressed
 drawable ic_share_white
+drawable ic_star_black_24dp
 drawable ic_stop_black_24dp
+drawable ic_toc_black_24dp
+drawable ic_toc_white_24dp
 drawable ic_translate_pressed
 drawable ic_translate_white
+drawable ic_view_carousel_black_24dp
+drawable ic_view_day_black_24dp
+drawable ic_view_list_black_24dp
+drawable ic_view_module_black_24dp
 drawable ic_vol_type_speaker_dark
 drawable ic_vol_type_speaker_group_dark
 drawable ic_vol_type_speaker_group_light
 drawable ic_vol_type_speaker_light
 drawable ic_vol_type_tv_dark
 drawable ic_vol_type_tv_light
+drawable ic_wrap_text_white_24dp
 drawable icon_dark_edit
 drawable icon_dark_exit
 drawable icon_dark_info
@@ -1562,6 +1599,8 @@ drawable icon_light_refresh
 drawable icon_light_save
 drawable icon_light_share
 drawable icon_light_undo
+drawable library_rating_bg
+drawable library_rating_bg_round_light
 drawable link
 drawable link_default
 drawable link_pressed
@@ -1634,6 +1673,8 @@ drawable shape_kitkat_undobarfocused
 drawable shape_kitkat_undobarselected
 drawable shape_undobarfocused
 drawable shape_undobarselected
+drawable side_nav_bar_dark
+drawable side_nav_bar_light
 drawable toolbar_icon_bottom_bg
 drawable toolbar_icon_dark
 drawable toolbar_icon_light
@@ -1641,9 +1682,16 @@ drawable toolbar_icon_round_dark
 drawable toolbar_icon_round_light
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+id ALT
+id CTRL
+id FUNCTION
+id META
+id SHIFT
+id SYM
 id about_title_name
 id about_title_version
 id action0
+id action_about
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1651,16 +1699,40 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_bm
 id action_container
 id action_context_bar
+id action_debug
+id action_delete
 id action_divider
+id action_edit
+id action_file
+id action_fontsize
+id action_grid
+id action_home
 id action_image
 id action_menu_divider
 id action_menu_presenter
+id action_mode
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_open
+id action_original
+id action_original_all
+id action_reflow
+id action_rename
+id action_rtl
+id action_search
+id action_settings
+id action_share
+id action_sort
 id action_text
+id action_theme
+id action_toc
+id action_tts
+id action_zoom
+id action_zoom_all
 id actions
 id activity_chooser_view_content
 id add
@@ -1725,6 +1797,7 @@ id afc_settings_sort_view_textview_sort_by_name
 id afc_settings_sort_view_textview_sort_by_size
 id afc_simple_text_input_view_text1
 id alertTitle
+id all
 id always
 id ambilwarna_cursor
 id ambilwarna_dialogView
@@ -1747,6 +1820,7 @@ id authentication_subtitle
 id authentication_unencrypted_warning
 id authentication_username
 id authentication_username_label
+id author
 id auto
 id background_chooser_item_title
 id background_predefined_item_preview
@@ -1755,6 +1829,7 @@ id background_preference_summary
 id background_preference_title
 id background_preference_widget
 id badge_unread
+id barrier
 id beginning
 id blocking
 id book_authors
@@ -1774,6 +1849,7 @@ id book_popup_buttons
 id book_popup_cover
 id book_popup_description_text
 id book_popup_header_text
+id book_progress
 id book_series
 id book_series_index
 id book_tags
@@ -1809,10 +1885,16 @@ id catalog_manager_item_subtitle
 id catalog_manager_item_title
 id catalog_manager_section_head_title
 id center
+id center_horizontal
+id center_vertical
+id chains
 id checkbox
 id chronometer
 id clickRemove
+id clip_horizontal
+id clip_vertical
 id collapseActionView
+id color
 id color_preference_title
 id color_preference_widget
 id container
@@ -1828,6 +1910,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dimensions
+id direct
 id disableHome
 id divider
 id down
@@ -1852,11 +1936,16 @@ id edit_query
 id edit_tags_input_field
 id end
 id end_padder
+id enterAlways
+id enterAlwaysCollapsed
+id exitUntilCollapsed
+id expand
 id expand_activities_button
 id expand_button
 id expanded_menu
 id extra_link_divider
 id extra_link_title
+id fab
 id fab_expand_menu_button
 id fab_label
 id file_info_title
@@ -1865,6 +1954,8 @@ id file_size
 id file_time
 id file_type
 id fill
+id fill_horizontal
+id fill_vertical
 id filled
 id fixed
 id flingRemove
@@ -1873,10 +1964,19 @@ id folder_list_dialog_button_ok
 id folder_list_dialog_buttons
 id folder_list_item_remove
 id folder_list_item_title
+id fonts_frame
+id fonts_list
+id fonts_text
+id fontsize_minus
+id fontsize_plus
+id fontsize_seek
+id fontsize_text
 id forever
 id ghost_view
 id gone
+id grid
 id group_divider
+id groups
 id header_text
 id header_text_divider
 id home
@@ -1887,6 +1987,7 @@ id icon_frame
 id icon_group
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1894,13 +1995,14 @@ id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id left
+id library_footer
+id library_header
 id library_tree_item_childrenlist
 id library_tree_item_icon
 id library_tree_item_name
 id library_tree_item_status
 id line1
 id line3
-id list
 id listMode
 id list_item
 id lr_auto_registration_action_change_email
@@ -1922,6 +2024,7 @@ id lr_user_registration_login
 id lr_user_registration_login_text
 id lr_user_registration_password
 id lr_user_registration_password_text
+id main_content
 id main_view
 id masked
 id media_actions
@@ -1979,6 +2082,9 @@ id mr_volume_slider
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
+id nav_library
+id nav_version
 id navigation_cancel
 id navigation_header_container
 id navigation_ok
@@ -2042,6 +2148,10 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
+id recent_controls
+id recent_fbview
+id recent_json
+id recent_pages
 id recycler_view
 id report_text
 id right
@@ -2053,6 +2163,7 @@ id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
 id screen
+id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
@@ -2069,7 +2180,17 @@ id search_details_refresh
 id search_details_stop
 id search_details_toolbar
 id search_edit_frame
+id search_footer_buttons
+id search_footer_next
+id search_footer_progress
+id search_footer_stop
 id search_go_btn
+id search_header_toolbar
+id search_header_toolbar_favs
+id search_header_toolbar_favs_name
+id search_header_toolbar_news
+id search_header_toolbar_parent
+id search_header_toolbar_search
 id search_mag_icon
 id search_panel
 id search_panel_close
@@ -2098,6 +2219,14 @@ id simple_dialog_text
 id smallLabel
 id snackbar_action
 id snackbar_text
+id snap
+id snapMargins
+id sort_add_ask
+id sort_add_desc
+id sort_name_ask
+id sort_name_desc
+id sort_open_ask
+id sort_open_desc
 id spacer
 id spinner
 id split_action_bar
@@ -2106,6 +2235,7 @@ id spread_inside
 id src_atop
 id src_in
 id src_over
+id standard
 id start
 id status_bar_latest_event_content
 id status_details_status
@@ -2128,6 +2258,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textStart
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -2142,6 +2273,7 @@ id titleDividerNoCustom
 id title_template
 id toc_tree_item_icon
 id toc_tree_item_text
+id toolbar
 id toolbar_icon
 id toolbar_icon_image
 id toolbar_icon_text
@@ -2154,6 +2286,10 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tts_close
+id tts_left
+id tts_play
+id tts_right
 id uniform
 id unlabeled
 id up
@@ -2193,7 +2329,6 @@ interpolator mtrl_linear
 interpolator mtrl_linear_out_slow_in
 layout abc_action_bar_title_item
 layout abc_action_bar_up_container
-layout abc_action_bar_view_list_nav_layout
 layout abc_action_menu_item_layout
 layout abc_action_menu_layout
 layout abc_action_mode_bar
@@ -2234,13 +2369,18 @@ layout afc_simple_text_input_view
 layout ambilwarna_dialog
 layout ambilwarna_pref_widget
 layout animation_speed_dialog
+layout app_bar_main
 layout authentication
 layout background_chooser_item
 layout background_predefined_item
 layout background_preference
 layout badge
+layout bm_color
+layout bm_item
 layout book_info
 layout book_info_pair
+layout book_item
+layout book_list_item
 layout book_popup
 layout book_popup_night
 layout bookmark_item
@@ -2253,6 +2393,8 @@ layout catalog_manager_item
 layout catalog_manager_section_head
 layout catalog_manager_view
 layout color_preference
+layout content_main
+layout cover_generate
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2277,6 +2419,11 @@ layout expand_button
 layout extra_link_item
 layout folder_list_dialog
 layout folder_list_item
+layout font_popup
+layout fragment_library
+layout fragment_reader
+layout library_footer
+layout library_header
 layout library_tree_item
 layout lr_action_item
 layout lr_auto_registration
@@ -2300,6 +2447,7 @@ layout mr_playback_control
 layout mr_volume_control
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout nav_header_main
 layout navigation_panel
 layout network_book
 layout notification_action
@@ -2338,6 +2486,8 @@ layout preference_widget_seekbar
 layout preference_widget_seekbar_material
 layout preference_widget_switch
 layout preference_widget_switch_compat
+layout recent
+layout recent_item
 layout remoteview
 layout remoteview_header
 layout remoteview_low
@@ -2359,20 +2509,28 @@ layout supercardtoast_progresshorizontal
 layout supertoast
 layout support_simple_spinner_dropdown_item
 layout tip
+layout toc_item
 layout toc_tree_item
 layout toolbar_icon
+layout tts_popup
+menu activity_main_drawer
 menu afc_file_chooser_activity
+menu bookitem_menu
+menu bookmark_menu
+menu image_menu
+menu main
+mipmap ic_launcher
+mipmap ic_launcher_round
 plurals days
 plurals hours
 plurals minutes
 plurals seconds
+raw about
 raw inject
 string ShareAction
 string Theme_Dark
 string Theme_Light
 string abc_action_bar_home_description
-string abc_action_bar_home_description_format
-string abc_action_bar_home_subtitle_description_format
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
 string abc_action_mode_done
@@ -2411,6 +2569,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_more_fonts_to
 string afc_cmd_advanced_selection_all
 string afc_cmd_advanced_selection_invert
 string afc_cmd_advanced_selection_none
@@ -2479,12 +2638,27 @@ string afc_yesterday
 string app_name
 string appbar_scrolling_view_behavior
 string are_you_sure
+string book_delete
+string book_font
+string book_open
+string book_rename
+string book_toc
+string bookmark_edit
+string bookmarks
 string bottom_sheet_behavior
+string catalog_home
 string character_counter_content_description
 string character_counter_pattern
 string close
+string continue_reading
+string controls_brightness
+string controls_fullscreen
+string controls_navigate
+string controls_nextpage
+string controls_prevpage
 string days_symbol
 string default_button
+string delete_bookmark
 string empty_string
 string expand_button_title
 string fab_transformation_scrim_behavior
@@ -2501,6 +2675,12 @@ string filedialog_renameto
 string filedialog_selectfolder
 string filedialog_unablecreatefolder
 string hide_bottom_view_on_scroll_behavior
+string image_fit_to_screen
+string image_fit_to_screen_all_images
+string image_original_size
+string image_original_size_all_images
+string keep_reading_position
+string loading_book
 string menu_about
 string menu_settings
 string migrating_data
@@ -2529,8 +2709,10 @@ string mr_dialog_route_header
 string mr_system_route_name
 string mr_user_route_category_name
 string mtrl_chip_close_icon_content_description
+string my_readings
 string not_permitted
 string open_browser
+string open_file
 string optimization_alive
 string optimization_alive_summary
 string optimization_dialog
@@ -2545,24 +2727,54 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string per_second
+string pref_rotate_summary
+string pref_rotate_title
 string pref_screenlock_title
+string pref_storagepath_summary
+string pref_storagepath_title
+string pref_theme_title
+string pref_tts_title
+string pref_volume_summary
+string pref_volume_title
+string search
+string search_book
+string search_local
 string search_menu_title
 string shared_via
 string size_gb
 string size_kb
 string size_mb
+string sort_by
+string sort_by_added_asc
+string sort_by_added_desc
+string sort_by_name_a_z
+string sort_by_name_z_a
+string sort_by_opened_asc
+string sort_by_opened_desc
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+string sync_conflict
 string system_default
 string v7_preference_off
 string v7_preference_on
+string view_mode
+string view_mode_continuous
+string view_mode_paging
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
+style AppBarOverlay
+style AppThemeDark
+style AppThemeDark_NoActionBar
+style AppThemeDark_PopupOverlay
 style AppThemeDarkLib
+style AppThemeLight
+style AppThemeLight_NoActionBar
+style AppThemeLight_PopupOverlay
 style AppThemeLightLib
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -2570,8 +2782,8 @@ style Base_Animation_AppCompat_Dialog
 style Base_Animation_AppCompat_DropDownUp
 style Base_Animation_AppCompat_Tooltip
 style Base_CardView
-style Base_DialogWindowTitleBackground_AppCompat
 style Base_DialogWindowTitle_AppCompat
+style Base_DialogWindowTitleBackground_AppCompat
 style Base_TextAppearance_AppCompat
 style Base_TextAppearance_AppCompat_Body1
 style Base_TextAppearance_AppCompat_Body2
@@ -2620,6 +2832,37 @@ style Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style Base_TextAppearance_Widget_AppCompat_Toolbar_Title
+style Base_Theme_AppCompat
+style Base_Theme_AppCompat_CompactMenu
+style Base_Theme_AppCompat_Dialog
+style Base_Theme_AppCompat_Dialog_Alert
+style Base_Theme_AppCompat_Dialog_FixedSize
+style Base_Theme_AppCompat_Dialog_MinWidth
+style Base_Theme_AppCompat_DialogWhenLarge
+style Base_Theme_AppCompat_Light
+style Base_Theme_AppCompat_Light_DarkActionBar
+style Base_Theme_AppCompat_Light_Dialog
+style Base_Theme_AppCompat_Light_Dialog_Alert
+style Base_Theme_AppCompat_Light_Dialog_FixedSize
+style Base_Theme_AppCompat_Light_Dialog_MinWidth
+style Base_Theme_AppCompat_Light_DialogWhenLarge
+style Base_Theme_MaterialComponents
+style Base_Theme_MaterialComponents_Bridge
+style Base_Theme_MaterialComponents_CompactMenu
+style Base_Theme_MaterialComponents_Dialog
+style Base_Theme_MaterialComponents_Dialog_Alert
+style Base_Theme_MaterialComponents_Dialog_FixedSize
+style Base_Theme_MaterialComponents_Dialog_MinWidth
+style Base_Theme_MaterialComponents_DialogWhenLarge
+style Base_Theme_MaterialComponents_Light
+style Base_Theme_MaterialComponents_Light_Bridge
+style Base_Theme_MaterialComponents_Light_DarkActionBar
+style Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge
+style Base_Theme_MaterialComponents_Light_Dialog
+style Base_Theme_MaterialComponents_Light_Dialog_Alert
+style Base_Theme_MaterialComponents_Light_Dialog_FixedSize
+style Base_Theme_MaterialComponents_Light_Dialog_MinWidth
+style Base_Theme_MaterialComponents_Light_DialogWhenLarge
 style Base_ThemeOverlay_AppCompat
 style Base_ThemeOverlay_AppCompat_ActionBar
 style Base_ThemeOverlay_AppCompat_Dark
@@ -2629,44 +2872,6 @@ style Base_ThemeOverlay_AppCompat_Dialog_Alert
 style Base_ThemeOverlay_AppCompat_Light
 style Base_ThemeOverlay_MaterialComponents_Dialog
 style Base_ThemeOverlay_MaterialComponents_Dialog_Alert
-style Base_Theme_AppCompat
-style Base_Theme_AppCompat_CompactMenu
-style Base_Theme_AppCompat_Dialog
-style Base_Theme_AppCompat_DialogWhenLarge
-style Base_Theme_AppCompat_Dialog_Alert
-style Base_Theme_AppCompat_Dialog_FixedSize
-style Base_Theme_AppCompat_Dialog_MinWidth
-style Base_Theme_AppCompat_Light
-style Base_Theme_AppCompat_Light_DarkActionBar
-style Base_Theme_AppCompat_Light_Dialog
-style Base_Theme_AppCompat_Light_DialogWhenLarge
-style Base_Theme_AppCompat_Light_Dialog_Alert
-style Base_Theme_AppCompat_Light_Dialog_FixedSize
-style Base_Theme_AppCompat_Light_Dialog_MinWidth
-style Base_Theme_MaterialComponents
-style Base_Theme_MaterialComponents_Bridge
-style Base_Theme_MaterialComponents_CompactMenu
-style Base_Theme_MaterialComponents_Dialog
-style Base_Theme_MaterialComponents_DialogWhenLarge
-style Base_Theme_MaterialComponents_Dialog_Alert
-style Base_Theme_MaterialComponents_Dialog_FixedSize
-style Base_Theme_MaterialComponents_Dialog_MinWidth
-style Base_Theme_MaterialComponents_Light
-style Base_Theme_MaterialComponents_Light_Bridge
-style Base_Theme_MaterialComponents_Light_DarkActionBar
-style Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge
-style Base_Theme_MaterialComponents_Light_Dialog
-style Base_Theme_MaterialComponents_Light_DialogWhenLarge
-style Base_Theme_MaterialComponents_Light_Dialog_Alert
-style Base_Theme_MaterialComponents_Light_Dialog_FixedSize
-style Base_Theme_MaterialComponents_Light_Dialog_MinWidth
-style Base_V11_ThemeOverlay_AppCompat_Dialog
-style Base_V11_Theme_AppCompat_Dialog
-style Base_V11_Theme_AppCompat_Light_Dialog
-style Base_V12_Widget_AppCompat_AutoCompleteTextView
-style Base_V12_Widget_AppCompat_EditText
-style Base_V14_ThemeOverlay_MaterialComponents_Dialog
-style Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert
 style Base_V14_Theme_MaterialComponents
 style Base_V14_Theme_MaterialComponents_Bridge
 style Base_V14_Theme_MaterialComponents_Dialog
@@ -2674,11 +2879,13 @@ style Base_V14_Theme_MaterialComponents_Light
 style Base_V14_Theme_MaterialComponents_Light_Bridge
 style Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge
 style Base_V14_Theme_MaterialComponents_Light_Dialog
-style Base_V21_ThemeOverlay_AppCompat_Dialog
+style Base_V14_ThemeOverlay_MaterialComponents_Dialog
+style Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert
 style Base_V21_Theme_AppCompat
 style Base_V21_Theme_AppCompat_Dialog
 style Base_V21_Theme_AppCompat_Light
 style Base_V21_Theme_AppCompat_Light_Dialog
+style Base_V21_ThemeOverlay_AppCompat_Dialog
 style Base_V22_Theme_AppCompat
 style Base_V22_Theme_AppCompat_Light
 style Base_V23_Theme_AppCompat
@@ -2688,11 +2895,11 @@ style Base_V26_Theme_AppCompat_Light
 style Base_V26_Widget_AppCompat_Toolbar
 style Base_V28_Theme_AppCompat
 style Base_V28_Theme_AppCompat_Light
-style Base_V7_ThemeOverlay_AppCompat_Dialog
 style Base_V7_Theme_AppCompat
 style Base_V7_Theme_AppCompat_Dialog
 style Base_V7_Theme_AppCompat_Light
 style Base_V7_Theme_AppCompat_Light_Dialog
+style Base_V7_ThemeOverlay_AppCompat_Dialog
 style Base_V7_Widget_AppCompat_AutoCompleteTextView
 style Base_V7_Widget_AppCompat_EditText
 style Base_V7_Widget_AppCompat_Toolbar
@@ -2708,13 +2915,13 @@ style Base_Widget_AppCompat_ActionMode
 style Base_Widget_AppCompat_ActivityChooserView
 style Base_Widget_AppCompat_AutoCompleteTextView
 style Base_Widget_AppCompat_Button
-style Base_Widget_AppCompat_ButtonBar
-style Base_Widget_AppCompat_ButtonBar_AlertDialog
 style Base_Widget_AppCompat_Button_Borderless
 style Base_Widget_AppCompat_Button_Borderless_Colored
 style Base_Widget_AppCompat_Button_ButtonBar_AlertDialog
 style Base_Widget_AppCompat_Button_Colored
 style Base_Widget_AppCompat_Button_Small
+style Base_Widget_AppCompat_ButtonBar
+style Base_Widget_AppCompat_ButtonBar_AlertDialog
 style Base_Widget_AppCompat_CompoundButton_CheckBox
 style Base_Widget_AppCompat_CompoundButton_RadioButton
 style Base_Widget_AppCompat_CompoundButton_Switch
@@ -2777,23 +2984,12 @@ style Platform_MaterialComponents_Light_Dialog
 style Platform_ThemeOverlay_AppCompat
 style Platform_ThemeOverlay_AppCompat_Dark
 style Platform_ThemeOverlay_AppCompat_Light
-style Platform_V11_AppCompat
-style Platform_V11_AppCompat_Light
-style Platform_V14_AppCompat
-style Platform_V14_AppCompat_Light
 style Platform_V21_AppCompat
 style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
 style Preference
-style PreferenceFragment
-style PreferenceFragmentList
-style PreferenceFragmentList_Material
-style PreferenceFragment_Material
-style PreferenceThemeOverlay
-style PreferenceThemeOverlay_v14
-style PreferenceThemeOverlay_v14_Material
 style Preference_Category
 style Preference_Category_Material
 style Preference_CheckBoxPreference
@@ -2812,9 +3008,16 @@ style Preference_PreferenceScreen_Material
 style Preference_SeekBarPreference
 style Preference_SeekBarPreference_Material
 style Preference_SwitchPreference
+style Preference_SwitchPreference_Material
 style Preference_SwitchPreferenceCompat
 style Preference_SwitchPreferenceCompat_Material
-style Preference_SwitchPreference_Material
+style PreferenceFragment
+style PreferenceFragment_Material
+style PreferenceFragmentList
+style PreferenceFragmentList_Material
+style PreferenceThemeOverlay
+style PreferenceThemeOverlay_v14
+style PreferenceThemeOverlay_v14_Material
 style Preference_TextAppearanceMaterialBody2
 style Preference_TextAppearanceMaterialSubhead
 style RtlOverlay_DialogWindowTitle_AppCompat
@@ -2826,12 +3029,12 @@ style RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_Text
 style RtlOverlay_Widget_AppCompat_PopupMenuItem_Title
-style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlOverlay_Widget_AppCompat_Search_DropDown
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Query
 style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
+style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
 style SuperActivityToast_Button_Button
@@ -2864,16 +3067,6 @@ style TextAppearance_AppCompat_Light_Widget_PopupMenu_Small
 style TextAppearance_AppCompat_Medium
 style TextAppearance_AppCompat_Medium_Inverse
 style TextAppearance_AppCompat_Menu
-style TextAppearance_AppCompat_Notification
-style TextAppearance_AppCompat_Notification_Info
-style TextAppearance_AppCompat_Notification_Info_Media
-style TextAppearance_AppCompat_Notification_Line2
-style TextAppearance_AppCompat_Notification_Line2_Media
-style TextAppearance_AppCompat_Notification_Media
-style TextAppearance_AppCompat_Notification_Time
-style TextAppearance_AppCompat_Notification_Time_Media
-style TextAppearance_AppCompat_Notification_Title
-style TextAppearance_AppCompat_Notification_Title_Media
 style TextAppearance_AppCompat_SearchResult_Subtitle
 style TextAppearance_AppCompat_SearchResult_Title
 style TextAppearance_AppCompat_Small
@@ -2938,14 +3131,61 @@ style TextAppearance_MaterialComponents_Tab
 style TextAppearance_MediaRouter_PrimaryText
 style TextAppearance_MediaRouter_SecondaryText
 style TextAppearance_MediaRouter_Title
-style TextAppearance_StatusBar_EventContent
-style TextAppearance_StatusBar_EventContent_Info
-style TextAppearance_StatusBar_EventContent_Line2
-style TextAppearance_StatusBar_EventContent_Time
-style TextAppearance_StatusBar_EventContent_Title
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style Theme_AppCompat
+style Theme_AppCompat_CompactMenu
+style Theme_AppCompat_DayNight
+style Theme_AppCompat_DayNight_DarkActionBar
+style Theme_AppCompat_DayNight_Dialog
+style Theme_AppCompat_DayNight_Dialog_Alert
+style Theme_AppCompat_DayNight_Dialog_MinWidth
+style Theme_AppCompat_DayNight_DialogWhenLarge
+style Theme_AppCompat_DayNight_NoActionBar
+style Theme_AppCompat_Dialog
+style Theme_AppCompat_Dialog_Alert
+style Theme_AppCompat_Dialog_MinWidth
+style Theme_AppCompat_DialogWhenLarge
+style Theme_AppCompat_Light
+style Theme_AppCompat_Light_DarkActionBar
+style Theme_AppCompat_Light_Dialog
+style Theme_AppCompat_Light_Dialog_Alert
+style Theme_AppCompat_Light_Dialog_MinWidth
+style Theme_AppCompat_Light_DialogWhenLarge
+style Theme_AppCompat_Light_NoActionBar
+style Theme_AppCompat_NoActionBar
+style Theme_Design
+style Theme_Design_BottomSheetDialog
+style Theme_Design_Light
+style Theme_Design_Light_BottomSheetDialog
+style Theme_Design_Light_NoActionBar
+style Theme_Design_NoActionBar
+style Theme_MaterialComponents
+style Theme_MaterialComponents_BottomSheetDialog
+style Theme_MaterialComponents_Bridge
+style Theme_MaterialComponents_CompactMenu
+style Theme_MaterialComponents_Dialog
+style Theme_MaterialComponents_Dialog_Alert
+style Theme_MaterialComponents_Dialog_MinWidth
+style Theme_MaterialComponents_DialogWhenLarge
+style Theme_MaterialComponents_Light
+style Theme_MaterialComponents_Light_BottomSheetDialog
+style Theme_MaterialComponents_Light_Bridge
+style Theme_MaterialComponents_Light_DarkActionBar
+style Theme_MaterialComponents_Light_DarkActionBar_Bridge
+style Theme_MaterialComponents_Light_Dialog
+style Theme_MaterialComponents_Light_Dialog_Alert
+style Theme_MaterialComponents_Light_Dialog_MinWidth
+style Theme_MaterialComponents_Light_DialogWhenLarge
+style Theme_MaterialComponents_Light_NoActionBar
+style Theme_MaterialComponents_Light_NoActionBar_Bridge
+style Theme_MaterialComponents_NoActionBar
+style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_MediaRouter
+style Theme_MediaRouter_Light
+style Theme_MediaRouter_Light_DarkControlPanel
+style Theme_MediaRouter_LightControlPanel
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -2967,58 +3207,6 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
 style ThemeOverlay_MediaRouter_Dark
 style ThemeOverlay_MediaRouter_Light
-style Theme_AppCompat
-style Theme_AppCompat_CompactMenu
-style Theme_AppCompat_DayNight
-style Theme_AppCompat_DayNight_DarkActionBar
-style Theme_AppCompat_DayNight_Dialog
-style Theme_AppCompat_DayNight_DialogWhenLarge
-style Theme_AppCompat_DayNight_Dialog_Alert
-style Theme_AppCompat_DayNight_Dialog_MinWidth
-style Theme_AppCompat_DayNight_NoActionBar
-style Theme_AppCompat_Dialog
-style Theme_AppCompat_DialogWhenLarge
-style Theme_AppCompat_Dialog_Alert
-style Theme_AppCompat_Dialog_MinWidth
-style Theme_AppCompat_Light
-style Theme_AppCompat_Light_DarkActionBar
-style Theme_AppCompat_Light_Dialog
-style Theme_AppCompat_Light_DialogWhenLarge
-style Theme_AppCompat_Light_Dialog_Alert
-style Theme_AppCompat_Light_Dialog_MinWidth
-style Theme_AppCompat_Light_NoActionBar
-style Theme_AppCompat_NoActionBar
-style Theme_Design
-style Theme_Design_BottomSheetDialog
-style Theme_Design_Light
-style Theme_Design_Light_BottomSheetDialog
-style Theme_Design_Light_NoActionBar
-style Theme_Design_NoActionBar
-style Theme_MaterialComponents
-style Theme_MaterialComponents_BottomSheetDialog
-style Theme_MaterialComponents_Bridge
-style Theme_MaterialComponents_CompactMenu
-style Theme_MaterialComponents_Dialog
-style Theme_MaterialComponents_DialogWhenLarge
-style Theme_MaterialComponents_Dialog_Alert
-style Theme_MaterialComponents_Dialog_MinWidth
-style Theme_MaterialComponents_Light
-style Theme_MaterialComponents_Light_BottomSheetDialog
-style Theme_MaterialComponents_Light_Bridge
-style Theme_MaterialComponents_Light_DarkActionBar
-style Theme_MaterialComponents_Light_DarkActionBar_Bridge
-style Theme_MaterialComponents_Light_Dialog
-style Theme_MaterialComponents_Light_DialogWhenLarge
-style Theme_MaterialComponents_Light_Dialog_Alert
-style Theme_MaterialComponents_Light_Dialog_MinWidth
-style Theme_MaterialComponents_Light_NoActionBar
-style Theme_MaterialComponents_Light_NoActionBar_Bridge
-style Theme_MaterialComponents_NoActionBar
-style Theme_MaterialComponents_NoActionBar_Bridge
-style Theme_MediaRouter
-style Theme_MediaRouter_Light
-style Theme_MediaRouter_LightControlPanel
-style Theme_MediaRouter_Light_DarkControlPanel
 style Translucent
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
@@ -3032,13 +3220,13 @@ style Widget_AppCompat_ActionMode
 style Widget_AppCompat_ActivityChooserView
 style Widget_AppCompat_AutoCompleteTextView
 style Widget_AppCompat_Button
-style Widget_AppCompat_ButtonBar
-style Widget_AppCompat_ButtonBar_AlertDialog
 style Widget_AppCompat_Button_Borderless
 style Widget_AppCompat_Button_Borderless_Colored
 style Widget_AppCompat_Button_ButtonBar_AlertDialog
 style Widget_AppCompat_Button_Colored
 style Widget_AppCompat_Button_Small
+style Widget_AppCompat_ButtonBar
+style Widget_AppCompat_ButtonBar_AlertDialog
 style Widget_AppCompat_CompoundButton_CheckBox
 style Widget_AppCompat_CompoundButton_RadioButton
 style Widget_AppCompat_CompoundButton_Switch
@@ -3073,8 +3261,6 @@ style Widget_AppCompat_ListPopupWindow
 style Widget_AppCompat_ListView
 style Widget_AppCompat_ListView_DropDown
 style Widget_AppCompat_ListView_Menu
-style Widget_AppCompat_NotificationActionContainer
-style Widget_AppCompat_NotificationActionText
 style Widget_AppCompat_PopupMenu
 style Widget_AppCompat_PopupMenu_Overflow
 style Widget_AppCompat_PopupWindow
@@ -3122,11 +3308,11 @@ style Widget_MaterialComponents_Button_TextButton_Icon
 style Widget_MaterialComponents_Button_UnelevatedButton
 style Widget_MaterialComponents_Button_UnelevatedButton_Icon
 style Widget_MaterialComponents_CardView
-style Widget_MaterialComponents_ChipGroup
 style Widget_MaterialComponents_Chip_Action
 style Widget_MaterialComponents_Chip_Choice
 style Widget_MaterialComponents_Chip_Entry
 style Widget_MaterialComponents_Chip_Filter
+style Widget_MaterialComponents_ChipGroup
 style Widget_MaterialComponents_FloatingActionButton
 style Widget_MaterialComponents_NavigationView
 style Widget_MaterialComponents_Snackbar
@@ -3151,6 +3337,7 @@ style afc_button_location
 style afc_button_navi_left
 style afc_button_navi_right
 style afc_button_sort
+style toolbar_bottom_icon_text
 style toolbar_icon_text
 styleable AboutPreferenceCompat html
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
@@ -3161,39 +3348,40 @@ styleable ActionMode background backgroundSplit closeItemLayout height subtitleT
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable AddFloatingActionButton fab_plusIconColor
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
-styleable AnimatedStateListDrawableCompat android_constantSize android_dither android_enterFadeDuration android_exitFadeDuration android_variablePadding android_visible
-styleable AnimatedStateListDrawableItem android_drawable android_id
-styleable AnimatedStateListDrawableTransition android_drawable android_fromId android_reversible android_toId
-styleable AppBarLayout android_background android_keyboardNavigationCluster android_touchscreenBlocksFocus elevation expanded liftOnScroll
+styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
+styleable AnimatedStateListDrawableItem android_id android_drawable
+styleable AnimatedStateListDrawableTransition android_drawable android_toId android_fromId android_reversible
+styleable AppBarLayout android_background android_touchscreenBlocksFocus android_keyboardNavigationCluster elevation expanded liftOnScroll
 styleable AppBarLayoutStates state_collapsed state_collapsible state_liftable state_lifted
 styleable AppBarLayout_Layout layout_scrollFlags layout_scrollInterpolator
 styleable AppCompatImageView android_src srcCompat tint tintMode
 styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
-styleable AppCompatTextHelper android_drawableBottom android_drawableEnd android_drawableLeft android_drawableRight android_drawableStart android_drawableTop android_textAppearance
+styleable AppCompatTextHelper android_textAppearance android_drawableTop android_drawableBottom android_drawableLeft android_drawableRight android_drawableStart android_drawableEnd
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
-styleable AppCompatTheme actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme android_windowAnimationStyle android_windowIsFloating autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
+styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable BackgroundStyle android_selectableItemBackground selectableItemBackground
 styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout behavior_fitToContents behavior_hideable behavior_peekHeight behavior_skipCollapsed
+styleable ButtonBarContainerTheme metaButtonBarButtonStyle metaButtonBarStyle
 styleable ButtonBarLayout allowStacking
-styleable CardView android_minHeight android_minWidth cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
-styleable CheckBoxPreference android_disableDependentsState android_summaryOff android_summaryOn disableDependentsState summaryOff summaryOn
-styleable Chip android_checkable android_ellipsize android_maxWidth android_text android_textAppearance checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
+styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
+styleable CheckBoxPreference android_summaryOn android_summaryOff android_disableDependentsState disableDependentsState summaryOff summaryOn
+styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
 styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_fill_color shadow_color shadow_size
 styleable CircularSeekBar circle_color circle_fill circle_progress_color circle_stroke_width circle_x_radius circle_y_radius end_angle lock_enabled maintain_equal_circle max move_outside_circle pointer_alpha_ontouch pointer_color pointer_halo_border_width pointer_halo_color pointer_halo_color_ontouch pointer_halo_width pointer_radius progress start_angle use_custom_radii
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
-styleable ColorStateListItem alpha android_alpha android_color
+styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode
-styleable ConstraintLayout_Layout android_maxHeight android_maxWidth android_minHeight android_minWidth android_orientation barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
+styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
 styleable ConstraintLayout_placeholder content emptyVisibility
-styleable ConstraintSet android_alpha android_elevation android_id android_layout_height android_layout_marginBottom android_layout_marginEnd android_layout_marginLeft android_layout_marginRight android_layout_marginStart android_layout_marginTop android_layout_width android_maxHeight android_maxWidth android_minHeight android_minWidth android_orientation android_rotation android_rotationX android_rotationY android_scaleX android_scaleY android_transformPivotX android_transformPivotY android_translationX android_translationY android_translationZ android_visibility barrierAllowsGoneWidgets barrierDirection chainUseRtl constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop
+styleable ConstraintSet android_orientation android_id android_visibility android_layout_width android_layout_height android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom android_maxWidth android_maxHeight android_minWidth android_minHeight android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_layout_marginStart android_layout_marginEnd android_translationZ android_elevation barrierAllowsGoneWidgets barrierDirection chainUseRtl constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
-styleable DialogPreference android_dialogIcon android_dialogLayout android_dialogMessage android_dialogTitle android_negativeButtonText android_positiveButtonText dialogIcon dialogLayout dialogMessage dialogTitle negativeButtonText positiveButtonText
+styleable DialogPreference android_dialogTitle android_dialogMessage android_dialogIcon android_positiveButtonText android_negativeButtonText android_dialogLayout dialogIcon dialogLayout dialogMessage dialogTitle negativeButtonText positiveButtonText
 styleable DragSortListView click_remove_id collapsed_height drag_enabled drag_handle_id drag_scroll_start drag_start_mode drop_animation_duration fling_handle_id float_alpha float_background_color max_drag_scroll_speed remove_animation_duration remove_enabled remove_mode slide_shuffle_speed sort_enabled track_drag_sort use_default_controller
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize fab_colorDisabled fab_colorNormal fab_colorPressed fab_icon fab_size fab_stroke_visible fab_title hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
@@ -3201,55 +3389,56 @@ styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FloatingActionsMenu fab_addButtonColorNormal fab_addButtonColorPressed fab_addButtonPlusIconColor fab_addButtonSize fab_addButtonStrokeVisible fab_expandDirection fab_labelStyle fab_labelsPosition
 styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
-styleable FontFamilyFont android_font android_fontStyle android_fontVariationSettings android_fontWeight android_ttcIndex font fontStyle fontVariationSettings fontWeight ttcIndex
+styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
-styleable GradientColor android_centerColor android_centerX android_centerY android_endColor android_endX android_endY android_gradientRadius android_startColor android_startX android_startY android_tileMode android_type
+styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation
-styleable LinearLayoutCompat android_baselineAligned android_baselineAlignedChildIndex android_gravity android_orientation android_weightSum divider dividerPadding measureWithLargestChild showDividers
-styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_height android_layout_weight android_layout_width
+styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
+styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable ListPreference android_entries android_entryValues entries entryValues
-styleable MaterialButton android_insetBottom android_insetLeft android_insetRight android_insetTop backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
+styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle
-styleable MediaRouteButton android_minHeight android_minWidth buttonTint externalRouteEnabledDrawable mediaRouteButtonTint
-styleable MenuGroup android_checkableBehavior android_enabled android_id android_menuCategory android_orderInCategory android_visible
-styleable MenuItem actionLayout actionProviderClass actionViewClass alphabeticModifiers android_alphabeticShortcut android_checkable android_checked android_enabled android_icon android_id android_menuCategory android_numericShortcut android_onClick android_orderInCategory android_title android_titleCondensed android_visible contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
-styleable MenuView android_headerBackground android_horizontalDivider android_itemBackground android_itemIconDisabledAlpha android_itemTextAppearance android_verticalDivider android_windowAnimationStyle preserveIconSpacing subMenuArrow
+styleable MediaRouteButton android_minWidth android_minHeight externalRouteEnabledDrawable mediaRouteButtonTint
+styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
+styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
+styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow
 styleable MultiSelectListPreference android_entries android_entryValues entries entryValues
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconTint itemTextAppearance itemTextColor menu
-styleable PopupWindow android_popupAnimationStyle android_popupBackground overlapAnchor
+styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
-styleable Preference allowDividerAbove allowDividerBelow android_defaultValue android_dependency android_enabled android_fragment android_icon android_iconSpaceReserved android_key android_layout android_order android_persistent android_selectable android_shouldDisableView android_singleLineTitle android_summary android_title android_widgetLayout defaultValue dependency enabled fragment icon iconSpaceReserved isPreferenceVisible key layout order persistent selectable shouldDisableView singleLineTitle summary title widgetLayout
-styleable PreferenceFragment allowDividerAfterLastItem android_divider android_dividerHeight android_layout
-styleable PreferenceFragmentCompat allowDividerAfterLastItem android_divider android_dividerHeight android_layout
+styleable Preference android_icon android_persistent android_enabled android_layout android_title android_selectable android_key android_summary android_order android_widgetLayout android_dependency android_defaultValue android_shouldDisableView android_fragment android_singleLineTitle android_iconSpaceReserved allowDividerAbove allowDividerBelow defaultValue dependency enabled fragment icon iconSpaceReserved isPreferenceVisible key layout order persistent selectable shouldDisableView singleLineTitle summary title widgetLayout
+styleable PreferenceFragment android_layout android_divider android_dividerHeight allowDividerAfterLastItem
+styleable PreferenceFragmentCompat android_layout android_divider android_dividerHeight allowDividerAfterLastItem
 styleable PreferenceGroup android_orderingFromXml initialExpandedChildrenCount orderingFromXml
-styleable PreferenceImageView android_maxHeight android_maxWidth maxHeight maxWidth
+styleable PreferenceImageView android_maxWidth android_maxHeight maxHeight maxWidth
 styleable PreferenceTheme checkBoxPreferenceStyle dialogPreferenceStyle dropdownPreferenceStyle editTextPreferenceStyle preferenceActivityStyle preferenceCategoryStyle preferenceFragmentCompatStyle preferenceFragmentListStyle preferenceFragmentPaddingSide preferenceFragmentStyle preferenceHeaderPanelStyle preferenceInformationStyle preferenceLayoutChild preferenceListStyle preferencePanelStyle preferenceScreenStyle preferenceStyle preferenceTheme ringtonePreferenceStyle seekBarPreferenceStyle switchPreferenceCompatStyle switchPreferenceStyle yesNoPreferenceStyle
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
-styleable RecyclerView android_descendantFocusability android_orientation fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
-styleable SearchView android_focusable android_imeOptions android_inputType android_maxWidth closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
-styleable SeekBarPreference adjustable android_layout android_max min seekBarIncrement showSeekBarValue
+styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
+styleable SeekBarPreference android_layout android_max adjustable min seekBarIncrement showSeekBarValue
 styleable Snackbar snackbarButtonStyle snackbarStyle
 styleable SnackbarLayout android_maxWidth elevation maxActionInlineWidth
-styleable Spinner android_dropDownWidth android_entries android_popupBackground android_prompt popupTheme
+styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SquareLinearLayout maxChild
-styleable StateListDrawable android_constantSize android_dither android_enterFadeDuration android_exitFadeDuration android_variablePadding android_visible
+styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
-styleable SwitchCompat android_textOff android_textOn android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
-styleable SwitchPreference android_disableDependentsState android_summaryOff android_summaryOn android_switchTextOff android_switchTextOn disableDependentsState summaryOff summaryOn switchTextOff switchTextOn
-styleable SwitchPreferenceCompat android_disableDependentsState android_summaryOff android_summaryOn android_switchTextOff android_switchTextOn disableDependentsState summaryOff summaryOn switchTextOff switchTextOn
+styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
+styleable SwitchPreference android_summaryOn android_summaryOff android_disableDependentsState android_switchTextOn android_switchTextOff disableDependentsState summaryOff summaryOn switchTextOff switchTextOn
+styleable SwitchPreferenceCompat android_summaryOn android_summaryOff android_disableDependentsState android_switchTextOn android_switchTextOff disableDependentsState summaryOff summaryOn switchTextOff switchTextOn
 styleable TabItem android_icon android_layout android_text
 styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIconTintMode tabIndicator tabIndicatorAnimationDuration tabIndicatorColor tabIndicatorFullWidth tabIndicatorGravity tabIndicatorHeight tabInlineLabel tabMaxWidth tabMinWidth tabMode tabPadding tabPaddingBottom tabPaddingEnd tabPaddingStart tabPaddingTop tabRippleColor tabSelectedTextColor tabTextAppearance tabTextColor tabUnboundedRipple
-styleable TextAppearance android_fontFamily android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_textColor android_textColorHint android_textColorLink android_textSize android_textStyle android_typeface fontFamily textAllCaps
-styleable TextInputLayout android_hint android_textColorHint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance helperText helperTextEnabled helperTextTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
+styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily fontFamily textAllCaps
+styleable TextInputLayout android_textColorHint android_hint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance helperText helperTextEnabled helperTextTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
 styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTextAppearance
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
-styleable View android_focusable android_theme paddingEnd paddingStart theme
+styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
-styleable ViewStubCompat android_id android_inflatedId android_layout
+styleable ViewStubCompat android_id android_layout android_inflatedId
 xml device_admin
+xml pref_general
 xml searchable
