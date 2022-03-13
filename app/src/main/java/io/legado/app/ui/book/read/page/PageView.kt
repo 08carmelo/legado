@@ -294,6 +294,11 @@ class PageView(context: Context) : FrameLayout(context) {
         binding.contentTextView.cancelSelect()
     }
 
+    //取消笔记
+    fun cancelNote(){
+        binding.contentTextView.cancelNote()
+    }
+
     fun createBookmark(): Bookmark? {
         return binding.contentTextView.createBookmark()
     }

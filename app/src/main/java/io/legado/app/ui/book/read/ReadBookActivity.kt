@@ -18,10 +18,7 @@ import io.legado.app.constant.EventBus
 import io.legado.app.constant.PreferKey
 import io.legado.app.constant.Status
 import io.legado.app.data.appDb
-import io.legado.app.data.entities.Book
-import io.legado.app.data.entities.BookChapter
-import io.legado.app.data.entities.BookProgress
-import io.legado.app.data.entities.BookSource
+import io.legado.app.data.entities.*
 import io.legado.app.help.BookHelp
 import io.legado.app.help.IntentData
 import io.legado.app.help.config.ReadBookConfig
@@ -78,7 +75,9 @@ class ReadBookActivity : BaseReadBookActivity(),
     ReadBook.CallBack,
     AutoReadDialog.CallBack,
     TocRegexDialog.CallBack,
-    ColorPickerDialogListener {
+    ColorPickerDialogListener,
+    BookNoteDialog.Callback
+{
 
     private val tocActivity =
         registerForActivityResult(TocActivityResult()) {
@@ -592,7 +591,7 @@ class ReadBookActivity : BaseReadBookActivity(),
      * 当前选择的文本
      */
     override val selectedText: String get() = binding.readView.curPage.selectedText
-
+    var mBooknote :Booknote? = null
     /**
      * 文本选择菜单操作
      */
@@ -604,6 +603,7 @@ class ReadBookActivity : BaseReadBookActivity(),
                     if (booknote == null) {
                         toastOnUi("创建笔记失败")
                     } else {
+                        mBooknote = booknote
                         showDialogFragment(BookNoteDialog(booknote))
                     }
                     return true
@@ -1175,6 +1175,12 @@ class ReadBookActivity : BaseReadBookActivity(),
             } else {
                 keepScreenOn(false)
             }
+        }
+    }
+
+    override fun cancelNote() {
+        binding.run {
+            readView.curPage.cancelNote()
         }
     }
 }

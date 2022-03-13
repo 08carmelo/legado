@@ -37,5 +37,5 @@ data class Booknote(
     var chapterPos: Int = 0,//第几页
     var chapterName: String = "",
     var bookText: String = "",
-    var content: String = ""
+    var content: String = ""//笔记内容
 ) : Parcelable

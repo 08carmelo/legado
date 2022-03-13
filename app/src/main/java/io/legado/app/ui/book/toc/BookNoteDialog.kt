@@ -9,6 +9,8 @@ import io.legado.app.data.appDb
 import io.legado.app.data.entities.Booknote
 import io.legado.app.databinding.DialogBooknoteBinding
 import io.legado.app.lib.theme.primaryColor
+import io.legado.app.ui.book.read.SearchMenu
+import io.legado.app.utils.activity
 import io.legado.app.utils.setLayout
 import io.legado.app.utils.viewbindingdelegate.viewBinding
 import io.legado.app.utils.visible
@@ -35,6 +37,11 @@ class BookNoteDialog() : BaseDialogFragment(R.layout.dialog_booknote) {
 
     private val binding by viewBinding(DialogBooknoteBinding::bind)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        isCancelable = false
+    }
+
     override fun onStart() {
         super.onStart()
         setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -57,6 +64,7 @@ class BookNoteDialog() : BaseDialogFragment(R.layout.dialog_booknote) {
             tvChapterName.text = booknote.chapterName
             editBookText.setText(booknote.content)
             tvCancel.setOnClickListener {
+                callBack.cancelNote()
                 dismiss()
             }
             tvOk.setOnClickListener {
@@ -65,7 +73,7 @@ class BookNoteDialog() : BaseDialogFragment(R.layout.dialog_booknote) {
                     withContext(IO) {
                         appDb.booknoteDao.insert(booknote)
                     }
-                    getCallback()?.upBooknote(editPos, booknote)
+//                    getCallback()?.upBooknote(editPos, booknote)
                     dismiss()
                 }
             }
@@ -74,7 +82,7 @@ class BookNoteDialog() : BaseDialogFragment(R.layout.dialog_booknote) {
                     withContext(IO) {
                         appDb.booknoteDao.delete(booknote)
                     }
-                    getCallback()?.deleteBooknote(editPos)
+//                    getCallback()?.deleteBooknote(editPos)
                     dismiss()
                 }
             }
@@ -85,11 +93,15 @@ class BookNoteDialog() : BaseDialogFragment(R.layout.dialog_booknote) {
         return parentFragment as? Callback
     }
 
+    private val callBack: Callback get() = activity as Callback
+
     interface Callback {
 
-        fun upBooknote(pos: Int, booknote: Booknote)
+//        fun upBooknote(pos: Int, booknote: Booknote){}
+//
+//        fun deleteBooknote(pos: Int){}
 
-        fun deleteBooknote(pos: Int)
+        fun cancelNote()
 
     }
 

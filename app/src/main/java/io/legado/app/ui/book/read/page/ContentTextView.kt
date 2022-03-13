@@ -449,6 +449,18 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         callBack.onCancelSelect()
     }
 
+    fun cancelNote(){
+        val last = if (callBack.isScroll) 2 else 0
+        for (relativePos in 0..last) {z
+            relativePage(relativePos).textLines.forEach { textLine ->
+                textLine.textChars.forEach {
+                    it.lineSelected = false
+                }
+            }
+        }
+        invalidate()
+    }
+
     val selectedText: String
         get() {
             val stringBuilder = StringBuilder()

@@ -1,7 +1,9 @@
 package io.legado.app.ui.book.read.page
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
@@ -14,11 +16,14 @@ import android.view.ViewConfiguration
 import android.view.WindowInsets
 import android.widget.FrameLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import io.legado.app.R
 import io.legado.app.help.config.AppConfig
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.lib.theme.accentColor
 import io.legado.app.model.ReadAloud
 import io.legado.app.model.ReadBook
+import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.book.read.page.api.DataSource
 import io.legado.app.ui.book.read.page.delegate.*
 import io.legado.app.ui.book.read.page.entities.PageDirection
@@ -28,6 +33,7 @@ import io.legado.app.ui.book.read.page.provider.ChapterProvider
 import io.legado.app.ui.book.read.page.provider.TextPageFactory
 import io.legado.app.utils.activity
 import io.legado.app.utils.screenshot
+import org.w3c.dom.Text
 import java.text.BreakIterator
 import java.util.*
 import kotlin.math.abs
@@ -272,9 +278,10 @@ class ReadView(context: Context, attrs: AttributeSet) :
         pageDelegate?.onScroll()
     }
 
-    private fun findTapFirstTextChar(): TextChar?{
+    private fun findTapFirstTextChar(block:(TextChar?,String?) -> Unit){
 
         var textChar: TextChar? = null
+        var selectedContent:String? = null
         curPage.runCatching {
             curPage.findTapFirstTextChar(startX,startY){ relativePage, lineIndex, charIndex ->
                 val page = if (isScroll) curPage.relativePage(relativePage) else curPage.textPage
@@ -293,12 +300,13 @@ class ReadView(context: Context, attrs: AttributeSet) :
                             }
                         }
                     }
-                    Toast.makeText(context,"${sb.toString()}", Toast.LENGTH_SHORT).show()
+                    selectedContent = sb.toString()
+
                 }
 
             }
         }
-        return textChar
+        block.invoke(textChar,selectedContent)
     }
 
     /**
@@ -414,44 +422,48 @@ class ReadView(context: Context, attrs: AttributeSet) :
      * 单击
      */
     private fun onSingleTapUp() {
-        val firstTextChar = findTapFirstTextChar()
-        if (firstTextChar?.lineSelected == true){
-            Log.e("tag","点击划线文字")
-
-            //TODO
-
-            return
-        }
-
-
-        when {
-            isTextSelected -> isTextSelected = false
-            mcRect.contains(startX, startY) -> if (!isAbortAnim) {
-                click(AppConfig.clickActionMC)
-            }
-            bcRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionBC)
-            }
-            blRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionBL)
-            }
-            brRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionBR)
-            }
-            mlRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionML)
-            }
-            mrRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionMR)
-            }
-            tlRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionTL)
-            }
-            tcRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionTC)
-            }
-            trRect.contains(startX, startY) -> {
-                click(AppConfig.clickActionTR)
+        findTapFirstTextChar {textChar, selectedContent ->
+            if (textChar?.lineSelected == true){
+                AlertDialog.Builder(context).setIcon(R.mipmap.ic_launcher)
+                    .setTitle("笔记内容")
+                    .setMessage((activity as ReadBookActivity).mBooknote?.content)
+                    .setPositiveButton("确定"
+                    ) { dialogInterface, i ->
+                        dialogInterface.dismiss()
+                    }
+                    .create()
+                    .show()
+            }else {
+                when {
+                    isTextSelected -> isTextSelected = false
+                    mcRect.contains(startX, startY) -> if (!isAbortAnim) {
+                        click(AppConfig.clickActionMC)
+                    }
+                    bcRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionBC)
+                    }
+                    blRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionBL)
+                    }
+                    brRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionBR)
+                    }
+                    mlRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionML)
+                    }
+                    mrRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionMR)
+                    }
+                    tlRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionTL)
+                    }
+                    tcRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionTC)
+                    }
+                    trRect.contains(startX, startY) -> {
+                        click(AppConfig.clickActionTR)
+                    }
+                }
             }
         }
     }

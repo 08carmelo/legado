@@ -130,10 +130,10 @@ object CacheBook {
 
     class CacheBookModel(var bookSource: BookSource, var book: Book) {
 
-        private val waitDownloadSet = hashSetOf<Int>()
-        private val onDownloadSet = hashSetOf<Int>()
-        private val successDownloadSet = hashSetOf<Int>()
-        private val errorDownloadMap = hashMapOf<Int, Int>()
+        private val waitDownloadSet = hashSetOf<Int>()//等待下载章节队列
+        private val onDownloadSet = hashSetOf<Int>()//正在下载队列
+        private val successDownloadSet = hashSetOf<Int>()//成功下载队列
+        private val errorDownloadMap = hashMapOf<Int, Int>()//错误下载队列
 
         val waitCount get() = waitDownloadSet.size
         val onDownloadCount get() = onDownloadSet.size

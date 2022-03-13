@@ -106,6 +106,7 @@ object ReadBook : CoroutineScope by MainScope() {
         nextTextChapter = null
     }
 
+    //往服务器上传书的进度
     fun uploadProgress() {
         book?.let {
             AppWebDav.uploadBookProgress(it)
@@ -129,12 +130,13 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //翻到下一页
     fun moveToNextPage() {
         durChapterPos = curTextChapter?.getNextPageLength(durChapterPos) ?: durChapterPos
         callBack?.upContent()
         saveRead()
     }
-
+    //翻到下一章节
     fun moveToNextChapter(upContent: Boolean): Boolean {
         if (durChapterIndex < chapterSize - 1) {
             durChapterPos = 0
@@ -143,11 +145,11 @@ object ReadBook : CoroutineScope by MainScope() {
             curTextChapter = nextTextChapter
             nextTextChapter = null
             if (curTextChapter == null) {
-                loadContent(durChapterIndex, upContent, false)
+                loadContent(durChapterIndex, upContent, false)//加载当前章节
             } else if (upContent) {
                 callBack?.upContent()
             }
-            loadContent(durChapterIndex.plus(1), upContent, false)
+            loadContent(durChapterIndex.plus(1), upContent, false)//加载下一章节
             saveRead()
             callBack?.upMenuView()
             curPageChanged()
@@ -157,6 +159,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //翻到上一章节
     fun moveToPrevChapter(
         upContent: Boolean,
         toLast: Boolean = true
@@ -182,6 +185,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //通过进度条跳转到对应页面
     fun skipToPage(index: Int, success: (() -> Unit)? = null) {
         durChapterPos = curTextChapter?.getReadLength(index) ?: index
         callBack?.upContent {
@@ -274,6 +278,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //下载传入章节索引数据
     private fun download(index: Int) {
         if (index < 0) return
         if (index > chapterSize - 1) {
@@ -297,7 +302,7 @@ object ReadBook : CoroutineScope by MainScope() {
             }
         }
     }
-
+    //下载章节数据
     private fun download(
         scope: CoroutineScope,
         chapter: BookChapter,
@@ -320,6 +325,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //添加正在加载的章节索引
     private fun addLoading(index: Int): Boolean {
         synchronized(this) {
             if (loadingChapters.contains(index)) return false
@@ -328,6 +334,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //移除加载的章节索引
     fun removeLoading(index: Int) {
         synchronized(this) {
             loadingChapters.remove(index)
@@ -383,11 +390,12 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //更新目录
     @Synchronized
     fun upToc() {
         val bookSource = bookSource ?: return
         val book = book ?: return
-        if (System.currentTimeMillis() - book.lastCheckTime < 600000) return
+        if (System.currentTimeMillis() - book.lastCheckTime < 600000) return//小于10分钟return
         book.lastCheckTime = System.currentTimeMillis()
         WebBook.getChapterList(this, bookSource, book).onSuccess(IO) { cList ->
             if (book.bookUrl == ReadBook.book?.bookUrl
@@ -400,10 +408,12 @@ object ReadBook : CoroutineScope by MainScope() {
         }
     }
 
+    //获取翻页动画
     fun pageAnim(): Int {
         return book?.getPageAnim() ?: ReadBookConfig.pageAnim
     }
 
+    //设置字符集
     fun setCharset(charset: String) {
         book?.let {
             it.charset = charset
@@ -411,7 +421,7 @@ object ReadBook : CoroutineScope by MainScope() {
         }
         saveRead()
     }
-
+    //缓存最新书籍Book
     fun saveRead() {
         Coroutine.async {
             book?.let { book ->
@@ -430,7 +440,7 @@ object ReadBook : CoroutineScope by MainScope() {
     }
 
     /**
-     * 预下载
+     * 预下载---往当前章节前后加载诺干章
      */
     private fun preDownload() {
         Coroutine.async {
