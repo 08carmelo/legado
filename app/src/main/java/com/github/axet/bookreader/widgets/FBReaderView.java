@@ -36,6 +36,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
@@ -933,7 +934,8 @@ public class FBReaderView extends RelativeLayout {
                         }
                     });
                     int color = l.color == 0 ? fb.app.BookTextView.getHighlightingBackgroundColor().intValue() : l.color;
-                    v.setBackgroundColor(SelectionView.SELECTION_ALPHA << 24 | (color & 0xffffff));
+                    // 去掉书签高亮文字
+//                    v.setBackgroundColor(SelectionView.SELECTION_ALPHA << 24 | (color & 0xffffff));
                     bmv.add(v);
                     addView(v);
                 }
@@ -2219,12 +2221,12 @@ public class FBReaderView extends RelativeLayout {
     }
 
     public void showControls() {
-        ActiveAreasView areas = new ActiveAreasView(getContext());
-        int w = getWidth();
-        if (w == 0)
-            return; // activity closed
-        areas.create(app, w);
-        showControls(this, areas);
+//        ActiveAreasView areas = new ActiveAreasView(getContext());
+//        int w = getWidth();
+//        if (w == 0)
+//            return; // activity closed
+//        areas.create(app, w);
+//        showControls(this, areas);
     }
 
     @Override
@@ -2282,5 +2284,15 @@ public class FBReaderView extends RelativeLayout {
     public void onScrollingFinished(ZLViewEnums.PageIndex pageIndex) {
         if (listener != null)
             listener.onScrollingFinished(pageIndex);
+    }
+
+    public void addBookMark() {
+        if (book.info.bookmarks == null)
+            book.info.bookmarks = new Storage.Bookmarks();
+        int currentPage = app.BookTextView.pagePosition().Current-1;
+        ZLTextPosition start = new ZLTextFixedPosition (currentPage, 0,0);
+        ZLTextPosition end = new ZLTextFixedPosition (currentPage, 0,0);
+        book.info.bookmarks.add(new Storage.Bookmark("第"+app.BookTextView.pagePosition().Current+"页", start, end));
+        Toast.makeText(getContext(), "添加书签成功",Toast.LENGTH_SHORT).show();
     }
 }

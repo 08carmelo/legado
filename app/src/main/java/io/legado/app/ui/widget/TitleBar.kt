@@ -151,7 +151,7 @@ class TitleBar @JvmOverloads constructor(
                 setPadding(paddingLeft, paddingTop, paddingRight, context.navigationBarHeight)
             }
 
-            setBackgroundColor(context.primaryColor)
+//            setBackgroundColor(context.primaryColor)
 
             stateListAnimator = null
             elevation = context.elevation

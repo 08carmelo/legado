@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.get
@@ -364,7 +365,14 @@ class ReadBookActivity : BaseReadBookActivity(),
                         chapterName = page.title
                         bookText = page.text.trim()
                     }
-                    showDialogFragment(BookmarkDialog(bookmark))
+                    // 改为直接添加书签
+//                    showDialogFragment(BookmarkDialog(bookmark))
+                    launch {
+                        withContext(IO) {
+                            appDb.bookmarkDao.insert(bookmark)
+                        }
+                        Toast.makeText(this@ReadBookActivity, "添加书签成功", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
             R.id.menu_image_style -> {

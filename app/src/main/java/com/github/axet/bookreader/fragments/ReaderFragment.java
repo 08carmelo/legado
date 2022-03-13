@@ -838,8 +838,9 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
             return true;
         }
         if (id == R.id.action_reflow) {
-            fb.setReflow(!fb.isReflow());
-            updateToolbar();
+//            fb.setReflow(!fb.isReflow());
+//            updateToolbar();
+            fb.addBookMark();
         }
         if (id == R.id.action_debug) {
             fb.pluginview.reflowDebug = !fb.pluginview.reflowDebug;

@@ -61,7 +61,7 @@ abstract class BaseReadBookActivity :
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        binding.navigationBar.setBackgroundColor(bottomBackground)
+//        binding.navigationBar.setBackgroundColor(bottomBackground)
         viewModel.permissionDenialLiveData.observe(this) {
             selectBookFolderResult.launch {
                 mode = HandleFileContract.DIR_SYS
@@ -82,7 +82,7 @@ abstract class BaseReadBookActivity :
     }
 
     fun showClickRegionalConfig() {
-        showDialogFragment<ClickActionConfigDialog>()
+//        showDialogFragment<ClickActionConfigDialog>()
     }
 
     /**
@@ -153,12 +153,12 @@ abstract class BaseReadBookActivity :
 
     override fun upNavigationBarColor() {
         upNavigationBar()
-        when {
-            binding.readMenu.isVisible -> super.upNavigationBarColor()
-            bottomDialog > 0 -> super.upNavigationBarColor()
-            !AppConfig.immNavigationBar -> super.upNavigationBarColor()
-            else -> setNavigationBarColorAuto(ReadBookConfig.bgMeanColor)
-        }
+//        when {
+//            binding.readMenu.isVisible -> super.upNavigationBarColor()
+//            bottomDialog > 0 -> super.upNavigationBarColor()
+//            !AppConfig.immNavigationBar -> super.upNavigationBarColor()
+//            else -> setNavigationBarColorAuto(ReadBookConfig.bgMeanColor)
+//        }
     }
 
     @SuppressLint("RtlHardcoded")

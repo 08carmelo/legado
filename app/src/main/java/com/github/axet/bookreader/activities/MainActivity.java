@@ -209,6 +209,7 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
         }
 
         RotatePreferenceCompat.onCreate(this, BookApplication.PREFERENCE_ROTATE);
+        setTitle("BookDemo");
     }
 
     @SuppressLint("RestrictedApi")
