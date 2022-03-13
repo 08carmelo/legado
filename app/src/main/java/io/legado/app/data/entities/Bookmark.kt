@@ -16,8 +16,25 @@ data class Bookmark(
     val time: Long = System.currentTimeMillis(),
     val bookName: String = "",
     val bookAuthor: String = "",
-    var chapterIndex: Int = 0,
-    var chapterPos: Int = 0,
+    var chapterIndex: Int = 0,//第几章节
+    var chapterPos: Int = 0,//第几页
+    var chapterName: String = "",
+    var bookText: String = "",
+    var content: String = ""
+) : Parcelable
+
+@Parcelize
+@Entity(
+    tableName = "booknotes",
+    indices = [(Index(value = ["bookName", "bookAuthor"], unique = false))]
+)
+data class Booknote(
+    @PrimaryKey
+    val time: Long = System.currentTimeMillis(),
+    val bookName: String = "",
+    val bookAuthor: String = "",
+    var chapterIndex: Int = 0,//第几章节
+    var chapterPos: Int = 0,//第几页
     var chapterName: String = "",
     var bookText: String = "",
     var content: String = ""

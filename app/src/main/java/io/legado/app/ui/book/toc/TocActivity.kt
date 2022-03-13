@@ -39,6 +39,7 @@ class TocActivity : VMBaseActivity<ActivityChapterListBinding, TocViewModel>() {
         tabLayout.isTabIndicatorFullWidth = false
         tabLayout.setSelectedTabIndicatorColor(accentColor)
         binding.viewPager.adapter = TabFragmentPageAdapter()
+        binding.viewPager.offscreenPageLimit = 3
         tabLayout.setupWithViewPager(binding.viewPager)
         intent.getStringExtra("bookUrl")?.let {
             viewModel.initBook(it)
@@ -114,17 +115,19 @@ class TocActivity : VMBaseActivity<ActivityChapterListBinding, TocViewModel>() {
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
+                2 -> BooknoteFragment()
                 1 -> BookmarkFragment()
                 else -> ChapterListFragment()
             }
         }
 
         override fun getCount(): Int {
-            return 2
+            return 3
         }
 
         override fun getPageTitle(position: Int): CharSequence {
             return when (position) {
+                2 -> "笔记"
                 1 -> getString(R.string.bookmark)
                 else -> getString(R.string.chapter_list)
             }

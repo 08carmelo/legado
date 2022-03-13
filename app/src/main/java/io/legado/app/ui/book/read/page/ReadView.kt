@@ -8,10 +8,12 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Build
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.ViewConfiguration
 import android.view.WindowInsets
 import android.widget.FrameLayout
+import android.widget.Toast
 import io.legado.app.help.config.AppConfig
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.lib.theme.accentColor
@@ -21,6 +23,7 @@ import io.legado.app.ui.book.read.page.api.DataSource
 import io.legado.app.ui.book.read.page.delegate.*
 import io.legado.app.ui.book.read.page.entities.PageDirection
 import io.legado.app.ui.book.read.page.entities.TextChapter
+import io.legado.app.ui.book.read.page.entities.TextChar
 import io.legado.app.ui.book.read.page.provider.ChapterProvider
 import io.legado.app.ui.book.read.page.provider.TextPageFactory
 import io.legado.app.utils.activity
@@ -269,6 +272,35 @@ class ReadView(context: Context, attrs: AttributeSet) :
         pageDelegate?.onScroll()
     }
 
+    private fun findTapFirstTextChar(): TextChar?{
+
+        var textChar: TextChar? = null
+        curPage.runCatching {
+            curPage.findTapFirstTextChar(startX,startY){ relativePage, lineIndex, charIndex ->
+                val page = if (isScroll) curPage.relativePage(relativePage) else curPage.textPage
+
+                with(page){
+                    var start: Int
+                    var end: Int
+                    // 单行
+                    textChar = textLines[lineIndex].getTextChar(charIndex)
+
+                    val sb = StringBuffer()
+                    textLines.forEach {textLine ->
+                        textLine.textChars.forEach{textChar ->
+                            if (textChar.lineSelected){
+                                sb.append(textChar.charData)
+                            }
+                        }
+                    }
+                    Toast.makeText(context,"${sb.toString()}", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
+        return textChar
+    }
+
     /**
      * 长按选择
      */
@@ -382,6 +414,16 @@ class ReadView(context: Context, attrs: AttributeSet) :
      * 单击
      */
     private fun onSingleTapUp() {
+        val firstTextChar = findTapFirstTextChar()
+        if (firstTextChar?.lineSelected == true){
+            Log.e("tag","点击划线文字")
+
+            //TODO
+
+            return
+        }
+
+
         when {
             isTextSelected -> isTextSelected = false
             mcRect.contains(startX, startY) -> if (!isAbortAnim) {

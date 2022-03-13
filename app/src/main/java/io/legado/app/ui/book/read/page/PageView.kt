@@ -10,6 +10,7 @@ import androidx.core.view.isInvisible
 import io.legado.app.R
 import io.legado.app.constant.AppConst.timeFormat
 import io.legado.app.data.entities.Bookmark
+import io.legado.app.data.entities.Booknote
 import io.legado.app.databinding.ViewBookPageBinding
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.help.config.ReadTipConfig
@@ -267,6 +268,12 @@ class PageView(context: Context) : FrameLayout(context) {
         return binding.contentTextView.selectText(x, y - headerHeight, select)
     }
 
+    //找到点击的第一个文字
+    fun findTapFirstTextChar(x: Float, y: Float,
+                             select: (relativePage: Int, lineIndex: Int, charIndex: Int) -> Unit){
+        return binding.contentTextView.findTapFirstTextChar(x, y - headerHeight, select)
+    }
+
     fun selectStartMove(x: Float, y: Float) {
         binding.contentTextView.selectStartMove(x, y - headerHeight)
     }
@@ -289,6 +296,10 @@ class PageView(context: Context) : FrameLayout(context) {
 
     fun createBookmark(): Bookmark? {
         return binding.contentTextView.createBookmark()
+    }
+
+    fun createBooknote():Booknote? {
+        return binding.contentTextView.createBooknote()
     }
 
     fun relativePage(relativePos: Int): TextPage {

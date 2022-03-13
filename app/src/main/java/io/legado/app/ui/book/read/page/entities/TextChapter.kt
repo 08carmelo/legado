@@ -2,6 +2,9 @@ package io.legado.app.ui.book.read.page.entities
 
 import kotlin.math.min
 
+/**
+ * 章节实体类
+ */
 data class TextChapter(
     val position: Int,
     val title: String,
@@ -32,6 +35,7 @@ data class TextChapter(
         return index >= pages.size - 1
     }
 
+    //获取传入页码文字长度
     fun getReadLength(pageIndex: Int): Int {
         var length = 0
         val maxIndex = min(pageIndex, pages.size)
@@ -40,11 +44,12 @@ data class TextChapter(
         }
         return length
     }
-
+    //获取下一页文字长度
     fun getNextPageLength(length: Int): Int {
         return getReadLength(getPageIndexByCharIndex(length) + 1)
     }
 
+    //获取未读文本
     fun getUnRead(pageIndex: Int): String {
         val stringBuilder = StringBuilder()
         if (pages.isNotEmpty()) {

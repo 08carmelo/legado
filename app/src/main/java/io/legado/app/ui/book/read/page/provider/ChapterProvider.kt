@@ -82,7 +82,7 @@ object ChapterProvider {
     private var titleBottomSpacing = 0
 
     @JvmStatic
-    var typeface: Typeface = Typeface.DEFAULT
+    var typeface: Typeface = Typeface.DEFAULT//默认字体类型
         private set
 
     @JvmStatic
@@ -113,7 +113,7 @@ object ChapterProvider {
         var absStartX = paddingLeft
         var durY = 0f
         textPages.add(TextPage())
-        if (ReadBookConfig.titleMode != 2) {
+        if (ReadBookConfig.titleMode != 2) {//标题设置
             displayTitle.splitNotBlank("\n").forEach { text ->
                 setTypeText(
                     absStartX, durY, text, textPages, stringBuilder, titlePaint,

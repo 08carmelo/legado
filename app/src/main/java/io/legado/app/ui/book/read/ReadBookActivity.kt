@@ -51,6 +51,7 @@ import io.legado.app.ui.book.read.page.provider.TextPageFactory
 import io.legado.app.ui.book.searchContent.SearchContentActivity
 import io.legado.app.ui.book.searchContent.SearchResult
 import io.legado.app.ui.book.source.edit.BookSourceEditActivity
+import io.legado.app.ui.book.toc.BookNoteDialog
 import io.legado.app.ui.book.toc.BookmarkDialog
 import io.legado.app.ui.book.toc.TocActivityResult
 import io.legado.app.ui.browser.WebViewActivity
@@ -597,8 +598,16 @@ class ReadBookActivity : BaseReadBookActivity(),
      */
     override fun onMenuItemSelected(itemId: Int): Boolean {
         when (itemId) {
-            R.id.menu_note -> {
-                // todo 记笔记
+            R.id.menu_note -> {//笔记
+                binding.readView.curPage.let {
+                    val booknote = it.createBooknote()
+                    if (booknote == null) {
+                        toastOnUi("创建笔记失败")
+                    } else {
+                        showDialogFragment(BookNoteDialog(booknote))
+                    }
+                    return true
+                }
                 return true
             }
             R.id.menu_bookmark -> binding.readView.curPage.let {

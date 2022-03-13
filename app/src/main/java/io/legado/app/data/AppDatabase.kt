@@ -21,7 +21,7 @@ val appDb by lazy {
     exportSchema = true,
     entities = [Book::class, BookGroup::class, BookSource::class, BookChapter::class,
         ReplaceRule::class, SearchBook::class, SearchKeyword::class, Cookie::class,
-        RssSource::class, Bookmark::class, RssArticle::class, RssReadRecord::class,
+        RssSource::class, Bookmark::class, Booknote::class,RssArticle::class, RssReadRecord::class,
         RssStar::class, TxtTocRule::class, ReadRecord::class, HttpTTS::class, Cache::class,
         RuleSub::class, KeyboardAssist::class],
     autoMigrations = [
@@ -41,6 +41,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract val searchKeywordDao: SearchKeywordDao
     abstract val rssSourceDao: RssSourceDao
     abstract val bookmarkDao: BookmarkDao
+    abstract val booknoteDao: BooknoteDao
     abstract val rssArticleDao: RssArticleDao
     abstract val rssStarDao: RssStarDao
     abstract val cookieDao: CookieDao

@@ -125,6 +125,7 @@ data class Book(
         return !isLocalBook() && type == 0
     }
 
+    //比较是否同一本书
     override fun equals(other: Any?): Boolean {
         if (other is Book) {
             return other.bookUrl == bookUrl
@@ -311,6 +312,13 @@ data class Book(
 
     fun createBookMark(): Bookmark {
         return Bookmark(
+            bookName = name,
+            bookAuthor = author,
+        )
+    }
+
+    fun createBookNote(): Booknote {
+        return Booknote(
             bookName = name,
             bookAuthor = author,
         )

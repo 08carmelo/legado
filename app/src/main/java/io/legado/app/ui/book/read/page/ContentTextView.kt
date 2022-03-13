@@ -9,6 +9,7 @@ import android.view.View
 import io.legado.app.R
 import io.legado.app.constant.PreferKey
 import io.legado.app.data.entities.Bookmark
+import io.legado.app.data.entities.Booknote
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.lib.theme.accentColor
 import io.legado.app.model.ReadBook
@@ -34,9 +35,15 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
             style = Paint.Style.FILL
         }
     }
+    private val selectedLine by lazy {
+        Paint().apply {
+            color = context.getCompatColor(R.color.md_red_700)
+            style = Paint.Style.FILL
+        }
+    }
     private var callBack: CallBack
     private val visibleRect = RectF()
-    private val selectStart = arrayOf(0, 0, 0)
+    private val selectStart = arrayOf(0, 0, 0)// ...,到顶行数,到左字数
     private val selectEnd = arrayOf(0, 0, 0)
     var textPage: TextPage = TextPage()
         private set
@@ -153,6 +160,9 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
             if (it.selected) {
                 canvas.drawRect(it.start, lineTop, it.end, lineBottom, selectedPaint)
             }
+            if (it.lineSelected){
+                canvas.drawRect(it.start,lineBottom,it.end,lineBottom+5,selectedLine)
+            }
         }
     }
 
@@ -238,7 +248,22 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                 activity?.showDialogFragment(PhotoDialog(textPage.chapterIndex, textChar.charData))
             } else {
                 textChar.selected = true
+                textChar.lineSelected = true
                 invalidate()
+                select(relativePos, lineIndex, charIndex)
+            }
+        }
+    }
+
+    fun findTapFirstTextChar(
+        x: Float,
+        y: Float,
+        select: (relativePage: Int, lineIndex: Int, charIndex: Int) -> Unit){
+        if (!selectAble) return
+        touch(x, y) { relativePos, textPage, _, lineIndex, _, charIndex, textChar ->
+            if (textChar.isImage) {
+                activity?.showDialogFragment(PhotoDialog(textPage.chapterIndex, textChar.charData))
+            } else {
                 select(relativePos, lineIndex, charIndex)
             }
         }
@@ -395,6 +420,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                             relativePos in selectStart[0] + 1 until selectEnd[0]
                         }
                     }
+                    textChar.lineSelected = textChar.selected
                     textChar.isSearchResult = textChar.selected && callBack.isSelectingSearchResult
                 }
             }
@@ -504,6 +530,22 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                     chapterIndex = page.chapterIndex
                     chapterPos = chapter.getReadLength(page.index) +
                             page.getSelectStartLength(selectStart[1], selectStart[2])
+                    chapterName = chapter.title
+                    bookText = selectedText
+                }
+            }
+        }
+        return null
+    }
+
+    fun createBooknote(): Booknote? {
+        val page = relativePage(selectStart[0])
+        page.getTextChapter()?.let { chapter ->
+            ReadBook.book?.let { book ->
+                return book.createBookNote().apply {
+                    chapterIndex = page.chapterIndex
+                    chapterPos = chapter.getReadLength(page.index) +
+                        page.getSelectStartLength(selectStart[1], selectStart[2])
                     chapterName = chapter.title
                     bookText = selectedText
                 }

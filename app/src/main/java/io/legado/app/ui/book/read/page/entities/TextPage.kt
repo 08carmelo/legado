@@ -11,6 +11,9 @@ import splitties.init.appCtx
 import java.text.DecimalFormat
 import kotlin.math.min
 
+/**
+ * 每页实体类
+ */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 data class TextPage(
     var index: Int = 0,
@@ -83,7 +86,7 @@ data class TextPage(
             val layout = StaticLayout(
                 text, ChapterProvider.contentPaint, visibleWidth,
                 Layout.Alignment.ALIGN_NORMAL, 1f, 0f, false
-            )
+            )//处理文字换行
             var y = (ChapterProvider.visibleHeight - layout.height) / 2f
             if (y < 0) y = 0f
             for (lineIndex in 0 until layout.lineCount) {
