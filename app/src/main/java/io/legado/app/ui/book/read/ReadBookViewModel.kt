@@ -52,7 +52,7 @@ class ReadBookViewModel(application: Application) : BaseViewModel(application) {
                 else -> ReadBook.upMsg(context.getString(R.string.no_book))
             }
         }.onFinally {
-            ReadBook.saveRead()
+            ReadBook.saveRead()//缓存书籍
         }
     }
 
@@ -74,7 +74,7 @@ class ReadBookViewModel(application: Application) : BaseViewModel(application) {
             }
             syncBookProgress(book)
         } else {
-            ReadBook.upData(book)
+            ReadBook.upData(book)//更新内存书籍
             isInitFinish = true
             if (ReadBook.chapterSize == 0) {
                 if (book.tocUrl.isEmpty()) {

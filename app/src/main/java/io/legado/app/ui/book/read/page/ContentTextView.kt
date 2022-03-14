@@ -56,6 +56,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         callBack = activity as CallBack
     }
 
+    //设置页面文字内容
     fun setContent(textPage: TextPage) {
         this.textPage = textPage
         invalidate()

@@ -116,6 +116,11 @@ android {
     sourceSets {
         // Adds exported schema location as test app assets.
         androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+
+        //为了解决viewbinding 报红问题
+        appDebug {
+            java.srcDirs = ['src/main/java', 'build/generated/data_binding_base_class_source_out/appDebug/out']
+        }
     }
     tasks.withType(JavaCompile) {
         //options.compilerArgs << "-Xlint:unchecked"

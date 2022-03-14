@@ -366,7 +366,7 @@ object ReadBook : CoroutineScope by MainScope() {
                     .getTextChapter(book, chapter, displayTitle, contents, chapterSize)
                 when (val offset = chapter.index - durChapterIndex) {
                     0 -> {
-                        curTextChapter = textChapter
+                        curTextChapter = textChapter//加载章节到ReadBook类内存
                         if (upContent) callBack?.upContent(offset, resetPageOffset)
                         callBack?.upMenuView()
                         curPageChanged()

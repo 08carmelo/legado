@@ -553,6 +553,7 @@ class ReadView(context: Context, attrs: AttributeSet) :
         }
     }
 
+    //更新阅读页面内容
     override fun upContent(relativePosition: Int, resetPageOffset: Boolean) {
         curPage.setContentDescription(pageFactory.curPage.text)
         if (isScroll && !callBack.isAutoPage) {
