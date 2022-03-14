@@ -117,13 +117,13 @@ class MainActivity : VMBaseActivity<ActivityMainBinding, MainViewModel>(),
     private fun upVersion() {
         if (LocalConfig.versionCode != appInfo.versionCode) {
             LocalConfig.versionCode = appInfo.versionCode
-            if (LocalConfig.isFirstOpenApp) {
-                val text = String(assets.open("help/appHelp.md").readBytes())
-                showDialogFragment(TextDialog(text, TextDialog.Mode.MD))
-            } else if (!BuildConfig.DEBUG) {
-                val log = String(assets.open("updateLog.md").readBytes())
-                showDialogFragment(TextDialog(log, TextDialog.Mode.MD))
-            }
+//            if (LocalConfig.isFirstOpenApp) {
+//                val text = String(assets.open("help/appHelp.md").readBytes())
+//                showDialogFragment(TextDialog(text, TextDialog.Mode.MD))
+//            } else if (!BuildConfig.DEBUG) {
+//                val log = String(assets.open("updateLog.md").readBytes())
+//                showDialogFragment(TextDialog(log, TextDialog.Mode.MD))
+//            }
             viewModel.upVersion()
         }
     }

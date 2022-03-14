@@ -11,6 +11,7 @@ import io.legado.app.data.appDb
 import io.legado.app.data.entities.Booknote
 import io.legado.app.databinding.FragmentBooknoteBinding
 import io.legado.app.lib.theme.primaryColor
+import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.widget.recycler.UpLinearLayoutManager
 import io.legado.app.ui.widget.recycler.VerticalDivider
 import io.legado.app.utils.setEdgeEffectColor
@@ -72,10 +73,11 @@ class BooknoteFragment : VMBaseFragment<TocViewModel>(R.layout.fragment_booknote
 
     override fun onClick(booknote: Booknote) {
         activity?.run {
-//            setResult(Activity.RESULT_OK, Intent().apply {
-//                putExtra("index", booknote.chapterIndex)
-//                putExtra("chapterPos", booknote.chapterPos)
-//            })
+            ReadBookActivity.temp = booknote
+            setResult(Activity.RESULT_OK, Intent().apply {
+                putExtra("index", booknote.chapterIndex)
+                putExtra("chapterPos", booknote.chapterPos)
+            })
             finish()
         }
     }

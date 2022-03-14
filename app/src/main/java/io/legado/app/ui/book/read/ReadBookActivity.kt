@@ -80,10 +80,25 @@ class ReadBookActivity : BaseReadBookActivity(),
     BookNoteDialog.Callback
 {
 
+    companion object {
+        // 临时办法
+        var temp: Booknote? = null
+    }
+
     private val tocActivity =
         registerForActivityResult(TocActivityResult()) {
             it?.let {
-                viewModel.openChapter(it.first, it.second)
+                viewModel.openChapter(it.first, it.second, success = {
+                    // 加载成功后还原笔记
+                    if (temp!= null) {
+                        mBooknote = temp
+                        findViewById<ReadView>(R.id.read_view)?.highlightText(mBooknote!!.firstRelativePage
+                            , mBooknote!!.lineStart
+                            ,mBooknote!!.charStart
+                            ,mBooknote!!.lineEnd,mBooknote!!.charEnd)
+                    }
+
+                })
             }
         }
     private val sourceEditActivity =

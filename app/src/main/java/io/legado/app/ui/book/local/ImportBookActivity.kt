@@ -149,7 +149,6 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
         val lastPath = AppConfig.importBookPath
         when {
             lastPath.isNullOrEmpty() -> {
-                binding.tvEmptyMsg.visible()
                 selectFolder.launch()
             }
             lastPath.isContentScheme() -> {
@@ -157,7 +156,6 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
                 kotlin.runCatching {
                     val doc = DocumentFile.fromTreeUri(this, rootUri)
                     if (doc == null || doc.name.isNullOrEmpty()) {
-                        binding.tvEmptyMsg.visible()
                         selectFolder.launch()
                     } else {
                         subDocs.clear()
@@ -165,12 +163,10 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
                         upDocs(rootDoc!!)
                     }
                 }.onFailure {
-                    binding.tvEmptyMsg.visible()
                     selectFolder.launch()
                 }
             }
             Build.VERSION.SDK_INT > Build.VERSION_CODES.Q -> {
-                binding.tvEmptyMsg.visible()
                 selectFolder.launch()
             }
             else -> initRootPath(lastPath)
@@ -178,7 +174,6 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
     }
 
     private fun initRootPath(path: String) {
-        binding.tvEmptyMsg.visible()
         PermissionsCompat.Builder(this)
             .addPermissions(*Permissions.Group.STORAGE)
             .rationale(R.string.tip_perm_request_storage)
@@ -188,7 +183,6 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
                     subDocs.clear()
                     upPath()
                 }.onFailure {
-                    binding.tvEmptyMsg.visible()
                     selectFolder.launch()
                 }
             }
@@ -212,7 +206,6 @@ class ImportBookActivity : VMBaseActivity<ActivityImportBookBinding, ImportBookV
     }
 
     private fun upDocs(rootDoc: FileDoc) {
-        binding.tvEmptyMsg.gone()
         var path = rootDoc.name + File.separator
         var lastDoc = rootDoc
         for (doc in subDocs) {

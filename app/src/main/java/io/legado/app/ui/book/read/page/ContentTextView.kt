@@ -51,7 +51,8 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
     //滚动参数
     private val pageFactory: TextPageFactory get() = callBack.pageFactory
     private var pageOffset = 0
-
+    // 只绘制下划线
+    var onlyLine = false
     init {
         callBack = activity as CallBack
     }
@@ -360,6 +361,20 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         }
     }
 
+    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int) {
+        selectStartMoveIndex(relativePage,lineIndex,charIndex)
+        postDelayed({
+            cancelSelect()
+        },70)
+    }
+
+    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int) {
+        selectEndMoveIndex(relativePage,lineIndex,charIndex)
+        postDelayed({
+            cancelSelect()
+        },70)
+    }
+
     /**
      * 选择开始文字
      */
@@ -452,7 +467,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
 
     fun cancelNote(){
         val last = if (callBack.isScroll) 2 else 0
-        for (relativePos in 0..last) {z
+        for (relativePos in 0..last) {
             relativePage(relativePos).textLines.forEach { textLine ->
                 textLine.textChars.forEach {
                     it.lineSelected = false
@@ -561,6 +576,12 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                         page.getSelectStartLength(selectStart[1], selectStart[2])
                     chapterName = chapter.title
                     bookText = selectedText
+                    // 选中文字的位置
+                    firstRelativePage = selectStart[0]
+                    lineStart = selectStart[1]
+                    charStart = selectStart[2]
+                    lineEnd = selectEnd[1]
+                    charEnd = selectEnd[2]
                 }
             }
         }

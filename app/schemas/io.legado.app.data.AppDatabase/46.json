@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 46,
-    "identityHash": "54ec0db6682b837d64269f30fc1adbe7",
+    "identityHash": "1a15310acb6057b402947cc232c63041",
     "entities": [
       {
         "tableName": "books",
@@ -1142,7 +1142,7 @@
       },
       {
         "tableName": "booknotes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`time` INTEGER NOT NULL, `bookName` TEXT NOT NULL, `bookAuthor` TEXT NOT NULL, `chapterIndex` INTEGER NOT NULL, `chapterPos` INTEGER NOT NULL, `chapterName` TEXT NOT NULL, `bookText` TEXT NOT NULL, `content` TEXT NOT NULL, PRIMARY KEY(`time`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`time` INTEGER NOT NULL, `bookName` TEXT NOT NULL, `bookAuthor` TEXT NOT NULL, `chapterIndex` INTEGER NOT NULL, `chapterPos` INTEGER NOT NULL, `chapterName` TEXT NOT NULL, `bookText` TEXT NOT NULL, `firstRelativePage` INTEGER NOT NULL, `lineStart` INTEGER NOT NULL, `charStart` INTEGER NOT NULL, `lineEnd` INTEGER NOT NULL, `charEnd` INTEGER NOT NULL, `content` TEXT NOT NULL, PRIMARY KEY(`time`))",
         "fields": [
           {
             "fieldPath": "time",
@@ -1184,6 +1184,36 @@
             "fieldPath": "bookText",
             "columnName": "bookText",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstRelativePage",
+            "columnName": "firstRelativePage",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lineStart",
+            "columnName": "lineStart",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charStart",
+            "columnName": "charStart",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lineEnd",
+            "columnName": "lineEnd",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "charEnd",
+            "columnName": "charEnd",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -1685,7 +1715,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '54ec0db6682b837d64269f30fc1adbe7')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a15310acb6057b402947cc232c63041')"
     ]
   }
 }
