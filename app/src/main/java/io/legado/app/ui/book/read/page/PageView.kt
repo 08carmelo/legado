@@ -278,6 +278,7 @@ class PageView(context: Context) : FrameLayout(context) {
         binding.contentTextView.selectStartMove(x, y - headerHeight)
     }
 
+    //选择文字开始
     fun selectStartMoveIndex(relativePage: Int, lineIndex: Int, charIndex: Int) {
         binding.contentTextView.selectStartMoveIndex(relativePage, lineIndex, charIndex)
     }
@@ -290,6 +291,7 @@ class PageView(context: Context) : FrameLayout(context) {
         binding.contentTextView.selectEndMove(x, y - headerHeight)
     }
 
+    //选择文字结束
     fun selectEndMoveIndex(relativePage: Int, lineIndex: Int, charIndex: Int) {
         binding.contentTextView.selectEndMoveIndex(relativePage, lineIndex, charIndex)
     }

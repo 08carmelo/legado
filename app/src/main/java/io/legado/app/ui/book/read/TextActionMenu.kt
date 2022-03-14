@@ -37,6 +37,8 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
     private val menuItems: List<MenuItemImpl>
     private val visibleMenuItems = arrayListOf<MenuItemImpl>()
     private val moreMenuItems = arrayListOf<MenuItemImpl>()
+
+    private var isTouchOutDismiss = true
     private val ttsListener by lazy {
         TTSUtteranceListener()
     }
@@ -68,6 +70,12 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
                 binding.recyclerViewMore.gone()
                 adapter.setItems(visibleMenuItems)
                 binding.recyclerView.visible()
+            }
+
+            if (isTouchOutDismiss){
+                isTouchOutDismiss = true
+                //为了处理点击外部把划线去除
+                callBack.onTouchOut()//点击外围回调
             }
         }
         binding.ivMenuMore.setOnClickListener {
@@ -177,6 +185,7 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
 
         override fun registerListener(holder: ItemViewHolder, binding: ItemTextBinding) {
             holder.itemView.setOnClickListener {
+                isTouchOutDismiss = false
                 getItem(holder.layoutPosition)?.let {
                     if (!callBack.onMenuItemSelected(it.itemId)) {
                         onMenuItemSelected(it)
@@ -319,5 +328,7 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
         fun onMenuItemSelected(itemId: Int): Boolean
 
         fun onMenuActionFinally()
+
+        fun onTouchOut()
     }
 }

@@ -92,7 +92,7 @@ class ReadBookActivity : BaseReadBookActivity(),
                     // 加载成功后还原笔记
                     if (temp!= null) {
                         mBooknote = temp
-                        findViewById<ReadView>(R.id.read_view)?.highlightText(mBooknote!!.firstRelativePage
+                        binding.readView.highlightText(mBooknote!!.firstRelativePage
                             , mBooknote!!.lineStart
                             ,mBooknote!!.charStart
                             ,mBooknote!!.lineEnd,mBooknote!!.charEnd)
@@ -679,6 +679,12 @@ class ReadBookActivity : BaseReadBookActivity(),
         textActionMenu.dismiss()
         readView.curPage.cancelSelect()
         readView.isTextSelected = false
+    }
+
+    override fun onTouchOut() {
+        binding.run {
+            readView.curPage.cancelNote()
+        }
     }
 
     /**
