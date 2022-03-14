@@ -73,10 +73,10 @@ class BooknoteFragment : VMBaseFragment<TocViewModel>(R.layout.fragment_booknote
 
     override fun onClick(booknote: Booknote) {
         activity?.run {
-            ReadBookActivity.temp = booknote
             setResult(Activity.RESULT_OK, Intent().apply {
                 putExtra("index", booknote.chapterIndex)
                 putExtra("chapterPos", booknote.chapterPos)
+                putExtra("pageIndex", booknote.pageIndex)
             })
             finish()
         }

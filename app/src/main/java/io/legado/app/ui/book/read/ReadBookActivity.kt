@@ -80,22 +80,28 @@ class ReadBookActivity : BaseReadBookActivity(),
     BookNoteDialog.Callback
 {
 
-    companion object {
-        // 临时办法
-        var temp: Booknote? = null
-    }
-
     private val tocActivity =
         registerForActivityResult(TocActivityResult()) {
             it?.let {
-                viewModel.openChapter(it.first, it.second, success = {
+                viewModel.openChapter(it.index, it.chapterPos, success = {
+
+                    val booknotes = appDb.booknoteDao.getByBook(ReadBook.book?.name?:"",ReadBook.book?.author?:"")
+
                     // 加载成功后还原笔记
-                    if (temp!= null) {
-                        mBooknote = temp
-                        binding.readView.highlightText(mBooknote!!.firstRelativePage
-                            , mBooknote!!.lineStart
-                            ,mBooknote!!.charStart
-                            ,mBooknote!!.lineEnd,mBooknote!!.charEnd)
+                    if (booknotes.isNotEmpty()) {
+                        mBooknotes.clear()
+                        booknotes.forEach { booknote ->
+                            if (it.pageIndex == booknote.pageIndex)
+                                mBooknotes.add(booknote)
+                        }
+                        if (mBooknotes.isNotEmpty()){
+                            mBooknotes.forEachIndexed { index, booknote ->
+                                binding.readView.highlightText(booknote!!.firstRelativePage
+                                    , booknote.lineStart
+                                    ,booknote.charStart
+                                    ,booknote.lineEnd,booknote.charEnd,index,mBooknotes.size)
+                            }
+                        }
                     }
 
                 })
@@ -614,7 +620,8 @@ class ReadBookActivity : BaseReadBookActivity(),
      * 当前选择的文本
      */
     override val selectedText: String get() = binding.readView.curPage.selectedText
-    var mBooknote :Booknote? = null
+
+    var mBooknotes = arrayListOf<Booknote?>()
     /**
      * 文本选择菜单操作
      */
@@ -626,7 +633,7 @@ class ReadBookActivity : BaseReadBookActivity(),
                     if (booknote == null) {
                         toastOnUi("创建笔记失败")
                     } else {
-                        mBooknote = booknote
+                        mBooknotes.add(booknote)
                         showDialogFragment(BookNoteDialog(booknote))
                     }
                     return true

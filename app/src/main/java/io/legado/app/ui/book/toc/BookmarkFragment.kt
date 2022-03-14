@@ -76,7 +76,6 @@ class BookmarkFragment : VMBaseFragment<TocViewModel>(R.layout.fragment_bookmark
 
     override fun onClick(bookmark: Bookmark) {
         activity?.run {
-            ReadBookActivity.temp = null
             setResult(Activity.RESULT_OK, Intent().apply {
                 putExtra("index", bookmark.chapterIndex)
                 putExtra("chapterPos", bookmark.chapterPos)

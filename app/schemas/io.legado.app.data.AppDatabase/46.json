@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 46,
-    "identityHash": "1a15310acb6057b402947cc232c63041",
+    "identityHash": "9c601add2db990e1675af36c04c18ae5",
     "entities": [
       {
         "tableName": "books",
@@ -1142,7 +1142,7 @@
       },
       {
         "tableName": "booknotes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`time` INTEGER NOT NULL, `bookName` TEXT NOT NULL, `bookAuthor` TEXT NOT NULL, `chapterIndex` INTEGER NOT NULL, `chapterPos` INTEGER NOT NULL, `chapterName` TEXT NOT NULL, `bookText` TEXT NOT NULL, `firstRelativePage` INTEGER NOT NULL, `lineStart` INTEGER NOT NULL, `charStart` INTEGER NOT NULL, `lineEnd` INTEGER NOT NULL, `charEnd` INTEGER NOT NULL, `content` TEXT NOT NULL, PRIMARY KEY(`time`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`time` INTEGER NOT NULL, `bookName` TEXT NOT NULL, `bookAuthor` TEXT NOT NULL, `chapterIndex` INTEGER NOT NULL, `pageIndex` INTEGER NOT NULL, `chapterPos` INTEGER NOT NULL, `chapterName` TEXT NOT NULL, `bookText` TEXT NOT NULL, `firstRelativePage` INTEGER NOT NULL, `lineStart` INTEGER NOT NULL, `charStart` INTEGER NOT NULL, `lineEnd` INTEGER NOT NULL, `charEnd` INTEGER NOT NULL, `content` TEXT NOT NULL, PRIMARY KEY(`time`))",
         "fields": [
           {
             "fieldPath": "time",
@@ -1165,6 +1165,12 @@
           {
             "fieldPath": "chapterIndex",
             "columnName": "chapterIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pageIndex",
+            "columnName": "pageIndex",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -1715,7 +1721,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a15310acb6057b402947cc232c63041')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9c601add2db990e1675af36c04c18ae5')"
     ]
   }
 }

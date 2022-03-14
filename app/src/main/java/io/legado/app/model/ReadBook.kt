@@ -31,8 +31,8 @@ object ReadBook : CoroutineScope by MainScope() {
     var inBookshelf = false
     var tocChanged = false
     var chapterSize = 0
-    var durChapterIndex = 0
-    var durChapterPos = 0
+    var durChapterIndex = 0//第几章
+    var durChapterPos = 0//文字在当前章节第几个
     var isLocalBook = true
     var prevTextChapter: TextChapter? = null
     var curTextChapter: TextChapter? = null

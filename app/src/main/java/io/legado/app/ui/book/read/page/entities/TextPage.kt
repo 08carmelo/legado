@@ -79,6 +79,7 @@ data class TextPage(
         }
     }
 
+    //把文字放到TextLine->TextChar
     @Suppress("DEPRECATION")
     fun format(): TextPage {
         if (textLines.isEmpty() && ChapterProvider.viewWidth > 0) {

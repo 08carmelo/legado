@@ -57,9 +57,9 @@ class BookInfoActivity :
             viewModel.bookData.value?.let { book ->
                 launch {
                     withContext(IO) {
-                        viewModel.durChapterIndex = it.first
-                        book.durChapterIndex = it.first
-                        book.durChapterPos = it.second
+                        viewModel.durChapterIndex = it.index
+                        book.durChapterIndex = it.index
+                        book.durChapterPos = it.chapterPos
                         appDb.bookDao.update(book)
                     }
                     viewModel.chapterListData.value?.let { chapterList ->

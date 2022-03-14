@@ -4,7 +4,7 @@ import io.legado.app.model.ReadBook
 import io.legado.app.ui.book.read.page.api.DataSource
 import io.legado.app.ui.book.read.page.api.PageFactory
 import io.legado.app.ui.book.read.page.entities.TextPage
-
+//TextPage 工厂类
 class TextPageFactory(dataSource: DataSource) : PageFactory<TextPage>(dataSource) {
 
     override fun hasPrev(): Boolean = with(dataSource) {

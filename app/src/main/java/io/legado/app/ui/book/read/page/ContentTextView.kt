@@ -35,7 +35,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
             style = Paint.Style.FILL
         }
     }
-    private val selectedLine by lazy {
+    private val selectedLinePaint by lazy {
         Paint().apply {
             color = context.getCompatColor(R.color.md_red_700)
             style = Paint.Style.FILL
@@ -43,8 +43,10 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
     }
     private var callBack: CallBack
     private val visibleRect = RectF()
-    private val selectStart = arrayOf(0, 0, 0)// ...,到顶行数,到左字数
+    private val selectStart = arrayOf(0, 0, 0)// 页面相对位置,到顶行数,到左字数
+    private val selectStartLines = arrayListOf(arrayOf(0,0,0))//多笔记
     private val selectEnd = arrayOf(0, 0, 0)
+    private val selectEndLines = arrayListOf(arrayOf(0,0,0))//多笔记
     var textPage: TextPage = TextPage()
         private set
 
@@ -76,7 +78,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         super.onSizeChanged(w, h, oldw, oldh)
         ChapterProvider.upViewSize(w, h)
         upVisibleRect()
-        textPage.format()
+        textPage.format()//每页文字生成TextLine->TextChar
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -90,12 +92,14 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
      */
     private fun drawPage(canvas: Canvas) {
         var relativeOffset = relativeOffset(0)
+        //绘制当前页面
         textPage.textLines.forEach { textLine ->
             draw(canvas, textLine, relativeOffset)
         }
         if (!callBack.isScroll) return
         //滚动翻页
         if (!pageFactory.hasNext()) return
+        //如果是滚动模式，绘制下一页
         val nextPage = relativePage(1)
         relativeOffset = relativeOffset(1)
         nextPage.textLines.forEach { textLine ->
@@ -104,12 +108,14 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         if (!pageFactory.hasNextPlus()) return
         relativeOffset = relativeOffset(2)
         if (relativeOffset < ChapterProvider.visibleHeight) {
+            //如果是滚动模式，绘制下下一页
             relativePage(2).textLines.forEach { textLine ->
                 draw(canvas, textLine, relativeOffset)
             }
         }
     }
 
+    //绘制每一行文字
     private fun draw(
         canvas: Canvas,
         textLine: TextLine,
@@ -163,7 +169,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                 canvas.drawRect(it.start, lineTop, it.end, lineBottom, selectedPaint)
             }
             if (it.lineSelected){
-                canvas.drawRect(it.start,lineBottom,it.end,lineBottom+5,selectedLine)
+                canvas.drawRect(it.start,lineBottom,it.end,lineBottom+5,selectedLinePaint)
             }
         }
     }
@@ -232,6 +238,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         invalidate()
     }
 
+    //重置距离顶部距离
     fun resetPageOffset() {
         pageOffset = 0
     }
@@ -361,18 +368,22 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         }
     }
 
-    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int) {
-        selectStartMoveIndex(relativePage,lineIndex,charIndex)
-        postDelayed({
-            cancelSelect()
-        },70)
+    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
+        if (index == 0){
+            selectStartLines.clear()
+            selectEndLines.clear()
+        }
+        selectStartLines.add(arrayOf(relativePage, lineIndex, charIndex))
+        val textLine = relativePage(relativePage).getLine(lineIndex)
+        val textChar = textLine.getTextChar(charIndex)
+        upSelectLineChars(index)
     }
 
-    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int) {
-        selectEndMoveIndex(relativePage,lineIndex,charIndex)
-        postDelayed({
-            cancelSelect()
-        },70)
+    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
+        selectEndLines.add(arrayOf(relativePage, lineIndex, charIndex))
+        val textLine = relativePage(relativePage).getLine(lineIndex)
+        val textChar = textLine.getTextChar(charIndex)
+        upSelectLineChars(index)
     }
 
     /**
@@ -382,6 +393,8 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         selectStart[0] = relativePage
         selectStart[1] = lineIndex
         selectStart[2] = charIndex
+
+//        selectStartLines.add(selectStart)
         val textLine = relativePage(relativePage).getLine(lineIndex)
         val textChar = textLine.getTextChar(charIndex)
         upSelectedStart(
@@ -399,6 +412,8 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         selectEnd[0] = relativePage
         selectEnd[1] = lineIndex
         selectEnd[2] = charIndex
+
+//        selectEndLines.add(selectEnd)
         val textLine = relativePage(relativePage).getLine(lineIndex)
         val textChar = textLine.getTextChar(charIndex)
         upSelectedEnd(textChar.end, textLine.lineBottom + relativeOffset(relativePage))
@@ -438,6 +453,45 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
                     }
                     textChar.lineSelected = textChar.selected
                     textChar.isSearchResult = textChar.selected && callBack.isSelectingSearchResult
+                }
+            }
+        }
+        invalidate()
+    }
+
+    private fun upSelectLineChars(index: Int) {
+        if (index >= selectStartLines.size || index >= selectEndLines.size) return
+        val last = if (callBack.isScroll) 2 else 0
+        for (relativePos in 0..last) {
+            for ((lineIndex, textLine) in relativePage(relativePos).textLines.withIndex()) {
+                for ((charIndex, textChar) in textLine.textChars.withIndex()) {
+                    if (textChar.lineSelected) continue
+                    textChar.lineSelected = when {
+                        relativePos == selectStartLines[index][0]
+                            && relativePos == selectEndLines[index][0]
+                            && lineIndex == selectStartLines[index][1]
+                            && lineIndex == selectEndLines[index][1] -> {
+                            charIndex in selectStartLines[index][2]..selectEndLines[index][2]
+                        }
+                        relativePos == selectStartLines[index][0] && lineIndex == selectStartLines[index][1] -> {
+                            charIndex >= selectStartLines[index][2]
+                        }
+                        relativePos == selectEndLines[index][0] && lineIndex == selectEndLines[index][1] -> {
+                            charIndex <= selectEndLines[index][2]
+                        }
+                        relativePos == selectStartLines[index][0] && relativePos == selectEndLines[index][0] -> {
+                            lineIndex in (selectStartLines[index][1] + 1) until selectEndLines[index][1]
+                        }
+                        relativePos == selectStartLines[index][0] -> {
+                            lineIndex > selectStartLines[index][1]
+                        }
+                        relativePos == selectEndLines[index][0] -> {
+                            lineIndex < selectEndLines[index][1]
+                        }
+                        else -> {
+                            relativePos in selectStartLines[index][0] + 1 until selectEndLines[index][0]
+                        }
+                    }
                 }
             }
         }
@@ -572,6 +626,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
             ReadBook.book?.let { book ->
                 return book.createBookNote().apply {
                     chapterIndex = page.chapterIndex
+                    pageIndex = page.index
                     chapterPos = chapter.getReadLength(page.index) +
                         page.getSelectStartLength(selectStart[1], selectStart[2])
                     chapterName = chapter.title
@@ -596,6 +651,7 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         return select[0] * 10000000 + select[1] * 100000 + select[2]
     }
 
+    //滚动模式第一第二第三页相对顶部偏移高度
     private fun relativeOffset(relativePos: Int): Float {
         return when (relativePos) {
             0 -> pageOffset.toFloat()

@@ -287,8 +287,6 @@ class ReadView(context: Context, attrs: AttributeSet) :
                 val page = if (isScroll) curPage.relativePage(relativePage) else curPage.textPage
 
                 with(page){
-                    var start: Int
-                    var end: Int
                     // 单行
                     textChar = textLines[lineIndex].getTextChar(charIndex)
 
@@ -301,7 +299,6 @@ class ReadView(context: Context, attrs: AttributeSet) :
                         }
                     }
                     selectedContent = sb.toString()
-
                 }
 
             }
@@ -421,21 +418,21 @@ class ReadView(context: Context, attrs: AttributeSet) :
     /**
      * 高亮划线
      */
-    fun highlightText(firstRelativePage:Int, lineStart: Int, start: Int, lineEnd: Int, end: Int) {
+    fun highlightText(firstRelativePage:Int, lineStart: Int, start: Int, lineEnd: Int, end: Int,index:Int,size:Int) {
         this.firstRelativePage = firstRelativePage
-        curPage.selectStartMoveIndex2(firstRelativePage, lineStart, start)
-        curPage.selectEndMoveIndex2(firstRelativePage, lineEnd, end)
+        curPage.selectStartMoveIndex2(firstRelativePage, lineStart, start,index,size)
+        curPage.selectEndMoveIndex2(firstRelativePage, lineEnd, end,index,size)
     }
 
     /**
      * 单击
      */
     private fun onSingleTapUp() {
-        findTapFirstTextChar {textChar, selectedContent ->
+        findTapFirstTextChar { textChar, selectedContent ->
             if (textChar?.lineSelected == true){
                 AlertDialog.Builder(context).setIcon(R.mipmap.ic_launcher)
                     .setTitle("笔记内容")
-                    .setMessage((activity as ReadBookActivity).mBooknote?.content)
+                    .setMessage((activity as ReadBookActivity).mBooknotes?.get(0)?.content)
                     .setPositiveButton("确定"
                     ) { dialogInterface, i ->
                         dialogInterface.dismiss()
