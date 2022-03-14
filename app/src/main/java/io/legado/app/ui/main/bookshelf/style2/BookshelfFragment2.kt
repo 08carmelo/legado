@@ -103,7 +103,6 @@ class BookshelfFragment2 : BaseBookshelfFragment(R.layout.fragment_bookshelf1),
         if (data != bookGroups) {
             bookGroups = data
             booksAdapter.notifyDataSetChanged()
-            binding.tvEmptyMsg.isGone = getItemCount() > 0
         }
     }
 
@@ -147,7 +146,6 @@ class BookshelfFragment2 : BaseBookshelfFragment(R.layout.fragment_bookshelf1),
             }.conflate().collect { list ->
                 books = list
                 booksAdapter.notifyDataSetChanged()
-                binding.tvEmptyMsg.isGone = getItemCount() > 0
                 delay(100)
             }
         }

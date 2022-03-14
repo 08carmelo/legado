@@ -130,7 +130,6 @@ class ExploreFragment : VMBaseFragment<ExploreViewModel>(R.layout.fragment_explo
             }.catch {
                 AppLog.put("发现界面更新数据出错", it)
             }.conflate().collect {
-                binding.tvEmptyMsg.isGone = it.isNotEmpty() || searchView.query.isNotEmpty()
                 adapter.setItems(it, diffItemCallBack)
             }
         }

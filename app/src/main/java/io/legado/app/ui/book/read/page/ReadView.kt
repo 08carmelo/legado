@@ -419,6 +419,15 @@ class ReadView(context: Context, attrs: AttributeSet) :
     }
 
     /**
+     * 高亮划线
+     */
+    fun highlightText(firstRelativePage:Int, lineStart: Int, start: Int, lineEnd: Int, end: Int) {
+        this.firstRelativePage = firstRelativePage
+        curPage.selectStartMoveIndex2(firstRelativePage, lineStart, start)
+        curPage.selectEndMoveIndex2(firstRelativePage, lineEnd, end)
+    }
+
+    /**
      * 单击
      */
     private fun onSingleTapUp() {

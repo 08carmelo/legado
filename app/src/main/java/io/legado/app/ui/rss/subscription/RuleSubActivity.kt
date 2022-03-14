@@ -63,7 +63,6 @@ class RuleSubActivity : BaseActivity<ActivityRuleSubBinding>(),
     private fun initData() {
         launch {
             appDb.ruleSubDao.flowAll().conflate().collect {
-                binding.tvEmptyMsg.isGone = it.isNotEmpty()
                 adapter.setItems(it)
             }
         }

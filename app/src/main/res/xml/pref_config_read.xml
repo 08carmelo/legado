@@ -98,7 +98,7 @@
         app:isBottomBackground="true" />
 
     <io.legado.app.ui.widget.prefs.SwitchPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:title="@string/show_brightness_view"
         android:key="showBrightnessView"
         app:iconSpaceReserved="false"

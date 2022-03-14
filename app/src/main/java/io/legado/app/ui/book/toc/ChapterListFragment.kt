@@ -16,6 +16,7 @@ import io.legado.app.databinding.FragmentChapterListBinding
 import io.legado.app.help.BookHelp
 import io.legado.app.lib.theme.bottomBackground
 import io.legado.app.lib.theme.getPrimaryTextColor
+import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.widget.recycler.UpLinearLayoutManager
 import io.legado.app.ui.widget.recycler.VerticalDivider
 import io.legado.app.utils.ColorUtils
@@ -151,6 +152,7 @@ class ChapterListFragment : VMBaseFragment<TocViewModel>(R.layout.fragment_chapt
 
     override fun openChapter(bookChapter: BookChapter) {
         activity?.run {
+            ReadBookActivity.temp = null
             setResult(RESULT_OK, Intent().putExtra("index", bookChapter.index))
             finish()
         }

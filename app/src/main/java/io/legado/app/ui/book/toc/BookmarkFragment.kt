@@ -11,6 +11,7 @@ import io.legado.app.data.appDb
 import io.legado.app.data.entities.Bookmark
 import io.legado.app.databinding.FragmentBookmarkBinding
 import io.legado.app.lib.theme.primaryColor
+import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.widget.recycler.UpLinearLayoutManager
 import io.legado.app.ui.widget.recycler.VerticalDivider
 import io.legado.app.utils.setEdgeEffectColor
@@ -75,6 +76,7 @@ class BookmarkFragment : VMBaseFragment<TocViewModel>(R.layout.fragment_bookmark
 
     override fun onClick(bookmark: Bookmark) {
         activity?.run {
+            ReadBookActivity.temp = null
             setResult(Activity.RESULT_OK, Intent().apply {
                 putExtra("index", bookmark.chapterIndex)
                 putExtra("chapterPos", bookmark.chapterPos)

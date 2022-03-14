@@ -124,7 +124,6 @@ class BooksFragment() : BaseFragment(R.layout.fragment_books),
             }.flowOn(Dispatchers.Default).catch {
                 AppLog.put("书架更新出错", it)
             }.conflate().collect { list ->
-                binding.tvEmptyMsg.isGone = list.isNotEmpty()
                 booksAdapter.setItems(list)
                 delay(100)
             }
