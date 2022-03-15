@@ -278,32 +278,30 @@ class ReadView(context: Context, attrs: AttributeSet) :
         pageDelegate?.onScroll()
     }
 
-    private fun findTapFirstTextChar(block:(TextChar?,String?) -> Unit){
+    private fun findTapFirstTextChar(block:(TextChar?,Int) -> Unit){
 
         var textChar: TextChar? = null
-        var selectedContent:String? = null
+        var index:Int = 0//选择是哪个笔记下标
         curPage.runCatching {
             curPage.findTapFirstTextChar(startX,startY){ relativePage, lineIndex, charIndex ->
                 val page = if (isScroll) curPage.relativePage(relativePage) else curPage.textPage
-
                 with(page){
                     // 单行
                     textChar = textLines[lineIndex].getTextChar(charIndex)
+                }
 
-                    val sb = StringBuffer()
-                    textLines.forEach {textLine ->
-                        textLine.textChars.forEach{textChar ->
-                            if (textChar.lineSelected){
-                                sb.append(textChar.charData)
-                            }
-                        }
+                val booknotes = (activity as ReadBookActivity).mBooknotes
+                booknotes.forEachIndexed { i, booknote ->
+                    if ((lineIndex >= booknote?.lineStart?:0 && lineIndex <=booknote?.lineEnd?:0)
+                        &&(charIndex >=booknote?.charStart?:0 && charIndex <=booknote?.charEnd?:0)){
+                        index = i
+                        return@forEachIndexed
                     }
-                    selectedContent = sb.toString()
                 }
 
             }
         }
-        block.invoke(textChar,selectedContent)
+        block.invoke(textChar,index)
     }
 
     /**
@@ -418,21 +416,21 @@ class ReadView(context: Context, attrs: AttributeSet) :
     /**
      * 高亮划线
      */
-    fun highlightText(firstRelativePage:Int, lineStart: Int, start: Int, lineEnd: Int, end: Int,index:Int,size:Int) {
+    fun highlightText(firstRelativePage:Int, lineStart: Int, start: Int, lineEnd: Int, end: Int,index:Int) {
         this.firstRelativePage = firstRelativePage
-        curPage.selectStartMoveIndex2(firstRelativePage, lineStart, start,index,size)
-        curPage.selectEndMoveIndex2(firstRelativePage, lineEnd, end,index,size)
+        curPage.selectStartMoveIndex2(firstRelativePage, lineStart, start,index)
+        curPage.selectEndMoveIndex2(firstRelativePage, lineEnd, end,index)
     }
 
     /**
      * 单击
      */
     private fun onSingleTapUp() {
-        findTapFirstTextChar { textChar, selectedContent ->
+        findTapFirstTextChar { textChar,index ->
             if (textChar?.lineSelected == true){
                 AlertDialog.Builder(context).setIcon(R.mipmap.ic_launcher)
                     .setTitle("笔记内容")
-                    .setMessage((activity as ReadBookActivity).mBooknotes?.get(0)?.content)
+                    .setMessage((activity as ReadBookActivity).mBooknotes?.get(index)?.content)
                     .setPositiveButton("确定"
                     ) { dialogInterface, i ->
                         dialogInterface.dismiss()

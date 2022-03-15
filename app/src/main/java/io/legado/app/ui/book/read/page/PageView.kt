@@ -283,8 +283,8 @@ class PageView(context: Context) : FrameLayout(context) {
         binding.contentTextView.selectStartMoveIndex(relativePage, lineIndex, charIndex)
     }
 
-    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
-        binding.contentTextView.selectStartMoveIndex2(relativePage, lineIndex, charIndex,index,size)
+    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int) {
+        binding.contentTextView.selectStartMoveIndex2(relativePage, lineIndex, charIndex,index)
     }
 
     fun selectEndMove(x: Float, y: Float) {
@@ -296,8 +296,8 @@ class PageView(context: Context) : FrameLayout(context) {
         binding.contentTextView.selectEndMoveIndex(relativePage, lineIndex, charIndex)
     }
 
-    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
-        binding.contentTextView.selectEndMoveIndex2(relativePage, lineIndex, charIndex,index,size)
+    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int) {
+        binding.contentTextView.selectEndMoveIndex2(relativePage, lineIndex, charIndex,index)
     }
 
     fun cancelSelect() {

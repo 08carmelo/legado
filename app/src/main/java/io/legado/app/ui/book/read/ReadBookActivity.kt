@@ -99,7 +99,7 @@ class ReadBookActivity : BaseReadBookActivity(),
                                 binding.readView.highlightText(booknote!!.firstRelativePage
                                     , booknote.lineStart
                                     ,booknote.charStart
-                                    ,booknote.lineEnd,booknote.charEnd,index,mBooknotes.size)
+                                    ,booknote.lineEnd,booknote.charEnd,index)
                             }
                         }
                     }
@@ -621,7 +621,7 @@ class ReadBookActivity : BaseReadBookActivity(),
      */
     override val selectedText: String get() = binding.readView.curPage.selectedText
 
-    var mBooknotes = arrayListOf<Booknote?>()
+    var mBooknotes = arrayListOf<Booknote?>()//缓存笔记列表
     /**
      * 文本选择菜单操作
      */

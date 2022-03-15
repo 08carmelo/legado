@@ -368,21 +368,17 @@ class ContentTextView(context: Context, attrs: AttributeSet?) : View(context, at
         }
     }
 
-    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
+    fun selectStartMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int) {
         if (index == 0){
             selectStartLines.clear()
             selectEndLines.clear()
         }
         selectStartLines.add(arrayOf(relativePage, lineIndex, charIndex))
-        val textLine = relativePage(relativePage).getLine(lineIndex)
-        val textChar = textLine.getTextChar(charIndex)
         upSelectLineChars(index)
     }
 
-    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int,size:Int) {
+    fun selectEndMoveIndex2(relativePage: Int, lineIndex: Int, charIndex: Int,index:Int) {
         selectEndLines.add(arrayOf(relativePage, lineIndex, charIndex))
-        val textLine = relativePage(relativePage).getLine(lineIndex)
-        val textChar = textLine.getTextChar(charIndex)
         upSelectLineChars(index)
     }
 
