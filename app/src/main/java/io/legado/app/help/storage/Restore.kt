@@ -12,7 +12,6 @@ import io.legado.app.constant.PreferKey
 import io.legado.app.data.appDb
 import io.legado.app.data.entities.*
 import io.legado.app.help.DefaultData
-import io.legado.app.help.LauncherIconHelp
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.help.config.ThemeConfig
 import io.legado.app.utils.*
@@ -183,7 +182,7 @@ object Restore {
         withContext(Main) {
             delay(100)
             if (!BuildConfig.DEBUG) {
-                LauncherIconHelp.changeIcon(appCtx.getPrefString(PreferKey.launcherIcon))
+//                LauncherIconHelp.changeIcon(appCtx.getPrefString(PreferKey.launcherIcon))
             }
             postEvent(EventBus.RECREATE, "")
         }

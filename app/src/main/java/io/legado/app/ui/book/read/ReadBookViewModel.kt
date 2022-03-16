@@ -18,11 +18,9 @@ import io.legado.app.help.config.AppConfig
 import io.legado.app.help.coroutine.Coroutine
 import io.legado.app.help.storage.AppWebDav
 import io.legado.app.model.NoStackTraceException
-import io.legado.app.model.ReadAloud
 import io.legado.app.model.ReadBook
 import io.legado.app.model.localBook.LocalBook
 import io.legado.app.model.webBook.WebBook
-import io.legado.app.service.BaseReadAloudService
 import io.legado.app.ui.book.read.page.entities.TextChapter
 import io.legado.app.ui.book.searchContent.SearchResult
 import io.legado.app.utils.msg
@@ -89,9 +87,9 @@ class ReadBookViewModel(application: Application) : BaseViewModel(application) {
                     ReadBook.loadContent(resetPageOffset = true)
                 }
             }
-            if (!BaseReadAloudService.isRun) {
-                syncBookProgress(book)
-            }
+//            if (!BaseReadAloudService.isRun) {
+//                syncBookProgress(book)
+//            }
         }
         if (!book.isLocalBook() && ReadBook.bookSource == null) {
             autoChangeSource(book.name, book.author)
@@ -398,9 +396,6 @@ class ReadBookViewModel(application: Application) : BaseViewModel(application) {
 
     override fun onCleared() {
         super.onCleared()
-        if (BaseReadAloudService.pause) {
-            ReadAloud.stop(context)
-        }
     }
 
 }

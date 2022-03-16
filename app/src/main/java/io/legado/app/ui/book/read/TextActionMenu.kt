@@ -22,7 +22,6 @@ import io.legado.app.base.adapter.RecyclerAdapter
 import io.legado.app.constant.PreferKey
 import io.legado.app.databinding.ItemTextBinding
 import io.legado.app.databinding.PopupActionMenuBinding
-import io.legado.app.service.BaseReadAloudService
 import io.legado.app.utils.*
 
 import java.util.*
@@ -200,13 +199,6 @@ class TextActionMenu(private val context: Context, private val callBack: CallBac
         when (item.itemId) {
             R.id.menu_copy -> context.sendToClip(callBack.selectedText)
             R.id.menu_share_str -> context.share(callBack.selectedText)
-            R.id.menu_aloud -> {
-                if (BaseReadAloudService.isRun) {
-                    context.toastOnUi(R.string.alouding_disable)
-                    return
-                }
-                readAloud(callBack.selectedText)
-            }
             R.id.menu_browser -> {
                 kotlin.runCatching {
                     val intent = if (callBack.selectedText.isAbsUrl()) {

@@ -1,27 +1,22 @@
 package io.legado.app.ui.book.read.page
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Build
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.ViewConfiguration
 import android.view.WindowInsets
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import io.legado.app.R
 import io.legado.app.help.config.AppConfig
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.lib.theme.accentColor
-import io.legado.app.model.ReadAloud
 import io.legado.app.model.ReadBook
 import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.book.read.page.api.DataSource
@@ -33,7 +28,6 @@ import io.legado.app.ui.book.read.page.provider.ChapterProvider
 import io.legado.app.ui.book.read.page.provider.TextPageFactory
 import io.legado.app.utils.activity
 import io.legado.app.utils.screenshot
-import org.w3c.dom.Text
 import java.text.BreakIterator
 import java.util.*
 import kotlin.math.abs
@@ -479,8 +473,6 @@ class ReadView(context: Context, attrs: AttributeSet) :
             2 -> pageDelegate?.prevPageByAnim(defaultAnimationSpeed)
             3 -> ReadBook.moveToNextChapter(true)
             4 -> ReadBook.moveToPrevChapter(upContent = true, toLast = false)
-            5 -> ReadAloud.prevParagraph(context)
-            6 -> ReadAloud.nextParagraph(context)
         }
     }
 

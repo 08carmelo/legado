@@ -3,7 +3,6 @@
 package io.legado.app.ui.main
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.ViewGroup
 import androidx.activity.viewModels
@@ -25,18 +24,13 @@ import io.legado.app.help.config.LocalConfig
 import io.legado.app.help.storage.Backup
 import io.legado.app.lib.theme.elevation
 import io.legado.app.lib.theme.primaryColor
-import io.legado.app.service.BaseReadAloudService
 import io.legado.app.ui.main.bookshelf.BaseBookshelfFragment
 import io.legado.app.ui.main.bookshelf.style1.BookshelfFragment1
 import io.legado.app.ui.main.bookshelf.style2.BookshelfFragment2
 import io.legado.app.ui.main.explore.ExploreFragment
-import io.legado.app.ui.main.my.MyFragment
 import io.legado.app.ui.main.rss.RssFragment
-import io.legado.app.ui.widget.dialog.TextDialog
 import io.legado.app.utils.observeEvent
 import io.legado.app.utils.setEdgeEffectColor
-import io.legado.app.utils.showDialogFragment
-import io.legado.app.utils.toastOnUi
 import io.legado.app.utils.viewbindingdelegate.viewBinding
 
 
@@ -252,7 +246,7 @@ class MainActivity : VMBaseActivity<ActivityMainBinding, MainViewModel>(),
                 11 -> BookshelfFragment2()
                 1 -> ExploreFragment()
                 2 -> RssFragment()
-                else -> MyFragment()
+                else -> RssFragment()
             }
         }
 

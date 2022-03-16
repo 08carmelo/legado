@@ -13,9 +13,7 @@ import io.legado.app.databinding.DialogAutoReadBinding
 import io.legado.app.help.config.ReadBookConfig
 import io.legado.app.lib.theme.bottomBackground
 import io.legado.app.lib.theme.getPrimaryTextColor
-import io.legado.app.model.ReadAloud
 import io.legado.app.model.ReadBook
-import io.legado.app.service.BaseReadAloudService
 import io.legado.app.ui.book.read.BaseReadBookActivity
 import io.legado.app.ui.book.read.ReadBookActivity
 import io.legado.app.ui.widget.seekbar.SeekBarChangeListener
@@ -84,7 +82,6 @@ class AutoReadDialog : BaseDialogFragment(R.layout.dialog_auto_read) {
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 ReadBookConfig.autoReadSpeed =
                     if (binding.seekAutoRead.progress < 2) 2 else binding.seekAutoRead.progress
-                upTtsSpeechRate()
             }
         })
     }
@@ -104,14 +101,6 @@ class AutoReadDialog : BaseDialogFragment(R.layout.dialog_auto_read) {
         binding.llAutoPageStop.setOnClickListener {
             callBack?.autoPageStop()
             dismissAllowingStateLoss()
-        }
-    }
-
-    private fun upTtsSpeechRate() {
-        ReadAloud.upTtsSpeechRate(requireContext())
-        if (!BaseReadAloudService.pause) {
-            ReadAloud.pause(requireContext())
-            ReadAloud.resume(requireContext())
         }
     }
 

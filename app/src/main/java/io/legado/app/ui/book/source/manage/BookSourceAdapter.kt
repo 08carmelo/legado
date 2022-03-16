@@ -115,7 +115,6 @@ class BookSourceAdapter(context: Context, val callBack: CallBack) :
                             var isFinalMessage =
                                 ivDebugText.text.toString().contains(Regex("成功|失败"))
                             if (!Debug.isChecking && !isFinalMessage) {
-                                Debug.updateFinalMessage(item.bookSourceUrl, "校验失败")
                                 ivDebugText.text = Debug.debugMessageMap[item.bookSourceUrl] ?: ""
                                 isFinalMessage = true
                             }

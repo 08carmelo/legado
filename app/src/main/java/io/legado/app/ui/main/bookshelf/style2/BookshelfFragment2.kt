@@ -17,7 +17,6 @@ import io.legado.app.databinding.FragmentBookshelf1Binding
 import io.legado.app.help.config.AppConfig
 import io.legado.app.lib.theme.accentColor
 import io.legado.app.lib.theme.primaryColor
-import io.legado.app.ui.book.audio.AudioPlayActivity
 import io.legado.app.ui.book.group.GroupEditDialog
 import io.legado.app.ui.book.info.BookInfoActivity
 import io.legado.app.ui.book.read.ReadBookActivity
@@ -180,10 +179,7 @@ class BookshelfFragment2 : BaseBookshelfFragment(R.layout.fragment_bookshelf1),
     override fun onItemClick(position: Int) {
         when (val item = getItem(position)) {
             is Book -> when (item.type) {
-                BookType.audio ->
-                    startActivity<AudioPlayActivity> {
-                        putExtra("bookUrl", item.bookUrl)
-                    }
+                BookType.audio ->{}
                 else -> startActivity<ReadBookActivity> {
                     putExtra("bookUrl", item.bookUrl)
                 }

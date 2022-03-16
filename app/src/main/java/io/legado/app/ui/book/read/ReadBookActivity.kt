@@ -31,10 +31,8 @@ import io.legado.app.lib.dialogs.alert
 import io.legado.app.lib.dialogs.selector
 import io.legado.app.lib.theme.accentColor
 import io.legado.app.model.NoStackTraceException
-import io.legado.app.model.ReadAloud
 import io.legado.app.model.ReadBook
 import io.legado.app.receiver.TimeBatteryReceiver
-import io.legado.app.service.BaseReadAloudService
 import io.legado.app.ui.about.AppLogDialog
 import io.legado.app.ui.book.changesource.ChangeBookSourceDialog
 import io.legado.app.ui.book.changesource.ChangeChapterSourceDialog
@@ -52,12 +50,8 @@ import io.legado.app.ui.book.source.edit.BookSourceEditActivity
 import io.legado.app.ui.book.toc.BookNoteDialog
 import io.legado.app.ui.book.toc.BookmarkDialog
 import io.legado.app.ui.book.toc.TocActivityResult
-import io.legado.app.ui.browser.WebViewActivity
-import io.legado.app.ui.dict.DictDialog
 import io.legado.app.ui.login.SourceLoginActivity
-import io.legado.app.ui.replace.ReplaceRuleActivity
 import io.legado.app.ui.replace.edit.ReplaceEditActivity
-import io.legado.app.ui.widget.dialog.TextDialog
 import io.legado.app.utils.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
@@ -70,7 +64,6 @@ class ReadBookActivity : BaseReadBookActivity(),
     PopupMenu.OnMenuItemClickListener,
     ReadMenu.CallBack,
     SearchMenu.CallBack,
-    ReadAloudDialog.CallBack,
     ChangeBookSourceDialog.CallBack,
     ChangeChapterSourceDialog.CallBack,
     ReadBook.CallBack,
@@ -523,11 +516,6 @@ class ReadBookActivity : BaseReadBookActivity(),
                         && event.isTracking
                         && !event.isCanceled
                     ) {
-                        if (BaseReadAloudService.isPlay()) {
-                            ReadAloud.pause(this)
-                            toastOnUi(R.string.read_aloud_pause)
-                            return true
-                        }
                         if (isAutoPage) {
                             autoPageStop()
                             return true
@@ -671,10 +659,6 @@ class ReadBookActivity : BaseReadBookActivity(),
                 openSearchActivity(selectedText)
                 return true
             }
-            R.id.menu_dict -> {
-                showDialogFragment(DictDialog(selectedText))
-                return true
-            }
         }
         return false
     }
@@ -701,7 +685,6 @@ class ReadBookActivity : BaseReadBookActivity(),
         if (!binding.readMenu.isVisible) {
             if (getPrefBoolean("volumeKeyPage", true)) {
                 if (getPrefBoolean("volumeKeyPageOnPlay")
-                    || BaseReadAloudService.pause
                 ) {
                     binding.readView.pageDelegate?.isCancel = false
                     binding.readView.pageDelegate?.keyTurnPage(direction)
@@ -730,7 +713,6 @@ class ReadBookActivity : BaseReadBookActivity(),
     override fun contentLoadFinish() {
         if (intent.getBooleanExtra("readAloud", false)) {
             intent.removeExtra("readAloud")
-            ReadBook.readAloud()
         }
         loadStates = true
     }
@@ -791,7 +773,6 @@ class ReadBookActivity : BaseReadBookActivity(),
 
     override fun showActionMenu() {
         when {
-            BaseReadAloudService.isRun -> showReadAloudDialog()
             isAutoPage -> showDialogFragment<AutoReadDialog>()
             isShowingSearchResult -> binding.searchMenu.runMenuIn()
             else -> binding.readMenu.runMenuIn()
@@ -806,15 +787,12 @@ class ReadBookActivity : BaseReadBookActivity(),
     /**
      * 显示朗读菜单
      */
-    override fun showReadAloudDialog() {
-        showDialogFragment<ReadAloudDialog>()
-    }
+    override fun showReadAloudDialog() {}
 
     /**
      * 自动翻页
      */
     override fun autoPage() {
-        ReadAloud.stop(this)
         if (isAutoPage) {
             autoPageStop()
         } else {
@@ -874,13 +852,6 @@ class ReadBookActivity : BaseReadBookActivity(),
                 putExtra("sourceUrl", it.bookSourceUrl)
             }
         }
-    }
-
-    /**
-     * 替换
-     */
-    override fun openReplaceRule() {
-        replaceActivity.launch(Intent(this, ReplaceRuleActivity::class.java))
     }
 
     /**
@@ -954,50 +925,11 @@ class ReadBookActivity : BaseReadBookActivity(),
         }
     }
 
-    override fun payAction() {
-        Coroutine.async(this) {
-            val book = ReadBook.book ?: throw NoStackTraceException("no book")
-            val chapter = appDb.bookChapterDao.getChapter(book.bookUrl, ReadBook.durChapterIndex)
-                ?: throw NoStackTraceException("no chapter")
-            val source = ReadBook.bookSource ?: throw NoStackTraceException("no book source")
-            val payAction = source.getContentRule().payAction
-            if (payAction.isNullOrEmpty()) {
-                throw NoStackTraceException("no pay action")
-            }
-            if (payAction.isAbsUrl()) {
-                payAction
-            } else {
-                source.evalJS(payAction) {
-                    put("book", book)
-                    put("chapter", chapter)
-                }?.toString()
-            }
-        }.onSuccess {
-            it?.let {
-                startActivity<WebViewActivity> {
-                    putExtra("title", getString(R.string.chapter_pay))
-                    putExtra("url", it)
-                    IntentData.put(it, ReadBook.bookSource?.getHeaderMap(true))
-                }
-            }
-        }.onError {
-            toastOnUi(it.localizedMessage)
-        }
-    }
-
     /**
      * 朗读按钮
      */
     override fun onClickReadAloud() {
         autoPageStop()
-        when {
-            !BaseReadAloudService.isRun -> {
-                ReadAloud.upReadAloudClass()
-                ReadBook.readAloud()
-            }
-            BaseReadAloudService.pause -> ReadAloud.resume(this)
-            else -> ReadAloud.pause(this)
-        }
     }
 
     /**
@@ -1137,9 +1069,7 @@ class ReadBookActivity : BaseReadBookActivity(),
         observeEvent<Boolean>(EventBus.MEDIA_BUTTON) {
             if (it) {
                 onClickReadAloud()
-            } else {
-                ReadBook.readAloud(!BaseReadAloudService.pause)
-            }
+            } else {}
         }
         observeEvent<Boolean>(EventBus.UP_CONFIG) {
             upSystemUiVisibility()
@@ -1165,15 +1095,6 @@ class ReadBookActivity : BaseReadBookActivity(),
         }
         observeEventSticky<Int>(EventBus.TTS_PROGRESS) { chapterStart ->
             launch(IO) {
-                if (BaseReadAloudService.isPlay()) {
-                    ReadBook.curTextChapter?.let { textChapter ->
-                        val pageIndex = ReadBook.durPageIndex
-                        val aloudSpanStart = chapterStart - textChapter.getReadLength(pageIndex)
-                        textChapter.getPage(pageIndex)
-                            ?.upPageAloudSpan(aloudSpanStart)
-                        upContent()
-                    }
-                }
             }
         }
         observeEvent<Boolean>(PreferKey.keepLight) {

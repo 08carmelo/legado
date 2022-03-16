@@ -25,7 +25,6 @@ import io.legado.app.databinding.DialogBookChangeSourceBinding
 import io.legado.app.help.config.AppConfig
 import io.legado.app.lib.theme.primaryColor
 import io.legado.app.ui.book.source.edit.BookSourceEditActivity
-import io.legado.app.ui.book.source.manage.BookSourceActivity
 import io.legado.app.ui.widget.recycler.VerticalDivider
 import io.legado.app.utils.*
 import io.legado.app.utils.viewbindingdelegate.viewBinding
@@ -181,7 +180,6 @@ class ChangeBookSourceDialog() : BaseDialogFragment(R.layout.dialog_book_change_
                 item.isChecked = !item.isChecked
             }
             R.id.menu_start_stop -> viewModel.startOrStopSearch()
-            R.id.menu_source_manage -> startActivity<BookSourceActivity>()
             else -> if (item?.groupId == R.id.source_group) {
                 if (!item.isChecked) {
                     item.isChecked = true

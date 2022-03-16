@@ -6,7 +6,6 @@ import io.legado.app.base.BaseViewModel
 import io.legado.app.data.appDb
 import io.legado.app.data.entities.HttpTTS
 import io.legado.app.model.NoStackTraceException
-import io.legado.app.model.ReadAloud
 import io.legado.app.utils.getClipText
 import io.legado.app.utils.isJsonArray
 import io.legado.app.utils.isJsonObject
@@ -37,7 +36,6 @@ class HttpTtsEditViewModel(app: Application) : BaseViewModel(app) {
         id = httpTTS.id
         execute {
             appDb.httpTTSDao.insert(httpTTS)
-            if (ReadAloud.ttsEngine == httpTTS.id.toString()) ReadAloud.upReadAloudClass()
         }.onSuccess {
             success?.invoke()
         }

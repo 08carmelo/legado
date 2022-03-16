@@ -86,18 +86,7 @@ object Debug {
         isChecking = false
     }
 
-    fun getRespondTime(sourceUrl: String): Long {
-        return debugTimeMap[sourceUrl] ?: CheckSource.timeout
-    }
 
-    fun updateFinalMessage(sourceUrl: String, state: String) {
-        if (debugTimeMap[sourceUrl] != null && debugMessageMap[sourceUrl] != null) {
-            val spendingTime = System.currentTimeMillis() - debugTimeMap[sourceUrl]!!
-            debugTimeMap[sourceUrl] = if (state == "校验成功") spendingTime else CheckSource.timeout + spendingTime
-            val printTime = debugTimeFormat.format(Date(spendingTime))
-            debugMessageMap[sourceUrl] = "$printTime $state"
-        }
-    }
 
     fun startDebug(scope: CoroutineScope, rssSource: RssSource) {
         cancelDebug()

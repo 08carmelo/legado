@@ -94,8 +94,6 @@ class ReadMenu @JvmOverloads constructor(
         fabSearch.setColorFilter(textColor)
         fabAutoPage.backgroundTintList = bottomBackgroundList
         fabAutoPage.setColorFilter(textColor)
-        fabReplaceRule.backgroundTintList = bottomBackgroundList
-        fabReplaceRule.setColorFilter(textColor)
         fabNightTheme.backgroundTintList = bottomBackgroundList
         fabNightTheme.setColorFilter(textColor)
         tvPre.setTextColor(textColor)
@@ -208,10 +206,6 @@ class ReadMenu @JvmOverloads constructor(
         tvLogin.setOnClickListener {
             callBack.showLogin()
         }
-        //购买
-        tvPay.setOnClickListener {
-            callBack.payAction()
-        }
         //书源操作
         tvSourceAction.onClick {
             sourceMenu.show()
@@ -260,10 +254,6 @@ class ReadMenu @JvmOverloads constructor(
                 callBack.autoPage()
             }
         }
-
-        //替换
-        fabReplaceRule.isVisible = false
-        fabReplaceRule.setOnClickListener { callBack.openReplaceRule() }
 
         //夜间模式
         fabNightTheme.isVisible = false
@@ -410,7 +400,6 @@ class ReadMenu @JvmOverloads constructor(
 
     interface CallBack {
         fun autoPage()
-        fun openReplaceRule()
         fun openChapterList()
         fun openSearchActivity(searchWord: String?)
         fun openSourceEditActivity()
@@ -421,7 +410,6 @@ class ReadMenu @JvmOverloads constructor(
         fun onClickReadAloud()
         fun showReadMenuHelp()
         fun showLogin()
-        fun payAction()
         fun disableSource()
     }
 
